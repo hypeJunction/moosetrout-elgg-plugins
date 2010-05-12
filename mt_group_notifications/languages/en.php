@@ -17,6 +17,7 @@ $english = array (
     'mt_group_notifications:dryrun' => 'Dry run?',
     'mt_group_notifications:defaultnotify' => 'Override notifications for existing group members: ',
     'mt_group_notifications:result' => 'Result',
+    'mt_group_notifications:setdefaults' => 'Set existing user membership notifications to:',
     'mt_group_notifications:displayskipping' => 'Display relationships that are skipped?',
     'mt_group_notifications:skipping' => 'Skipping relationship: ',
     'mt_group_notifications:defaultnotifyparamerror' => 'Defaultnotify param should be email/site/both; received ',
