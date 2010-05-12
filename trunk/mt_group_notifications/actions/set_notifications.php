@@ -36,7 +36,7 @@ $displayskipping = get_input('displayskipping', 0);
 $body .= "Display relationships that are skipped: $displayskipping<br/>\n";
 
 // grab all users
-$users = get_entities('user', '', '', '', 5000);
+$users = elgg_get_entities(array (types => 'user', limit => 50000));
 $num = count($users);
 $body .= "Max number of users being fetched: 5000; number of users being processed: $num<br />\n";
 
