@@ -9,7 +9,7 @@
 	$internalname = get_input('internalname');
 		
 	// Echo the view
-	echo elgg_view('tinyurl/longurl', array(
+	echo elgg_view('mt_tinyurl/longurl', array(
 							'internalname' => $internalname,
 					   ));
 
