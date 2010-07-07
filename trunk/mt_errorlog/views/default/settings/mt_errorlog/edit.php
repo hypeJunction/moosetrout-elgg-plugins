@@ -9,11 +9,9 @@
 ?>
 
 <p>
-  <?php echo elgg_echo('mt_errorlog:settings:enable_email_notifications'); ?>
- 
-  <select name="params[enable_email_notifications]">
-  <option value="true" <?php if ($vars['entity']->enable_email_notifications == 'true') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:yes')?></option>
-  <option value="false" <?php if (($vars['entity']->enable_email_notifications == 'false') || (!isset($vars['entity']->enable_email_notifications))) echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:no')?></option>
-  </select>
+  <?php echo elgg_echo('mt_errorlog:settings:path_to_errorlog'); ?>
+  
+  <?php echo elgg_view('input/text',array('internalname' => 'path_to_errorlog')); ?>
+  
 
 </p>
