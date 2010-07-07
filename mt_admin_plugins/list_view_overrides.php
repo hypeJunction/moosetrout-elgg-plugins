@@ -41,8 +41,8 @@ $root = $location . $viewtype . '/' . $view_root;
 $views = array();
 
 if (file_exists($root) && is_dir($root)) {
-    //$toplevel_views = get_views($root, $view_root);
-    $views = get_views($root, $view_root);
+    //$toplevel_views = elgg_get_views($root, $view_root);
+    $views = elgg_get_views($root, $view_root);
 }
 
 // sort views
@@ -75,7 +75,7 @@ foreach ($plugins as $plugin) {
     // grab views
     //$views = mt_load_plugin($views, $plugin);
     $p = $CONFIG->pluginspath . "/$plugin/views/default";
-    $views = get_views($p, '');
+    $views = elgg_get_views($p, '');
 
     $i = 0;
     foreach($views as $view) {
