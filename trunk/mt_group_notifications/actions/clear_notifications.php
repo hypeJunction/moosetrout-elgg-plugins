@@ -1,7 +1,7 @@
 <?php
 
 /**
- * mt_group_notifications set_notications action
+ * mt_group_notifications clear_notications action
  * 
  * @author Brian Jorgensen (brian@moosetrout.com)
  * @copyright 2010 Brian Jorgensen
@@ -26,14 +26,6 @@ $body = "Starting...<br/>\n";
 // dryrun?
 $dryrun = get_input('dryrun', 'true');
 $body .= "Dryrun: $dryrun<br/>\n";
-
-// default
-$defaultnotify = get_input('defaultnotify', 'email');
-$body .= "Default notify: $defaultnotify<br/>\n";
-
-// displayskipping?
-$displayskipping = get_input('displayskipping', 0);
-$body .= "Display relationships that are skipped: $displayskipping<br/>\n";
 
 // grab all users
 $users = elgg_get_entities(array (types => 'user', limit => 5000));
@@ -69,44 +61,32 @@ if ($num == 5000) {
                 $siteset = check_entity_relationship($guid_one, 'notifysite', $guid_two);
                 
                 //
-                if (($emailset == false) && ($siteset == false)) {
+                if (true) {
     
                     // dryrun?
                     if ($dryrun == 0) {
-                        if ($defaultnotify == 'email') {
+                        if ($emailset) {
                             
-                            $body .= elgg_echo('mt_group_notifications:addingnotifyemail') . "$guid_one; $guid_two<br />\n";
-                            add_entity_relationship($guid_one, 'notifyemail', $guid_two);
+                            $body .= elgg_echo('mt_group_notifications:clearnotifyemail') . "$guid_one; $guid_two<br />\n";
+                            remove_entity_relationship($guid_one, 'notifyemail', $guid_two);
                             
-                        } else if ($defaultnotify == 'site') {
+                        }
+                        if ($siteset) {
                             
-                            $body .= elgg_echo('mt_group_notifications:addingnotifysite') . "$guid_one; $guid_two<br />\n";
-                            add_entity_relationship($guid_one, 'notifysite', $guid_two);
+                            $body .= elgg_echo('mt_group_notifications:clearnotifysite') . "$guid_one; $guid_two<br />\n";
+                            remove_entity_relationship($guid_one, 'notifysite', $guid_two);
                             
-                        } else if ($defaultnotify == 'both') {
-                            
-                            $body .= elgg_echo('mt_group_notifications:addingnotifyboth') . "$guid_one; $guid_two<br />\n";
-                            add_entity_relationship($guid_one, 'notifyemail', $guid_two);
-                            add_entity_relationship($guid_one, 'notifysite', $guid_two);
-                            
-                        } else {
-                            $body .= elgg_echo('mt_group_notifications:defaultnotifyparamerror') . "$defaultnotify<br />\n";
                         }
                     } else if ($dryrun == 1) {
-                        if ($defaultnotify == 'email') {
+                        if ($emailset) {
                             
-                            $body .= elgg_echo('mt_group_notifications:addingnotifyemail') . "$guid_one; $guid_two<br />\n";
+                            $body .= elgg_echo('mt_group_notifications:clearnotifyemail') . "$guid_one; $guid_two<br />\n";
                             
-                        } else if ($defaultnotify == 'site') {
+                        }
+                        if ($siteset) {
                             
-                            $body .= elgg_echo('mt_group_notifications:addingnotifysite') . "$guid_one; $guid_two<br />\n";
+                            $body .= elgg_echo('mt_group_notifications:clearnotifysite') . "$guid_one; $guid_two<br />\n";
                             
-                        } else if ($defaultnotify == 'both') {
-                            
-                            $body .= elgg_echo('mt_group_notifications:addingnotifyboth') . "$guid_one; $guid_two<br />\n";
-                            
-                        } else {
-                            $body .= elgg_echo('mt_group_notifications:defaultnotifyparamerror') . "$defaultnotify<br />\n";
                         }
                     } else {
                         $body .= elgg_echo('mt_group_notifications:dryrunparamerror') . $dryrun;
