@@ -7,7 +7,7 @@ admin_gatekeeper();
 set_context('admin');
 
 // grab lib
-require_once($CONFIG->pluginspath . 'au_admin_plugins/lib/au_admin_plugins_lib.php');
+require_once($CONFIG->pluginspath . 'mt_admin_plugins/lib/mt_admin_plugins_lib.php');
 
 // defaults
 $conflicts = array();
@@ -180,6 +180,6 @@ foreach ($keys as $view) {
 }
 $body .= "</table></div>\n";
 
-$title = elgg_view_title(elgg_echo('au_admin_plugins:list_view_overrides_title'));
+$title = elgg_view_title(elgg_echo('mt_admin_plugins:list_view_overrides_title'));
 
-page_draw(elgg_echo('au_admin_plugins:list_view_overrides_title'), elgg_view_layout("two_column_left_sidebar", '', $title . $body));
+page_draw(elgg_echo('mt_admin_plugins:list_view_overrides_title'), elgg_view_layout("two_column_left_sidebar", '', $title . $body));

@@ -4,13 +4,13 @@ admin_gatekeeper();
 set_context('admin');
 
 // grab lib
-require_once($CONFIG->pluginspath . 'au_admin_plugins/lib/au_admin_plugins_lib.php');
+require_once($CONFIG->pluginspath . 'mt_admin_plugins/lib/mt_admin_plugins_lib.php');
 
 // get list of plugins
 $plugins = get_plugin_list();
 
 // add nav menu here?
-//$body = elgg_view('au_admin_plugins/nav');
+//$body = elgg_view('mt_admin_plugins/nav');
 
 $body = "<div class='contentWrapper'>\n<table cellpadding='5'>\n";
 $body .= "<tr><th>Plugin</th><th>Requires</th></tr>\n";
@@ -102,8 +102,8 @@ foreach ($plugins as $plugin) {
 }
 $body .= "</table></div>\n";
 
-$title = elgg_view_title(elgg_echo('au_admin_plugins:list_dependencies'));
+$title = elgg_view_title(elgg_echo('mt_admin_plugins:list_dependencies'));
 
-page_draw(elgg_echo('au_admin_plugins:list_versions_dependencies'), elgg_view_layout("two_column_left_sidebar", '', $title . $body));
+page_draw(elgg_echo('mt_admin_plugins:list_versions_dependencies'), elgg_view_layout("two_column_left_sidebar", '', $title . $body));
 
 

@@ -27,6 +27,6 @@ while (false !== ($file = $d->read())) {
 
 $body .= "</div>\n";
 
-$title = elgg_view_title(elgg_echo('au_admin_plugins:delete_view_caches'));
+$title = elgg_view_title(elgg_echo('mt_admin_plugins:delete_view_caches'));
 
-page_draw(elgg_echo('au_admin_plugins:delete_view_caches'), elgg_view_layout("two_column_left_sidebar", '', $title . $body));
+page_draw(elgg_echo('mt_admin_plugins:delete_view_caches'), elgg_view_layout("two_column_left_sidebar", '', $title . $body));

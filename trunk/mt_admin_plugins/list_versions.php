@@ -4,7 +4,7 @@ admin_gatekeeper();
 set_context('admin');
 
 // grab lib
-require_once($CONFIG->pluginspath . 'au_admin_plugins/lib/au_admin_plugins_lib.php');
+require_once($CONFIG->pluginspath . 'mt_admin_plugins/lib/mt_admin_plugins_lib.php');
 
 // plugin base
 $plugin_base = 'http://community.elgg.org/mod/plugins/read.php?guid=';
@@ -43,7 +43,7 @@ $plugin_url_guid = array(
 );
 
 // add nav menu here?
-//$body = elgg_view('au_admin_plugins/nav');
+//$body = elgg_view('mt_admin_plugins/nav');
 
 $body = "<div class='contentWrapper'>\n<table cellpadding='5'>\n";
 $body .= "<th>Plugin</th><th>Installed</th><th>Available Version</th><th>Author</th><th>Trust</th><th>Notes</th>\n";
@@ -145,7 +145,7 @@ foreach ($plugins as $plugin) {
 
     // available version
     if ($verified) {
-        $body .= "<td style='color:$css_color'>$latest_version <a href='$url'><img src='" . $CONFIG->wwwroot . "mod/au_admin_plugins/_graphics/ur_arrow.png' border='0'></a></td>";
+        $body .= "<td style='color:$css_color'>$latest_version <a href='$url'><img src='" . $CONFIG->wwwroot . "mod/mt_admin_plugins/_graphics/ur_arrow.png' border='0'></a></td>";
     } else {
         $body .= "<td>&nbsp;</td>";
     }
@@ -154,7 +154,7 @@ foreach ($plugins as $plugin) {
     $body .= "<td>{$manifest_values['author']}";
 
     if (isset($author_website)) {
-        $body .= " <a href='" . $author_website . "'><img src='" . $CONFIG->wwwroot . "mod/au_admin_plugins/_graphics/ur_arrow.png' border='0'></a>";
+        $body .= " <a href='" . $author_website . "'><img src='" . $CONFIG->wwwroot . "mod/mt_admin_plugins/_graphics/ur_arrow.png' border='0'></a>";
     }
     $body .= "</td>";
 
@@ -173,8 +173,8 @@ foreach ($plugins as $plugin) {
 $body .= "</table></div>\n";
 
 
-$title = elgg_view_title(elgg_echo('au_admin_plugins:list_versions_title'));
+$title = elgg_view_title(elgg_echo('mt_admin_plugins:list_versions_title'));
 
-page_draw(elgg_echo('au_admin_plugins:list_versions_title'), elgg_view_layout("two_column_left_sidebar", '', $title . $body));
+page_draw(elgg_echo('mt_admin_plugins:list_versions_title'), elgg_view_layout("two_column_left_sidebar", '', $title . $body));
 
 
