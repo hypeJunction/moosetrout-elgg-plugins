@@ -91,7 +91,7 @@
      * 
      * @param $exception
      */
-    function errorlog_php_exception_handler($exception)
+    function mt_errorlog_php_exception_handler($exception)
     {
       error_log("*** FATAL EXCEPTION *** : " . $exception . "\n", 3, "../../error_log.txt");
       
