@@ -39,7 +39,7 @@
       global $CONFIG;
       
       // grab path to error file from plugin settings
-      $errorlog = get_plugin_setting('errorlog', 'mt_errorlog');
+      $errorlog = get_plugin_setting('path_to_errorlog', 'mt_errorlog');
       
       // check if plugin setting is set and if file already exists
       if (isset($errorlog)) {
