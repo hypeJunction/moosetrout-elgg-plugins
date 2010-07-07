@@ -8,7 +8,7 @@
  * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2
   */
 $english = array (
-
+    'mt_group_notifications' => 'MT Group Notifications',
     'mt_group_notifications:settings:enable_email_notifications' => 'Automatically set email notifications ON when a user joins a group',
     'mt_group_notifications:settings:enable_site_notifications' => 'Automatically set site notifications ON when a user joins a group',
     'mt_group_notifications:adminlink' => 'MT Group Notifications',

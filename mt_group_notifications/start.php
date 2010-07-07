@@ -15,6 +15,7 @@ register_elgg_event_handler('init', 'system', 'mt_group_notifications_init');
 
 // register actions
 register_action("mt_group_notifications/set_notifications", false, $CONFIG->pluginspath . "mt_group_notifications/actions/set_notifications.php", true);
+register_action("mt_group_notifications/clear_notifications", false, $CONFIG->pluginspath . "mt_group_notifications/actions/clear_notifications.php", true);
 
 /**
  * Standard init method
