@@ -9,7 +9,7 @@
   */
 $english = array (
     'mt_errorlog' => 'MT Errorlog',
-    'mt_errorlog:path_to_errorlog' => 'Full path to errorlog.'
+    'mt_errorlog:settings:path_to_errorlog' => 'Full path to errorlog.'
 );
 
 add_translation('en', $english);
