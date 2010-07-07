@@ -43,28 +43,28 @@ switch($tab) {
 <div id="elgg_horizontal_tabbed_nav">
 <ul>
 	<li id="auap_index_nav" <?php echo $indexselect; ?>><a
-		href="javascript:auapSwitchTab('auap_index')"><?php echo elgg_echo('au_admin_plugins:index'); ?></a></li>
+		href="javascript:auapSwitchTab('auap_index')"><?php echo elgg_echo('mt_admin_plugins:index'); ?></a></li>
 	<li id="auap_listversions_nav" <?php echo $listversionsselect; ?>><a
-		href="javascript:auapSwitchTab('auap_listversions')"><?php echo elgg_echo('au_admin_plugins:listversions'); ?></a></li>
+		href="javascript:auapSwitchTab('auap_listversions')"><?php echo elgg_echo('mt_admin_plugins:listversions'); ?></a></li>
 	<li id="auap_listoverrides_nav" <?php echo $listoverridesselect; ?>><a
-		href="javascript:auapSwitchTab('auap_listoverrides')"><?php echo elgg_echo('au_admin_plugins:listoverrides'); ?></a></li>
+		href="javascript:auapSwitchTab('auap_listoverrides')"><?php echo elgg_echo('mt_admin_plugins:listoverrides'); ?></a></li>
 	<li id="auap_dumporder_nav" <?php echo $dumporderselect; ?>><a
-		href="javascript:auapSwitchTab('auap_dumporder')"><?php echo elgg_echo('au_admin_plugins:dumporder'); ?></a></li>
+		href="javascript:auapSwitchTab('auap_dumporder')"><?php echo elgg_echo('mt_admin_plugins:dumporder'); ?></a></li>
 </ul>
 </div>
 <br />
 
-<div id="auap_index_tab" class="au_admin_plugins_tab"><?php 
-echo elgg_view("au_admin_plugins/content");
+<div id="auap_index_tab" class="mt_admin_plugins_tab"><?php 
+echo elgg_view("mt_admin_plugins/content");
 ?></div>
-<div id="auap_listversions_tab" class="au_admin_plugins_tab"><?php 
-echo elgg_view("au_admin_plugins/content"); //listversions");
+<div id="auap_listversions_tab" class="mt_admin_plugins_tab"><?php 
+echo elgg_view("mt_admin_plugins/content"); //listversions");
 ?></div>
-<div id="auap_listoverrides_tab" class="au_admin_plugins_tab"><?php 
-echo elgg_view("au_admin_plugins/content"); //listoverrides");
+<div id="auap_listoverrides_tab" class="mt_admin_plugins_tab"><?php 
+echo elgg_view("mt_admin_plugins/content"); //listoverrides");
 ?></div>
-<div id="auap_dumporder_tab" class="au_admin_plugins_tab"><?php 
-echo elgg_view("au_admin_plugins/content"); //dumporder");
+<div id="auap_dumporder_tab" class="mt_admin_plugins_tab"><?php 
+echo elgg_view("mt_admin_plugins/content"); //dumporder");
 ?></div>
 
 </div>
@@ -78,7 +78,7 @@ function auapSwitchTab(tab_id)
 	var nav_name = "#" + tab_id + "_nav";
 	var tab_name = "#" + tab_id + "_tab";
 	
-	$(".au_admin_plugins_tab").hide();
+	$(".mt_admin_plugins_tab").hide();
 	$(tab_name).show();
 	$(".auap_tab_nav").removeClass("selected");
 	$(nav_name).addClass("selected");

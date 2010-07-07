@@ -5,31 +5,31 @@
  */
 
 
-register_elgg_event_handler('init', 'system', 'au_admin_plugins_init', 1);
+register_elgg_event_handler('init', 'system', 'mt_admin_plugins_init', 1);
 
 /**
  * Init
  */
-function au_admin_plugins_init() {
+function mt_admin_plugins_init() {
 
     // extend css
-    extend_view('css', 'au_admin_plugins/css');
+    extend_view('css', 'mt_admin_plugins/css');
     
     // register a page handler
-    register_page_handler('au_admin_plugins','au_admin_plugins_page_handler');
+    register_page_handler('mt_admin_plugins','mt_admin_plugins_page_handler');
 
     // register event handler
-    register_elgg_event_handler('pagesetup', 'system', 'au_admin_plugins_pagesetup');
+    register_elgg_event_handler('pagesetup', 'system', 'mt_admin_plugins_pagesetup');
 }
 
 /**
  * Add admin menu item
  */
-function au_admin_plugins_pagesetup() {
+function mt_admin_plugins_pagesetup() {
 
     if (get_context() == 'admin' && isadminloggedin()) {
         global $CONFIG;
-        add_submenu_item(elgg_echo('au_admin_plugins:admin_link'), $CONFIG->wwwroot . 'pg/au_admin_plugins/index');
+        add_submenu_item(elgg_echo('mt_admin_plugins:admin_link'), $CONFIG->wwwroot . 'pg/mt_admin_plugins/index');
     }
      
     return true;
@@ -42,7 +42,7 @@ function au_admin_plugins_pagesetup() {
  *
  * @param array $page Array of page elements, forwarded by the page handling mechanism
  */
-function au_admin_plugins_page_handler($page) {
+function mt_admin_plugins_page_handler($page) {
 
     global $CONFIG;
 
@@ -56,29 +56,29 @@ function au_admin_plugins_page_handler($page) {
     if (isset($page)) {
         switch($page[0]) {
             case 'index2':
-                include($CONFIG->pluginspath . 'au_admin_plugins/index2.php');
+                include($CONFIG->pluginspath . 'mt_admin_plugins/index2.php');
                 break;
             case 'index':
-                include($CONFIG->pluginspath . 'au_admin_plugins/index.php');
+                include($CONFIG->pluginspath . 'mt_admin_plugins/index.php');
                 break;
             case 'list_versions':
-                include($CONFIG->pluginspath . 'au_admin_plugins/list_versions.php');
+                include($CONFIG->pluginspath . 'mt_admin_plugins/list_versions.php');
                 break;
             case 'list_view_overrides':
-                include($CONFIG->pluginspath . 'au_admin_plugins/list_view_overrides.php');
+                include($CONFIG->pluginspath . 'mt_admin_plugins/list_view_overrides.php');
                 break;
             case 'dump_order':
-                include($CONFIG->pluginspath . 'au_admin_plugins/dump_order.php');
+                include($CONFIG->pluginspath . 'mt_admin_plugins/dump_order.php');
                 break;
             case 'list_dependencies':
-                include($CONFIG->pluginspath . 'au_admin_plugins/list_dependencies.php');
+                include($CONFIG->pluginspath . 'mt_admin_plugins/list_dependencies.php');
                 break;
             default:
-                include($CONFIG->pluginspath . 'au_admin_plugins/index.php');
+                include($CONFIG->pluginspath . 'mt_admin_plugins/index.php');
         }
     } else {
         // assume index
-        include($CONFIG->pluginspath . 'au_admin_plugins/index.php');
+        include($CONFIG->pluginspath . 'mt_admin_plugins/index.php');
     }
 
 }
