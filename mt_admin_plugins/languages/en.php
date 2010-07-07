@@ -1,9 +1,9 @@
 <?php
 
 $english = array (
-    'mt_admin_plugins:admin_link' => 'AU Administer Plugins',
+    'mt_admin_plugins:admin_link' => 'MT Administer Plugins',
     'mt_admin_plugins:index' => 'Home',
-    'mt_admin_plugins:index_title' => 'AU Administer Plugins',
+    'mt_admin_plugins:index_title' => 'MT Administer Plugins',
     'mt_admin_plugins:dump_order' => 'Dump Order',
     'mt_admin_plugins:dump_order_title' => 'Dump Order',
     'mt_admin_plugins:delete_view_caches' => 'Delete View Caches',
