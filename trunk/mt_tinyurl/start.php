@@ -2,6 +2,7 @@
 
 /**
  * mt_tinyurl plugin
+ * 
  * Based on tinyurl plugin
  *
  */
@@ -13,9 +14,9 @@
 function mt_tinyurl_init() {
 
     // Extend useful views
-    elgg_extend_view('css','tinyurl/css');
+    elgg_extend_view('css','mt_tinyurl/css');
     	
-    // extend urlshortner view!
+    // extend urlshortener view!
     elgg_extend_view('input/urlshortener', 'my_tinyurl/addlink');
     	
     if(!is_plugin_enabled('embed')){
