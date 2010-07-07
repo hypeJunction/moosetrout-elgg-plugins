@@ -14,10 +14,10 @@ $plugins = get_plugin_list();
 
 //
 $plugin_url_guid = array(
-    'au_blog_widget'		=> 428039,
-    'au_default_profile_fields'		=> 425386,
-    'au_language_overrides'	=> 424552,
-    'au_widgets_reordering_debug'	=> 426582,
+    'mt_blog_widget'		=> 428039,
+    'mt_default_profile_fields'		=> 425386,
+    'mt_language_overrides'	=> 424552,
+    'mt_widgets_reordering_debug'	=> 426582,
     'blogextended'          => 384585,
     'custom_index_widgets'	=> 385113,
     'customspotlight'		=> 384767,

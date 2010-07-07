@@ -104,7 +104,7 @@ function findVersionByXpath() {
  * loadPlugins
  * variation of plugins/load_plugins
  */
-function au_load_plugins($mod) {
+function mt_load_plugins($mod) {
 
     global $CONFIG;
 
@@ -119,7 +119,7 @@ function au_load_plugins($mod) {
                 if ($handle = opendir($CONFIG->pluginspath . $mod . "/views")) {
                     while ($viewtype = readdir($handle)) {
                         if (!in_array($viewtype,array('.','..','.svn','CVS')) && is_dir($CONFIG->pluginspath . $mod . "/views/" . $viewtype)) {
-                            au_autoregister_views("",$CONFIG->pluginspath . $mod . "/views/" . $viewtype,$CONFIG->pluginspath . $mod . "/views/", $viewtype);
+                            mt_autoregister_views("",$CONFIG->pluginspath . $mod . "/views/" . $viewtype,$CONFIG->pluginspath . $mod . "/views/", $viewtype);
                         }
                     }
                 }
@@ -134,7 +134,7 @@ function au_load_plugins($mod) {
  * variation of elgglib/autoregister_views
  * @return unknown_type
  */
-function au_autoregister_views($view_base, $folder, $base_location_path, $viewtype) {
+function mt_autoregister_views($view_base, $folder, $base_location_path, $viewtype) {
      
     if (!isset($i)) $i = 0;
     if ($handle = opendir($folder)) {
@@ -142,18 +142,18 @@ function au_autoregister_views($view_base, $folder, $base_location_path, $viewty
             if (!in_array($view,array('.','..','.svn','CVS')) && !is_dir($folder . "/" . $view)) {
                 if ((substr_count($view,".php") > 0) || (substr_count($view,".png") > 0)) {
                     if (!empty($view_base)) { $view_base_new = $view_base . "/"; } else { $view_base_new = ""; }
-                    au_set_view_location($view_base_new . str_replace(".php","",$view), $base_location_path, $viewtype);
+                    mt_set_view_location($view_base_new . str_replace(".php","",$view), $base_location_path, $viewtype);
                 }
             } else if (!in_array($view,array('.','..','.svn','CVS')) && is_dir($folder . "/" . $view)) {
                 if (!empty($view_base)) { $view_base_new = $view_base . "/"; } else { $view_base_new = ""; }
-                au_autoregister_views($view_base_new . $view, $folder . "/" . $view, $base_location_path, $viewtype);
+                mt_autoregister_views($view_base_new . $view, $folder . "/" . $view, $base_location_path, $viewtype);
             }
         }
     }
 }
 
 /**
- * au_set_view_location
+ * mt_set_view_location
  * 
  * Based on elgglib/set_view_location
  * 
@@ -162,7 +162,7 @@ function au_autoregister_views($view_base, $folder, $base_location_path, $viewty
  * @param
  * @returns
  */
-function au_set_view_location($view, $location, $viewtype = '') {
+function mt_set_view_location($view, $location, $viewtype = '') {
      
     if (empty($viewtype))
     $viewtype = 'default';
@@ -183,7 +183,7 @@ function au_set_view_location($view, $location, $viewtype = '') {
         $plugin_views->views->locations[$viewtype][$view] = $location;
     }
     //return $plugin_views;
-    au_display_plugin_views($plugin_views);
+    mt_display_plugin_views($plugin_views);
 }
 
 /**
@@ -191,7 +191,7 @@ function au_set_view_location($view, $location, $viewtype = '') {
  * @param unknown_type $plugin_views
  * @return unknown_type
  */
-function au_display_plugin_views($plugin_views) {
+function mt_display_plugin_views($plugin_views) {
     
     foreach($plugin_views->views->locations as $locations) {
         var_dump($locations);

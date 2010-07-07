@@ -73,7 +73,7 @@ foreach ($plugins as $plugin) {
     $views = array();
 
     // grab views
-    //$views = au_load_plugin($views, $plugin);
+    //$views = mt_load_plugin($views, $plugin);
     $p = $CONFIG->pluginspath . "/$plugin/views/default";
     $views = get_views($p, '');
 
