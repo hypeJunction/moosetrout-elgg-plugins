@@ -1,4 +1,14 @@
 <?php
-echo("<!-- open mt_tinyurl link -->");
+
+/**
+ * Link that opens tinyurl facebox
+ */
+?>
+<!-- open mt_tinyurl link -->
+
+<?php
+echo("whatever<br />");
 echo("<a class=\"tinyurl_option\" href=\"{$vars['url']}pg/mt_tinyurl/longurl?internalname=note\" rel=\"facebox\">" . elgg_echo('shortlink:insert') . "</a><br />");
-echo("<!-- close mt_tinyurl link -->");
+?>
+
+<!-- close mt_tinyurl link -->
