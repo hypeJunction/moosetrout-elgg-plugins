@@ -136,7 +136,7 @@ $fb .= elgg_view('input/button', array(	'name' => 'submit',
 
 $fb .= '<div id="mt_ajax_spinner"><img src="' . $vars['url'] . '_graphics/ajax_loader.gif" /></div>';
 
-echo elgg_view('input/form', array('body' => $fb, 'internalid' =>'mt_activity_tabs_settings_form', 'action' => $url));
+echo elgg_view('input/form', array('body' => $fb, 'internalid' =>'mt_activity_tabs_settings_form'));
 
 ?>
 
@@ -166,7 +166,6 @@ function mtActivityTabsSettings()
 		success: function(data){
 
 			// reload tabs
-			return false;
 		}
 	});
 
