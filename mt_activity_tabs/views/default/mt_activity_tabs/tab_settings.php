@@ -136,20 +136,22 @@ $(document).ready(function() {
 function mtActivityTabsSettings()
 {
 	alert('here');
-	
+
+	// register event handlers for spinner
 	$("#mt_ajax_spinner").ajaxStart(function(){
 		   $(this).show();
 		 });
-
 	$("#mt_ajax_spinner").ajaxStop(function(){
 		   $(this).hide();
 		 });
-//
-//	var mapped_values = {};
-//	
-//	mapped_values = {$("#mt_activity_tabs_settings_form").serialize()};
-//	
+
+	// serialize form values
+	var mapped_values = {};
+	mapped_values = $("#mt_activity_tabs_settings_form").serialize();
+	
 	var datastring = 'a=b';
+
+	// make ajax call
 	$.ajax({
 		type: "POST",
 		url: '<?php echo $url ?>',
