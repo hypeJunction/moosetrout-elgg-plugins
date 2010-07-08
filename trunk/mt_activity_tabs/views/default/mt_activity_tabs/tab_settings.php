@@ -126,37 +126,36 @@ echo('</form>');
 <script type="text/javascript">
 function mtActivityTabsSettings2()
 {
-	var mapped_values = {};
-	
-	mapped_values = {$("#mt_activity_tabs_settings_form").serialize()};
-	
-	alert('stuff');
+	$('#mt_activity_tabs_settings_form').submit(function() {
+		  alert($(this).serialize());
+		  return false;
+		});
 }
 
-function mtActivityTabsSettings()
-{
-	
-	$("#mt_ajax_spinner").ajaxStart(function(){
-		   $(this).show();
-		 });
-
-	$("#mt_ajax_spinner").ajaxStop(function(){
-		   $(this).hide();
-		 });
-
-	var mapped_values = {};
-	
-	mapped_values = {$("#mt_activity_tabs_settings_form").serialize()};
-	
-	$.ajax({
-		type: "POST",
-		url: '<?php echo $url ?>',
-		data: mapped_values,
-		cache: false,
-//		success: function(data){
+//function mtActivityTabsSettings()
+//{
+//	
+//	$("#mt_ajax_spinner").ajaxStart(function(){
+//		   $(this).show();
+//		 });
 //
-//			// reload tabs
-//		}
-	});
-}
+//	$("#mt_ajax_spinner").ajaxStop(function(){
+//		   $(this).hide();
+//		 });
+//
+//	var mapped_values = {};
+//	
+//	mapped_values = {$("#mt_activity_tabs_settings_form").serialize()};
+//	
+//	$.ajax({
+//		type: "POST",
+//		url: '<?php echo $url ?>',
+//		data: mapped_values,
+//		cache: false,
+////		success: function(data){
+////
+////			// reload tabs
+////		}
+//	});
+//}
 </script>
