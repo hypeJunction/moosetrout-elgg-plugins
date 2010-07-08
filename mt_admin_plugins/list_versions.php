@@ -32,6 +32,7 @@ $plugin_url_guid = array(
     'mnet_support'			=> 391628,
     'poll'					=> 384627,
     'poll_extended'			=> 384626,
+    'river-comments'		=> 515633,
     'simplepie'      	    => 384545,
     'stats'					=> 385105,
 	'tagcloud'              => 384567,
