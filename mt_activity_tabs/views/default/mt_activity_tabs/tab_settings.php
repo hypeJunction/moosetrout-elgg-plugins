@@ -136,8 +136,8 @@ function mtActivityTabsSettings()
 	
 	$.ajax({
 		type: "POST",
-		url: <?php echo $url ?>,
-		data: $("#mt_activity_tabs_settings_form").serialize());
+		url: '<?php echo $url ?>',
+		data: $("#mt_activity_tabs_settings_form").serialize()),
 		cache: false,
 //		success: function(data){
 //
