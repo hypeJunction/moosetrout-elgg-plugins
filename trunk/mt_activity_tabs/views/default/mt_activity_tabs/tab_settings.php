@@ -21,9 +21,6 @@ $collections = get_user_access_collections($user_guid);
 // grab groups this user is a member of
 $groups = get_users_membership($user_guid);
 
-var_dump($collections);
-var_dump($groups);
-
 // use ajax to post to /action/plugins/usersettings/save
 $url = $CONFIG->wwwroot . "action/plugins/usersettings/save";
 
@@ -35,7 +32,7 @@ $fb .= "<h2>" . elgg_echo('mt_activity_tabs:description') ."</h2>\n";
 $fb .= "<div class='mt_activity_tabs_wrapper'>\n";
 
 if (empty($collections)) {
-    $fb .= elgg_echo('mt_activity_tabs:nocollections');
+    $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nocollections') . '</td></tr>';
 } else {
 
     $fb .= "<h3>Collections</h3>\n";
@@ -95,7 +92,7 @@ if (empty($collections)) {
 }
 
 if (empty($groups)) {
-    $fb .= elgg_echo('mt_activity_tabs:nogroups');
+    $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nogroups') . "</td></tr>\n";
 } else {
     $fb .= "<h3>Groups</h3>\n";
     $fb .= "<table border='1' cellpadding='5'>\n";
@@ -129,7 +126,7 @@ if (empty($groups)) {
         if ($usersettings->{$groupid} != 'yes') {
             $fb .= " selected=\"selected\" ";
         }
-        $fb .= '>' . elgg_echo('option:no') . '</option></select></td></tr>';
+        $fb .= '>' . elgg_echo('option:no') . "</option></select></td></tr>\n";
 
         // toggle even flag
         if($even) {
