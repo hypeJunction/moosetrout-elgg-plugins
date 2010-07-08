@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 
+ *
  */
 
 global $CONFIG;
@@ -22,104 +22,112 @@ $collections = get_user_access_collections($user_guid);
 $groups = get_users_membership($user_guid);
 
 // use ajax to post to /action/plugins/usersettings/save
-$url = $CONFIG->wwwroot . "action/plugins/usersettings/save"; 
+$url = $CONFIG->wwwroot . "action/plugins/usersettings/save";
 
 // plugin name hidden field
 $fb .= elgg_view('input/hidden', array('internalname' => 'plugin', 'value' => 'mt_activity_tabs'));
 
-$fb .= "<h2>" . elgg_echo('mt_activity_tabs:description') ."<h2>\n";
+$fb .= "<h2>" . elgg_echo('mt_activity_tabs:description') ."</h2>\n";
 
-$fb .= "<div class=''>\n";
-$fb .= "<h3>Collections</h3>\n";
-$fb .= "<table border='1' cellpadding='5'>\n";
+$fb .= "<div class='mt_activity_tabs_wrapper'>\n";
 
-$even = false;
-foreach ($collections as $collection) {
+if (!$collections) {
+    elgg_echo('mt_activity_tabs:nocollections');
+} else {
 
-    //
-    $name = $collection->name;
-    if(substr($name, 0, 7) == 'Group: ') {
-        continue;  
+    $fb .= "<h3>Collections</h3>\n";
+    $fb .= "<table border='1' cellpadding='5'>\n";
+
+    $even = false;
+    foreach ($collections as $collection) {
+
+        //
+        $name = $collection->name;
+        if(substr($name, 0, 7) == 'Group: ') {
+            continue;
+        }
+
+        $id = $collection->id;
+        $collectionid = "collection_" . $id;
+
+        if ($even) {
+            $fb .= "<tr class='even'><td class='column_one'>$name</td>";
+        } else {
+            $fb .= "<tr class='odd'><td class='column_one'>$name</td>";
+        }
+        $fb .= "<td><select name='params[{$collectionid}]'>\n";
+
+        // yes
+        $fb .= '<option value="yes"';
+        if ($usersettings->{$collectionid} == 'yes') {
+            $fb .= " selected=\"selected\" ";
+        }
+        $fb .= '>' . elgg_echo('option:yes') .'</option>';
+
+        // no
+        $fb .= '<option value="no"';
+        if ($usersettings->{$collectionid} != 'yes') {
+            $fb .= " selected=\"selected\" ";
+        }
+        $fb .= '>' . elgg_echo('option:no') . '</option></select></td></tr>';
+
+        // toggle even flag
+        if($even) {
+            $even = false;
+        } else {
+            $even = true;
+        }
     }
-    
-    $id = $collection->id;
-    $collectionid = "collection_" . $id;
-
-    if ($even) {
-        $fb .= "<tr class='even'><td class='column_one'>$name</td>";
-    } else {
-        $fb .= "<tr class='odd'><td class='column_one'>$name</td>";
-    }
-    $fb .= "<td><select name='params[{$collectionid}]'>\n";
-
-    // yes
-    $fb .= '<option value="yes"';
-    if ($usersettings->{$collectionid} == 'yes') {
-        $fb .= " selected=\"selected\" "; 
-    }
-    $fb .= '>' . elgg_echo('option:yes') .'</option>';
-    
-    // no
-    $fb .= '<option value="no"';
-    if ($usersettings->{$collectionid} != 'yes') {
-        $fb .= " selected=\"selected\" "; 
-    }
-    $fb .= '>' . elgg_echo('option:no') . '</option></select></td></tr>';
-    
-    // toggle even flag
-    if($even) {
-        $even = false;
-    } else {
-        $even = true;
-    }
-}
-$fb .= "</table>\n";
-
-$fb .= "<br /><br />\n";
-
-$fb .= "<h3>Groups</h3>\n";
-$fb .= "<table border='1' cellpadding='5'>\n";
-
-// even flag
-$even = false;
-foreach ($groups as $group) {
-
-    //
-    $name = $group->name;
-    
-    $id = $group->guid;
-    $groupid = "group_" . $id;
-
-    if ($even) {
-        $fb .= "<tr class='even'><td class='column_one'>$name</td>";
-    } else {
-        $fb .= "<tr class='odd'><td class='column_one'>$name</td>";
-    }	
-    $fb .= "<td><select name='params[{$groupid}]'>\n";
-
-    // yes
-    $fb .= '<option value="yes"';
-    if ($usersettings->{$groupid} == 'yes') {
-        $fb .= " selected=\"selected\" "; 
-    }
-    $fb .= '>' . elgg_echo('option:yes') . '</option>';
-    
-    // no
-    $fb .= '<option value="no"';
-    if ($usersettings->{$groupid} != 'yes') {
-        $fb .= " selected=\"selected\" "; 
-    }
-    $fb .= '>' . elgg_echo('option:no') . '</option></select></td></tr>';
-    
-    // toggle even flag
-    if($even) {
-        $even = false;
-    } else {
-        $even = true;
-    }
+    $fb .= "</table><br /><br />\n";
 }
 
-$fb .= "</table>\n";
+if (!$groups) {
+    elgg_echo('mt_activity_tabs:nogroups');
+} else {
+    $fb .= "<h3>Groups</h3>\n";
+    $fb .= "<table border='1' cellpadding='5'>\n";
+
+    // even flag
+    $even = false;
+    foreach ($groups as $group) {
+
+        //
+        $name = $group->name;
+
+        $id = $group->guid;
+        $groupid = "group_" . $id;
+
+        if ($even) {
+            $fb .= "<tr class='even'><td class='column_one'>$name</td>";
+        } else {
+            $fb .= "<tr class='odd'><td class='column_one'>$name</td>";
+        }
+        $fb .= "<td><select name='params[{$groupid}]'>\n";
+
+        // yes
+        $fb .= '<option value="yes"';
+        if ($usersettings->{$groupid} == 'yes') {
+            $fb .= " selected=\"selected\" ";
+        }
+        $fb .= '>' . elgg_echo('option:yes') . '</option>';
+
+        // no
+        $fb .= '<option value="no"';
+        if ($usersettings->{$groupid} != 'yes') {
+            $fb .= " selected=\"selected\" ";
+        }
+        $fb .= '>' . elgg_echo('option:no') . '</option></select></td></tr>';
+
+        // toggle even flag
+        if($even) {
+            $even = false;
+        } else {
+            $even = true;
+        }
+    }
+
+    $fb .= "</table>\n";
+}
 $fb .= "</div>\n";
 
 $fb .= elgg_view('input/button', array(	'name' => 'submit',
