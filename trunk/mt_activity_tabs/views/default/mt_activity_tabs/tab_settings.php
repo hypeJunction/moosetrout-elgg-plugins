@@ -60,9 +60,9 @@ foreach ($collections as $collection) {
 
     ?>
 <option value="yes"
-    <?php if ($vars['entity']->{$collectionid} == 'yes') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:yes'); ?></option>
+    <?php if ($usersettings->{$collectionid} == 'yes') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:yes'); ?></option>
 <option value="no"
-    <?php if ($vars['entity']->{$collectionid} != 'yes') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:no'); ?></option>
+    <?php if ($usersettings->{$collectionid} != 'yes') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:no'); ?></option>
 </select></td></tr>
     <?php
     
@@ -99,9 +99,9 @@ foreach ($groups as $group) {
 
     ?>
 <option value="yes"
-    <?php if ($vars['entity']->{$groupid} == 'yes') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:yes'); ?></option>
+    <?php if ($usersettings->{$groupid} == 'yes') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:yes'); ?></option>
 <option value="no"
-    <?php if ($vars['entity']->{$groupid} != 'yes') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:no'); ?></option>
+    <?php if ($usersettings->{$groupid} != 'yes') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:no'); ?></option>
 </select></td></tr>
     <?php
     
