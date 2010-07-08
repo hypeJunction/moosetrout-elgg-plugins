@@ -29,7 +29,7 @@ $fb .= elgg_view('input/hidden', array('internalname' => 'plugin', 'value' => 'm
 
 $fb .= "<h2>" . elgg_echo('mt_activity_tabs:description') ."</h2>\n";
 
-$fb .= "<div class='mt_activity_tabs_wrapper'>\n";
+$fb .= "<div class='admin_statistics'>\n";
 
 if (empty($collections)) {
     $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nocollections') . '</td></tr>';
