@@ -141,7 +141,7 @@ $(document).ready(function () {
 
 			// reload tabs
 			alert(returned_data);
-			$('#nav_test').html(returned_data);
+			$('#elgg_horizontal_tabbed_nav').html(returned_data);
 		}
 	});
 	
