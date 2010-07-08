@@ -131,16 +131,16 @@ $(document).ready(function () {
 
 	// load up nav tabs
 	// make ajax call
-	var endpoint_values = <?php echo $nav_tab_endpoint_values ?>;
+	var endpoint_values = '<?php echo $nav_tab_endpoint_values ?>';
 	$.ajax({
 		type: "POST",
 		url: '<?php echo $nav_tab_endpoint_url ?>',
 		data: endpoint_values,
 		cache: false,
-		success: function(data){
+		success: function(returned_data){
 
 			// reload tabs
-			${'#nav_test'}.innerHyml
+			${'#nav_test'}.html(returned_data);
 		}
 	});
 	
