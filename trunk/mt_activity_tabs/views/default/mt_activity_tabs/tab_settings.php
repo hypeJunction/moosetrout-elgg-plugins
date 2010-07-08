@@ -126,7 +126,10 @@ echo('</form>');
 <script type="text/javascript">
 function mtActivityTabsSettings2()
 {
-	//var stuff = $("#mt_activity_tabs_settings_form").serialize();
+	var mapped_values = {};
+	
+	mapped_values = {$("#mt_activity_tabs_settings_form").serialize()};
+	
 	alert('stuff');
 }
 
@@ -140,11 +143,15 @@ function mtActivityTabsSettings()
 	$("#mt_ajax_spinner").ajaxStop(function(){
 		   $(this).hide();
 		 });
+
+	var mapped_values = {};
+	
+	mapped_values = {$("#mt_activity_tabs_settings_form").serialize()};
 	
 	$.ajax({
 		type: "POST",
 		url: '<?php echo $url ?>',
-		data: {$("#mt_activity_tabs_settings_form").serialize();},
+		data: mapped_values,
 		cache: false,
 //		success: function(data){
 //
