@@ -162,7 +162,7 @@ function mtActivityTabsSettings()
 		type: "POST",
 		url: '<?php echo $url ?>',
 		data: mapped_values,
-		cache: false
+		cache: false,
 		success: function(data){
 
 			// reload tabs
