@@ -31,7 +31,7 @@ $fb .= "<h2>" . elgg_echo('mt_activity_tabs:description') ."</h2>\n";
 
 $fb .= "<div class='mt_activity_tabs_wrapper'>\n";
 
-if (!$collections) {
+if (empty($collections)) {
     $fb .= elgg_echo('mt_activity_tabs:nocollections');
 } else {
 
@@ -81,7 +81,7 @@ if (!$collections) {
     $fb .= "</table><br /><br />\n";
 }
 
-if (!$groups) {
+if (empty($groups)) {
     $fb .= elgg_echo('mt_activity_tabs:nogroups');
 } else {
     $fb .= "<h3>Groups</h3>\n";
