@@ -12,8 +12,8 @@
   <?php echo elgg_echo('mt_group_notifications:settings:enable_email_notifications'); ?>
  
   <select name="params[enable_email_notifications]">
-  <option value="true" <?php if ($vars['entity']->enable_email_notifications == 'true') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:yes')?></option>
-  <option value="false" <?php if (($vars['entity']->enable_email_notifications == 'false') || (!isset($vars['entity']->enable_email_notifications))) echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:no')?></option>
+  <option value="true" <?php if ($vars['entity']->enable_email_notifications == 'true') echo " selected=\"selected\" "; ?>><?php echo elgg_echo('option:yes')?></option>
+  <option value="false" <?php if (($vars['entity']->enable_email_notifications == 'false') || (!isset($vars['entity']->enable_email_notifications))) echo " selected=\"selected\" "; ?>><?php echo elgg_echo('option:no')?></option>
   </select>
 
 </p>
@@ -22,8 +22,8 @@
   <?php echo elgg_echo('mt_group_notifications:settings:enable_site_notifications'); ?>
  
   <select name="params[enable_site_notifications]">
-  <option value="true" <?php if ($vars['entity']->enable_site_notifications == 'true') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:yes')?></option>
-  <option value="false" <?php if (($vars['entity']->enable_site_notifications == 'false') || (!isset($vars['entity']->enable_email_notifications))) echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:no')?></option>
+  <option value="true" <?php if ($vars['entity']->enable_site_notifications == 'true') echo " selected=\"selected\" "; ?>><?php echo elgg_echo('option:yes')?></option>
+  <option value="false" <?php if (($vars['entity']->enable_site_notifications == 'false') || (!isset($vars['entity']->enable_email_notifications))) echo " selected=\"selected\" "; ?>><?php echo elgg_echo('option:no')?></option>
   </select>
 
 </p>

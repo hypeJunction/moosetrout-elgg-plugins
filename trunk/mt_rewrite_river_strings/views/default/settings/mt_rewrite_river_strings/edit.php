@@ -9,8 +9,8 @@
   <?php echo elgg_echo('mt_rewrite_river_urls:settings:enable'); ?>
   
   <select name="params[enable_string_rewriting]">
-  <option value="true" <?php if ($vars['entity']->enable_string_rewriting == 'true') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:yes')?></option>
-  <option value="false" <?php if (($vars['entity']->enable_string_rewriting == 'false') || (!isset($vars['entity']->enable_string_rewriting))) echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:no')?></option>
+  <option value="true" <?php if ($vars['entity']->enable_string_rewriting == 'true') echo " selected=\"selected\" "; ?>><?php echo elgg_echo('option:yes')?></option>
+  <option value="false" <?php if (($vars['entity']->enable_string_rewriting == 'false') || (!isset($vars['entity']->enable_string_rewriting))) echo " selected=\"selected\" "; ?>><?php echo elgg_echo('option:no')?></option>
   </select>
 
 </p>
