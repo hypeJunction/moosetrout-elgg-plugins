@@ -135,18 +135,18 @@ $(document).ready(function () {
     
 	// load up nav tabs
 	// make ajax call
-	var endpoint_values = '<?php echo $nav_tab_endpoint_values ?>';
-	$.ajax({
-		type: "POST",
-		url: '<?php echo $nav_tab_endpoint_url ?>',
-		data: endpoint_values,
-		cache: false,
-		success: function(returned_data){
-
-			// reload tabs
-			$('#elgg_horizontal_tabbed_nav').html(returned_data);
-		}
-	});
+//	var endpoint_values = '<?php echo $nav_tab_endpoint_values ?>';
+//	$.ajax({
+//		type: "POST",
+//		url: '<?php echo $nav_tab_endpoint_url ?>',
+//		data: endpoint_values,
+//		cache: false,
+//		success: function(returned_data){
+//
+//			// reload tabs
+//			$('#elgg_horizontal_tabbed_nav').html(returned_data);
+//		}
+//	});
 	
 }); /* end document ready function */
 </script>
