@@ -7,7 +7,9 @@ function mt_rewrite_river_strings_init() {
 
     global $CONFIG;
 
-    if (get_plugin_setting('enabled', 'mt_rewrite_river_strings') == 'true') {
+    if (get_plugin_setting('enable_string_rewriting', 'mt_rewrite_river_strings') == 'true') {
+        
+        elgg_echo('Registering hook!');
         
         // register post processing hook
         register_plugin_hook('display', 'view', 'mt_rewrite_river_strings');
@@ -29,10 +31,11 @@ function mt_rewrite_river_strings_init() {
 function mt_rewrite_river_strings($hook, $entity_type, $returnvalue, $params) {
 
     global $CONFIG;
-
+    
     // check if enabled
-    if(get_plugin_setting('enabled', 'mt_rewrite_river_strings') != 'true') {    
-        return $returnvalue;
+    if(get_plugin_setting('enable_string_rewriting', 'mt_rewrite_river_strings') != 'true') {    
+        elgg_echo('Not postprocessing; exiting!');
+        return;
     }
     
     // grab view
