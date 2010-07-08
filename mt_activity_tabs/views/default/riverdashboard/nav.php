@@ -111,14 +111,19 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 
 <script type="text/javascript">
 $(document).ready(function () {
-    $('a.mt_display_tab_settings').click(function () {
-		$(this.parentNode).children("[id=mt_activity_tabs_settings]").slideToggle("fast");
+
+	// hide on load
+	$('#mt_display_tab_settings').hide();
+
+	// toggle on click
+    $('#mt_display_tab_settings').click(function () {
+		$('#mt_activity_tabs_settings').slideToggle("fast");
 		return false;
     });
 }); /* end document ready function */
 </script>
 <p><a href='#' id='mt_display_tab_settings'>Show settings</a></p>
-<div id="mt_activity_tabs_settings" style="display:hidden">
+<div id="mt_activity_tabs_settings">
 Stuff here.
 </div>
 
