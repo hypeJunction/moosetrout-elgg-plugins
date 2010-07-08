@@ -149,15 +149,15 @@ function mtActivityTabsSettings()
 //	
 //	mapped_values = {$("#mt_activity_tabs_settings_form").serialize()};
 //	
-//	$.ajax({
-//		type: "POST",
-//		url: '<?php echo $url ?>',
-//		data: mapped_values,
-//		cache: false,
-////		success: function(data){
-////
-////			// reload tabs
-////		}
-//	});
+	$.ajax({
+		type: "POST",
+		url: '<?php echo $url ?>',
+		data: {'a' => 'b'},
+		cache: false
+//		success: function(data){
+//
+//			// reload tabs
+//		}
+	});
 }
 </script>
