@@ -148,7 +148,6 @@ function mtActivityTabsSettings()
 	// serialize form values
 	var mapped_values = {};
 	mapped_values = $("#mt_activity_tabs_settings_form").serialize();
-	alert(mapped_values);
 
 	// make ajax call
 	$.ajax({
@@ -156,10 +155,11 @@ function mtActivityTabsSettings()
 		url: '<?php echo $url ?>',
 		data: mapped_values,
 		cache: false
-//		success: function(data){
-//
-//			// reload tabs
-//		}
+		success: function(data){
+
+			// reload tabs
+			return false;
+		}
 	});
 
 	return false;
