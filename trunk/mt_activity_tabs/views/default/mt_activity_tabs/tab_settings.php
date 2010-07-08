@@ -22,10 +22,10 @@ $collections = get_user_access_collections($user_guid);
 $groups = get_users_membership($user_guid);
 
 // use ajax to post to /action/plugins/usersettings/save
-$url = elgg_add_action_tokens_to_url($CONFIG->wwwroot . "action/plugins/usersettings/save"); 
+$url = $CONFIG->wwwroot . "action/plugins/usersettings/save"; 
 
 // plugin name hidden field
-$fb .= elgg_view('input/hidden', array('name' => 'plugin', 'value' => 'mt_activity_tabs'));
+$fb .= elgg_view('input/hidden', array('internalname' => 'plugin', 'value' => 'mt_activity_tabs'));
 
 $fb .= "<p>" . elgg_echo('mt_activity_tabs:description') ."<p>\n";
 
