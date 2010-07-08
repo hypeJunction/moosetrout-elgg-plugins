@@ -126,6 +126,8 @@ echo('</form>');
 <script type="text/javascript">
 function mtActivityTabsSettings()
 {
+	alert($("#mt_activity_tabs_settings_form").serialize());
+	
 	$("#mt_ajax_spinner").ajaxStart(function(){
 		   $(this).show();
 		 });
