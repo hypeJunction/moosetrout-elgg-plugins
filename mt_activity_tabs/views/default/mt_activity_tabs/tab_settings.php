@@ -114,7 +114,7 @@ echo("</table>\n");
 echo("</div>\n");
 
 echo elgg_view('input/button', array(	'value' => elgg_echo('Submit'),
-										'js' => 'onclick="mtActivityTabsSettings()"' ));
+										'js' => 'onclick="mtActivityTabsSettings2()"' ));
 
 echo '<div id="mt_ajax_spinner"><img src="' . $vars['url'] . '_graphics/ajax_loader.gif" /></div>';
 echo('</form>');
@@ -124,9 +124,13 @@ echo('</form>');
 <div id="mt_ajax_spinner"><img src="<?php echo $vars['url'] ?>_graphics/ajax_loader.gif" /></div>
 
 <script type="text/javascript">
-function mtActivityTabsSettings()
+function mtActivityTabsSettings2()
 {
 	alert($("#mt_activity_tabs_settings_form").serialize());
+}
+
+function mtActivityTabsSettings()
+{
 	
 	$("#mt_ajax_spinner").ajaxStart(function(){
 		   $(this).show();
