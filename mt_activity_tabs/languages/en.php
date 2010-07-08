@@ -10,7 +10,7 @@
 $english = array(
 
     'mt_activity_tabs' => 'Activity Tabs',
-    'mt_activity_tabs:description' => 'Enable Activity Tabs for groups and collections:',
+    'mt_activity_tabs:description' => 'Add/Remove Filters:',
     'mt_activity_tabs:clickhere' => 'Click here to go to Activity Tabs.',
     'mt_activity_tabs:empty' => 'There are no users in this group or collection.',
     'mt_activity_tabs:addtab' => 'To add an Activity Tab for a group or collection, go to My Account -> Configure your tools -> Activity Tabs or click here.'
