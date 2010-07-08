@@ -27,7 +27,7 @@ $url = $CONFIG->wwwroot . "action/plugins/usersettings/save";
 // plugin name hidden field
 $fb .= elgg_view('input/hidden', array('internalname' => 'plugin', 'value' => 'mt_activity_tabs'));
 
-$fb .= "<p>" . elgg_echo('mt_activity_tabs:description') ."<p>\n";
+$fb .= "<h2>" . elgg_echo('mt_activity_tabs:description') ."<h2>\n";
 
 $fb .= "<div class=''>\n";
 $fb .= "<h3>Collections</h3>\n";
