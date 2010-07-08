@@ -21,6 +21,9 @@ $collections = get_user_access_collections($user_guid);
 // grab groups this user is a member of
 $groups = get_users_membership($user_guid);
 
+var_dump($collections);
+var_dump($groups);
+
 // use ajax to post to /action/plugins/usersettings/save
 $url = $CONFIG->wwwroot . "action/plugins/usersettings/save";
 
@@ -39,13 +42,17 @@ if (empty($collections)) {
     $fb .= "<table border='1' cellpadding='5'>\n";
 
     $even = false;
+    $non_group_collection = false;
     foreach ($collections as $collection) {
 
-        //
+        // grab name and skip if a group
         $name = $collection->name;
         if(substr($name, 0, 7) == 'Group: ') {
             continue;
         }
+
+        // set flag
+        $non_group_collection = true;
 
         $id = $collection->id;
         $collectionid = "collection_" . $id;
@@ -77,7 +84,13 @@ if (empty($collections)) {
         } else {
             $even = true;
         }
+        
+        // pring out message if non non-group collections
+        if (!$non_group_collection) {
+            $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nocollections') . '</td></tr>';
+        }
     }
+
     $fb .= "</table><br /><br />\n";
 }
 
@@ -132,7 +145,7 @@ $fb .= "</div>\n";
 
 $fb .= elgg_view('input/button', array(	'name' => 'submit',
                                         'value' => elgg_echo('Submit'),
-										'js' => 'onclick="mtActivityTabsSettings()"' ));
+										'js' => 'onclick="mtActivityTabsSettings(); return false;"' ));
 
 $fb .= '<div id="mt_ajax_spinner"><img src="' . $vars['url'] . '_graphics/ajax_loader.gif" /></div>';
 
@@ -168,7 +181,5 @@ function mtActivityTabsSettings()
 			// reload tabs
 		}
 	});
-
-	return false;
 }
 </script>
