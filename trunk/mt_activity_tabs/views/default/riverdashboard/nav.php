@@ -53,6 +53,18 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 
 ?>
 <div class="contentWrapper">
+<div id='nav_test'>
+
+<?php
+// calculate endpoint query string
+$nav_tab_endpoint_values = "orient=" . $vars['orient'] . "&type=" . $vars['type'] . "&url=" . $vars['url'];
+$nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_tabs.php';
+
+echo("<p>nav_tab_endpoint_values: $nav_tab_endpoint_values</p>");
+echo("<p>nav_tab_endpoint_url: $nav_tab_endpoint_url</p>");
+?>
+</div>
+
 <div id="elgg_horizontal_tabbed_nav">
 <ul>
 	<li <?php echo $allselect; ?>><a
@@ -66,49 +78,49 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 		href="?display=mine"><?php echo elgg_echo('mine'); ?></a></li>
 		<?php
 
-		// iterate through collections
-		foreach($collection_ids as $id) {
+	// iterate through collections
+	foreach($collection_ids as $id) {
 
-		    $collection = get_access_collection($id);
-		    $collection_name = $collection->name;
+	    $collection = get_access_collection($id);
+	    $collection_name = $collection->name;
 
-            // set selected class
-		    if($c_river && ($selectedid == $id)) {
-		    ?>
-		        <li class='selected'><a onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?display=collection_<?php echo $collection->id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;" href="?display=collection_<?php echo $collection->id; ?>"><?php echo $collection_name; ?></a></li>
-		        
-		    <?php
-		    } else {
-		    ?>
-	            <li><a onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?display=collection_<?php echo $collection->id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;" href="?display=collection_<?php echo $collection->id; ?>"><?php echo $collection_name; ?></a></li>
-	        <?php
-	        }
-		}
+        // set selected class
+	    if($c_river && ($selectedid == $id)) {
+	    ?>
+	        <li class='selected'><a onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?display=collection_<?php echo $collection->id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;" href="?display=collection_<?php echo $collection->id; ?>"><?php echo $collection_name; ?></a></li>
+	        
+	    <?php
+	    } else {
+	    ?>
+            <li><a onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?display=collection_<?php echo $collection->id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;" href="?display=collection_<?php echo $collection->id; ?>"><?php echo $collection_name; ?></a></li>
+        <?php
+        }
+	}
 
-		// iterate through groups
-		foreach($group_ids as $id) {
+	// iterate through groups
+	foreach($group_ids as $id) {
 
-		    $group = get_group_entity_as_row($id);
-		    $group_name = $group->name;
+	    $group = get_group_entity_as_row($id);
+	    $group_name = $group->name;
 
-            // set selected class
-		    if($g_river && ($selectedid == $id)) {
-		    ?>
-		    	<li class='selected'><a onclick="javascript:$('#river_container').load('<?php echo $vars['url'] ?>pg/activity_tabs/?display=group_<?php echo $id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;" href="?display=group_<?php echo $id ?>"><?php echo $group_name ?></a></li>
-		    <?php
-		    } else {
-		    ?>
-		        <li><a onclick="javascript:$('#river_container').load('<?php echo $vars['url'] ?>pg/activity_tabs/?display=group_<?php echo $id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;" href="?display=group_<?php echo $id ?>"><?php echo $group_name ?></a></li>
-		    <?php
-		    }
-		}
-		
-		// add settings tab
-		echo("<li><a href='#' id='mt_display_tab_settings'>+/-</a></li>");
-		?>
-		    
-		</ul>
-	</div>
+        // set selected class
+	    if($g_river && ($selectedid == $id)) {
+	    ?>
+	    	<li class='selected'><a onclick="javascript:$('#river_container').load('<?php echo $vars['url'] ?>pg/activity_tabs/?display=group_<?php echo $id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;" href="?display=group_<?php echo $id ?>"><?php echo $group_name ?></a></li>
+	    <?php
+	    } else {
+	    ?>
+	        <li><a onclick="javascript:$('#river_container').load('<?php echo $vars['url'] ?>pg/activity_tabs/?display=group_<?php echo $id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;" href="?display=group_<?php echo $id ?>"><?php echo $group_name ?></a></li>
+	    <?php
+	    }
+	}
+	
+	// add settings tab
+	echo("<li><a href='#' id='mt_display_tab_settings'>+/-</a></li>");
+	?>
+	    
+</ul>
+</div>
 
 
 <script type="text/javascript">
@@ -117,6 +129,21 @@ $(document).ready(function () {
 	// hide on load
 	$('#mt_activity_tabs_settings').hide();
 
+	// load up nav tabs
+	// make ajax call
+	var endpoint_values = <?php echo $nav_tab_endpoint_values ?>;
+	$.ajax({
+		type: "POST",
+		url: '<?php echo $nav_tab_endpoint_url ?>',
+		data: endpoint_values,
+		cache: false,
+		success: function(data){
+
+			// reload tabs
+			${'#nav_test'}.innerHyml
+		}
+	});
+	
 	// toggle on click
     $('#mt_display_tab_settings').click(function () {
 		$('#mt_activity_tabs_settings').slideToggle("fast");
