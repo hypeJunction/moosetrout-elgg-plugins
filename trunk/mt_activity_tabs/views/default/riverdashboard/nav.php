@@ -113,7 +113,7 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 $(document).ready(function () {
 
 	// hide on load
-	$('#mt_display_tab_settings').hide();
+	$('#mt_activity_tabs_settings').hide();
 
 	// toggle on click
     $('#mt_display_tab_settings').click(function () {
