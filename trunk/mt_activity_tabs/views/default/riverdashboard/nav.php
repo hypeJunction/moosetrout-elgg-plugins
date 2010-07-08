@@ -127,6 +127,12 @@ $(document).ready(function () {
 	// hide on load
 	$('#mt_activity_tabs_settings').hide();
 
+	// toggle on click
+    $('#mt_display_tab_settings').click(function () {
+		$('#mt_activity_tabs_settings').slideToggle("fast");
+		return false;
+    });
+    
 	// load up nav tabs
 	// make ajax call
 	var endpoint_values = '<?php echo $nav_tab_endpoint_values ?>';
@@ -138,16 +144,10 @@ $(document).ready(function () {
 		success: function(returned_data){
 
 			// reload tabs
-			alert(returned_data);
 			$('#elgg_horizontal_tabbed_nav').html(returned_data);
 		}
 	});
 	
-	// toggle on click
-    $('#mt_display_tab_settings').click(function () {
-		$('#mt_activity_tabs_settings').slideToggle("fast");
-		return false;
-    });
 }); /* end document ready function */
 </script>
 <!-- p><a href='#' id='mt_display_tab_settings'>Show settings</a></p-->
