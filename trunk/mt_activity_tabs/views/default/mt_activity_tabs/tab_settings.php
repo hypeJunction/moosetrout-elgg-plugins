@@ -32,7 +32,7 @@ $fb .= "<h2>" . elgg_echo('mt_activity_tabs:description') ."</h2>\n";
 $fb .= "<div class='mt_activity_tabs_wrapper'>\n";
 
 if (!$collections) {
-    elgg_echo('mt_activity_tabs:nocollections');
+    $fb .= elgg_echo('mt_activity_tabs:nocollections');
 } else {
 
     $fb .= "<h3>Collections</h3>\n";
@@ -82,7 +82,7 @@ if (!$collections) {
 }
 
 if (!$groups) {
-    elgg_echo('mt_activity_tabs:nogroups');
+    $fb .= elgg_echo('mt_activity_tabs:nogroups');
 } else {
     $fb .= "<h3>Groups</h3>\n";
     $fb .= "<table border='1' cellpadding='5'>\n";
