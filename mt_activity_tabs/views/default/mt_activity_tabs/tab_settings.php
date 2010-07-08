@@ -134,16 +134,8 @@ echo elgg_view('input/form', array('body' => $fb, 'internalid' =>'mt_activity_ta
 
 <script type="text/javascript">
 
-$(document).ready(function() {	
-    $('#mt_activity_tabs_settings_form').submit(function() {
-    	  alert($(this).serialize());
-    	  return false;
-    });
-});
-
 function mtActivityTabsSettings()
 {
-	alert('here');
 
 	// register event handlers for spinner
 	$("#mt_ajax_spinner").ajaxStart(function(){
@@ -157,14 +149,12 @@ function mtActivityTabsSettings()
 	var mapped_values = {};
 	mapped_values = $("#mt_activity_tabs_settings_form").serialize();
 	alert(mapped_values);
-	
-	var datastring = 'a=b';
 
 	// make ajax call
 	$.ajax({
 		type: "POST",
 		url: '<?php echo $url ?>',
-		data: datastring,
+		data: mapped_values,
 		cache: false
 //		success: function(data){
 //
