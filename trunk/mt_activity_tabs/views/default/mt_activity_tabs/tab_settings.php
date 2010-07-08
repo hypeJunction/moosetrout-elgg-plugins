@@ -127,7 +127,10 @@ echo('</form>');
 function mtActivityTabsSettings2()
 {
 alert('here');
+}
 
+$(document).ready(function(){
+	
 $('#mt_activity_tabs_settings_form').submit(function() {
 	  alert($(this).serialize());
 	  return false;
