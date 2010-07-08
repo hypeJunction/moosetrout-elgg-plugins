@@ -6,6 +6,10 @@
 
 global $CONFIG;
 
+// calculate endpoint query string
+$nav_tab_endpoint_values = "orient=" . $vars['orient'] . "&type=" . $vars['type'] . "&url=" . $vars['url'];
+$nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_tabs.php';
+
 // grab userid
 $userid = $_SESSION['user']->guid;
 
@@ -173,9 +177,26 @@ function mtActivityTabsSettings()
 		url: '<?php echo $url ?>',
 		data: mapped_values,
 		cache: false,
-		success: function(data){
+		success: function(returned_data){
 
 			// reload tabs
+			mtLoadTabs();
+		}
+	});
+}
+
+function mtLoadTabs()
+{
+	// make ajax call
+	$.ajax({
+		type: "POST",
+		url: '<?php echo $nav_tab_endpoint_values ?>',
+		data: '<?php echo $nav_tab_endpoint_url ?>',
+		cache: false,
+		success: function(returned_data){
+
+			// reload tabs
+			$('#elgg_horizontal_tabbed_nav').html(returned_data);
 		}
 	});
 }
