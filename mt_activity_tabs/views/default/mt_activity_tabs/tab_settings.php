@@ -149,10 +149,11 @@ function mtActivityTabsSettings()
 //	
 //	mapped_values = {$("#mt_activity_tabs_settings_form").serialize()};
 //	
+	var datastring = 'a=b';
 	$.ajax({
 		type: "POST",
 		url: '<?php echo $url ?>',
-		data: {'a' => 'b'},
+		data: datastring,
 		cache: false
 //		success: function(data){
 //
