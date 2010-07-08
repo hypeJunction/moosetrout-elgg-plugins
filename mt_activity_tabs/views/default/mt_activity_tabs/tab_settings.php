@@ -126,11 +126,14 @@ echo('</form>');
 <script type="text/javascript">
 function mtActivityTabsSettings2()
 {
-	$('#mt_activity_tabs_settings_form').submit(function() {
+alert('here');
+}
+
+$('#mt_activity_tabs_settings_form').submit(function() {
 		  alert($(this).serialize());
 		  return false;
 		});
-}
+//}
 
 //function mtActivityTabsSettings()
 //{
