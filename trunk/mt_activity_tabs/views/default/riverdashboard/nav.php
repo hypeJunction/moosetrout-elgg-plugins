@@ -60,8 +60,6 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 $nav_tab_endpoint_values = "orient=" . $vars['orient'] . "&type=" . $vars['type'] . "&url=" . $vars['url'];
 $nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_tabs.php';
 
-echo("<p>nav_tab_endpoint_values: $nav_tab_endpoint_values</p>");
-echo("<p>nav_tab_endpoint_url: $nav_tab_endpoint_url</p>");
 ?>
 </div>
 

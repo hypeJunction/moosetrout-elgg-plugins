@@ -11,6 +11,20 @@ global $CONFIG;
 
 gatekeeper();
 	
+// grab userid
+$userid = $_SESSION['user']->guid;
+
+// grab collections from usersettings
+$usersettings = find_plugin_usersettings('mt_activity_tabs', $userid);
+
+// grab user
+$user_guid = $_SESSION['user']->guid;
+
+// grab collections for this user
+$collections = get_user_access_collections($user_guid);
+
+// grab groups this user is a member of
+$groups = get_users_membership($user_guid);
 	
 $allselect = '';
 $friendsselect = '';
@@ -19,6 +33,7 @@ $mineselect = '';
 $vars['orient'] = get_input('orient');
 $vars['url'] = get_input('url');
 $vars['type'] = get_input('type');
+$vars['user'] = get_input('user');
 
 switch($vars['orient']) {
     case '':		$allselect = 'class="selected"';
@@ -28,6 +43,26 @@ switch($vars['orient']) {
     case 'mine':		$mineselect = 'class="selected"';
     break;
 }
+
+
+// grab enabled collections and groups from usersettings
+$collection_ids = mt_get_user_collection_ids($vars['user']->guid);
+$group_ids = mt_get_user_group_ids($vars['user']->guid);
+
+$c_river = false;
+$g_river = false;
+// deal with setting class for selected collection tab
+if (substr($vars['orient'], 0, 11) == 'collection_') {
+    //
+    $c_river = true;
+    $z = explode('_', $vars['orient']);
+    $selectedid = $z[1];
+} else if (substr($vars['orient'], 0, 6) == 'group_') {
+    $g_river = true;
+    $z = explode('_', $vars['orient']);
+    $selectedid = $z[1];
+}
+
 ?>
 
 <ul>
