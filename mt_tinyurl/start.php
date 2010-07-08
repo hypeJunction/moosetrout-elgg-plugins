@@ -24,7 +24,7 @@ function mt_tinyurl_init() {
         elgg_extend_view('metatags','mt_tinyurl/metatags');
     }
 
-    register_page_handler('tinyurl','mt_tinyurl_page_handler');
+    register_page_handler('mt_tinyurl','mt_tinyurl_page_handler');
 }
 
 function mt_tinyurl_page_handler($page) {
