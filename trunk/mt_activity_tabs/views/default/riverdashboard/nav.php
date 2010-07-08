@@ -54,7 +54,6 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 ?>
 <div class="contentWrapper">
 <div id="elgg_horizontal_tabbed_nav">
-<p><a href="<?php echo $vars['url']; ?>pg/settings/plugins/admin/#Activity Tabs"><?php echo elgg_echo('mt_activity_tabs:addtab') ?></a></p>
 <ul>
 	<li <?php echo $allselect; ?>><a
 		onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
@@ -103,6 +102,9 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 		    <?php
 		    }
 		}
+		
+		// add settings tab
+		echo("<li><a href='#' id='mt_display_tab_settings'>+/-</a></li>");
 		?>
 		    
 		</ul>
@@ -122,9 +124,8 @@ $(document).ready(function () {
     });
 }); /* end document ready function */
 </script>
-<p><a href='#' id='mt_display_tab_settings'>Show settings</a></p>
+<!-- p><a href='#' id='mt_display_tab_settings'>Show settings</a></p-->
 <div id="mt_activity_tabs_settings">
-Stuff here.
 
 <?php echo elgg_view('mt_activity_tabs/tab_settings') ?>
 
