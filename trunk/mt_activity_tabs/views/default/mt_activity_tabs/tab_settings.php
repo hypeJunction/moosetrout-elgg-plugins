@@ -6,6 +6,12 @@
 
 global $CONFIG;
 
+
+//
+var_dump($vars['entity']);
+
+
+
 // grab user
 $user_guid = $_SESSION['user']->guid;
 
