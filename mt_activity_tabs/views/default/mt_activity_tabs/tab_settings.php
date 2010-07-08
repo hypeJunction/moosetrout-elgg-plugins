@@ -126,7 +126,8 @@ echo('</form>');
 <script type="text/javascript">
 function mtActivityTabsSettings2()
 {
-	alert($("#mt_activity_tabs_settings_form").serialize());
+	var stuff = $("#mt_activity_tabs_settings_form").serialize();
+	alert(stuff);
 }
 
 function mtActivityTabsSettings()
