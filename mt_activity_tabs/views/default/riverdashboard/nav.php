@@ -140,8 +140,8 @@ $(document).ready(function () {
 		success: function(returned_data){
 
 			// reload tabs
-			//${'#nav_test'}.html(returned_data);
 			alert(returned_data);
+			$('#nav_test').html(returned_data);
 		}
 	});
 	
