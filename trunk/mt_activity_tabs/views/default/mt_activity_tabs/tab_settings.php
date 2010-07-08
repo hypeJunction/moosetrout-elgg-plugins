@@ -114,7 +114,7 @@ echo '<div id="edt_ajax_spinner"><img src="' . $vars['url'] . '_graphics/ajax_lo
 
 ?>
 
-echo '<div id="mt_ajax_spinner"><img src="' . $vars['url'] . '_graphics/ajax_loader.gif" /></div>';
+<div id="mt_ajax_spinner"><img src="<?php $vars['url']?>_graphics/ajax_loader.gif" /></div>
 
 <script type="text/javascript">
 function mt_activity_tabs_settings()
@@ -126,12 +126,10 @@ function mt_activity_tabs_settings()
 	$("#mt_ajax_spinner").ajaxStop(function(){
 		   $(this).hide();
 		 });
-	 
-	var inspect_type = $(".input-pulldown").val();
 	
 	$.ajax({
 		type: "POST",
-		url: "<?php echo $CONFIG->wwwroot . 'action/plugins/usersettings/save'; ?>",
+		url: <?php echo $url ?>,
 		data: $("#mt_activity_tabs_settings_form").serialize());
 		cache: false,
 		success: function(data){
