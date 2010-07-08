@@ -113,8 +113,9 @@ foreach ($groups as $group) {
 echo("</table>\n");
 echo("</div>\n");
 
-echo elgg_view('input/button', array(	'value' => elgg_echo('Submit'),
-										'js' => 'onclick="mtActivityTabsSettings2()"' ));
+echo elgg_view('input/button', array(	'name' => 'submit',
+                                        'value' => elgg_echo('Submit'),
+										'js' => 'onclick="mtActivityTabsSettings()"' ));
 
 echo '<div id="mt_ajax_spinner"><img src="' . $vars['url'] . '_graphics/ajax_loader.gif" /></div>';
 echo('</form>');
@@ -124,10 +125,6 @@ echo('</form>');
 <div id="mt_ajax_spinner"><img src="<?php echo $vars['url'] ?>_graphics/ajax_loader.gif" /></div>
 
 <script type="text/javascript">
-function mtActivityTabsSettings2()
-{
-alert('here');
-}
 
 $(document).ready(function() {	
     $('#mt_activity_tabs_settings_form').submit(function() {
@@ -136,16 +133,17 @@ $(document).ready(function() {
     });
 });
 
-//function mtActivityTabsSettings()
-//{
-//	
-//	$("#mt_ajax_spinner").ajaxStart(function(){
-//		   $(this).show();
-//		 });
-//
-//	$("#mt_ajax_spinner").ajaxStop(function(){
-//		   $(this).hide();
-//		 });
+function mtActivityTabsSettings()
+{
+	alert('here');
+	
+	$("#mt_ajax_spinner").ajaxStart(function(){
+		   $(this).show();
+		 });
+
+	$("#mt_ajax_spinner").ajaxStop(function(){
+		   $(this).hide();
+		 });
 //
 //	var mapped_values = {};
 //	
@@ -161,5 +159,5 @@ $(document).ready(function() {
 ////			// reload tabs
 ////		}
 //	});
-//}
+}
 </script>
