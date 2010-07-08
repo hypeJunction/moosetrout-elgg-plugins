@@ -108,6 +108,20 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 		</ul>
 	</div>
 
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('a.mt_display_tab_settings').click(function () {
+		$(this.parentNode).children("[id=mt_activity_tabs_settings]").slideToggle("fast");
+		return false;
+    });
+}); /* end document ready function */
+</script>
+<p><a href='#' id='mt_display_tab_settings'>Show settings</a></p>
+<div id="mt_activity_tabs_settings" style="display:hidden">
+Stuff here.
+</div>
+
 <div class="riverdashboard_filtermenu"><select name="content" id="content" onchange="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?callback=true&amp;display='+$('input#display').val() + '&amp;content=' + $('select#content').val());">
 	
     <?php
