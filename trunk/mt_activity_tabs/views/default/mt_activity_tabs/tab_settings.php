@@ -127,12 +127,15 @@ echo('</form>');
 function mtActivityTabsSettings2()
 {
 alert('here');
-}
 
 $('#mt_activity_tabs_settings_form').submit(function() {
-		  alert($(this).serialize());
-		  return false;
-		});
+	  alert($(this).serialize());
+	  return false;
+	});
+
+}
+
+
 //}
 
 //function mtActivityTabsSettings()
