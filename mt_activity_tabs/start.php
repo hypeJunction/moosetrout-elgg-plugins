@@ -22,6 +22,9 @@ function mt_activity_tabs_init() {
     // register page handler
     register_page_handler('activity_tabs','mt_activity_tabs_page_handler');
     
+    // extend views
+	extend_view('css', 'mt_activity_tabs/css');
+		
     // override activity menu item
     if (isloggedin())
     {
