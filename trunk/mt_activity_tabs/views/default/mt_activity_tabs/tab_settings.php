@@ -158,7 +158,7 @@ $fb .= '<div id="mt_ajax_spinner"><img src="' . $vars['url'] . '_graphics/ajax_l
 // open div
 
 echo("<div id='mt_activity_tabs_settings'>\n");
-echo("<div id='mt_activity_tabs_settings_header' />\n");
+echo("<div id='mt_activity_tabs_settings_header'></div>\n");
 echo("<div id='mt_activity_tabs_settings_body'>\n");
 
 // write out form
