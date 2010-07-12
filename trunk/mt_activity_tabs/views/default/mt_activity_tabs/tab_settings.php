@@ -67,14 +67,14 @@ if (empty($collections)) {
         if ($usersettings->{$collectionid} == 'yes') {
             $fb .= " selected=\"selected\" ";
         }
-        $fb .= '>' . elgg_echo('option:remove') .'</option>';
+        $fb .= '>' . elgg_echo('mt_activity_tabs:remove') .'</option>';
 
         // no
         $fb .= '<option value="no"';
         if ($usersettings->{$collectionid} != 'yes') {
             $fb .= " selected=\"selected\" ";
         }
-        $fb .= '>' . elgg_echo('option:add') . '</option></select></td>';
+        $fb .= '>' . elgg_echo('mt_activity_tabs:add') . '</option></select></td>';
 
         // add default radio button
         $fb .= "<td>" . elgg_view('input/radio', array('internalname' => 'default_tab', 'value' => $collectionid)) . "</td></tr>\n";
@@ -118,7 +118,7 @@ if (empty($groups)) {
         if ($usersettings->{$groupid} == 'yes') {
             $fb .= " selected=\"selected\" ";
         }
-        $fb .= '>' . elgg_echo('option:remove') . '</option>';
+        $fb .= '>' . elgg_echo('mt_activity_tabs:remove') . '</option>';
 
         // no
         $fb .= '<option value="no"';
@@ -127,7 +127,7 @@ if (empty($groups)) {
         }
         
         // finish select dropdown
-        $fb .= '>' . elgg_echo('option:add') . "</option></select></td>";
+        $fb .= '>' . elgg_echo('mt_activity_tabs:add') . "</option></select></td>";
 
         // add default radio button
         $fb .= "<td>" . elgg_view('input/radio', array('internalname' => 'default_tab', 'value' => $groupid)) . "</td></tr>\n";
