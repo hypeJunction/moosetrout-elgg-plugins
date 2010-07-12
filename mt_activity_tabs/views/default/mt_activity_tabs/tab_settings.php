@@ -37,8 +37,8 @@ $fb .= "<table border='1' cellpadding='5'>\n";
 $fb .= "<tr class='even'><th></th><th></th><th>" . elgg_echo('mt_activity_tabs:makedefault') . "</th></tr>\n";
     
 // fix default_tab
-if (is_null($usersettings['default_tab'])) {
-    $usersettings['default_tab'] = 'all';
+if (is_null($usersettings->default_tab)) {
+    $usersettings->default_tab = 'all';
 }
 
 if (empty($collections)) {
