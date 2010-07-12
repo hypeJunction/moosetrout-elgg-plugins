@@ -11,7 +11,7 @@
 }
 #mt_activity_tabs_settings_body {
 	border:1px solid #cccccc;
-	background-color:#dddddd;
+	background-color:#eeeeee;
 	padding:10px;
 }
 
