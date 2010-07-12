@@ -39,10 +39,8 @@ $fb .= "<tr class='even'><th></th><th></th><th>" . elgg_echo('mt_activity_tabs:m
 if (is_null($usersettings->default_tab)) {
     $usersettings->default_tab = 'all';
 }
-var_dump($usersettings);
-if (empty($collections)) {
-    $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nocollections') . '</td></tr>';
-} else {
+
+if (!empty($collections)) {
 
     $even = false;
     $non_group_collection = false;
@@ -91,9 +89,7 @@ if (empty($collections)) {
     }
 }
 
-if (empty($groups)) {
-    $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nogroups') . "</td></tr>\n";
-} else {
+if (!empty($groups)) {
 
     // iterate through groups
     foreach ($groups as $group) {
