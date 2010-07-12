@@ -55,9 +55,9 @@ if (empty($collections)) {
         $collectionid = "collection_" . $id;
 
         if ($even) {
-            $fb .= "<tr class='even'><td class='column_one'>$name</td>";
+            $fb .= "<tr class='even'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_collection.png' />$name</td>";
         } else {
-            $fb .= "<tr class='odd'><td class='column_one'>$name</td>";
+            $fb .= "<tr class='odd'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_collection.png' />$name</td>";
         }
         $fb .= "<td><select name='params[{$collectionid}]'>\n";
 
@@ -82,7 +82,7 @@ if (empty($collections)) {
             $even = true;
         }
         
-        // pring out message if non non-group collections
+        // print out message if no non-group collections
         if (!$non_group_collection) {
             $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nocollections') . '</td></tr>';
         }
@@ -102,9 +102,9 @@ if (empty($groups)) {
         $groupid = "group_" . $id;
 
         if ($even) {
-            $fb .= "<tr class='even'><td class='column_one'>$name</td>";
+            $fb .= "<tr class='even'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_group.png' />$name</td>";
         } else {
-            $fb .= "<tr class='odd'><td class='column_one'>$name</td>";
+            $fb .= "<tr class='odd'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_group.png' />$name</td>";
         }
         $fb .= "<td><select name='params[{$groupid}]'>\n";
 
