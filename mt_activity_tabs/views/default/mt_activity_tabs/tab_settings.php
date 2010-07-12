@@ -156,8 +156,9 @@ $fb .= elgg_view('input/button', array(	'name' => 'submit',
 $fb .= '<div id="mt_ajax_spinner"><img src="' . $vars['url'] . '_graphics/ajax_loader.gif" /></div>';
 
 // open div
-echo("<div id='mt_activity_tabs_settings_header' />\n");
+
 echo("<div id='mt_activity_tabs_settings'>\n");
+echo("<div id='mt_activity_tabs_settings_header' />\n");
 
 // write out form
 echo elgg_view('input/form', array('body' => $fb, 'internalid' =>'mt_activity_tabs_settings_form'));
