@@ -145,7 +145,7 @@ if (empty($groups)) {
         $fb .= elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'options' => array('yes'=>'yes', 'no'=>'no')));
 
         // add default radio button
-        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'default_tab', 'value' => $usersettings->default_tab, 'options' => array(''=>$groupid))) . "</td></tr>\n";
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => "params['default_tab']", 'value' => $usersettings->default_tab, 'options' => array(''=>$groupid))) . "</td></tr>\n";
 
         // toggle even flag
         if($even) {
