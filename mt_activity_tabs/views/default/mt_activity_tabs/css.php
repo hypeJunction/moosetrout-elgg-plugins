@@ -3,7 +3,10 @@
 	margin-right: 340px;
 	display: none;
 }
-
+#mt_activity_tabs_settings_close {
+	float:right;
+	background: url(<?php echo $vars['url']; ?>/mod/embed/images/close_button.gif) no-repeat center -1px;
+}
 #mt_activity_tabs_settings_header {
 	height:10px;
 	background: url(<?php echo $vars['url']; ?>mod/mt_activity_tabs/_graphics/div_up.png) no-repeat center -1px;
