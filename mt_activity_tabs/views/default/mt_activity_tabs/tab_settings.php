@@ -65,22 +65,15 @@ if (empty($collections)) {
         } else {
             $fb .= "<tr class='odd'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_collection.png' />$name</td>";
         }
-        $fb .= "<td><select name='params[{$collectionid}]'>\n";
 
-        // yes
-        $fb .= '<option value="yes"';
-        if ($usersettings->{$collectionid} == 'yes') {
-            $fb .= " selected=\"selected\" ";
+        // fix usersettings when NULL
+        if (is_null($usersettings->$collectionid)) {
+            $usersettings->$collectionid = 'no';
         }
-        $fb .= '>' . elgg_echo('mt_activity_tabs:off') .'</option>';
-
-        // no
-        $fb .= '<option value="no"';
-        if ($usersettings->{$collectionid} != 'yes') {
-            $fb .= " selected=\"selected\" ";
-        }
-        $fb .= '>' . elgg_echo('mt_activity_tabs:mt_activity_tabs:on') . '</option></select></td>';
-
+        
+        // radio buttons
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $collectionid .']', 'value' => $usersettings->$collectionid, 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+        
         // add default radio button
         $fb .= "<td>" . elgg_view('input/radio', array('internalname' => 'default_tab', 'value' => $collectionid)) . "</td></tr>\n";
         
@@ -116,25 +109,6 @@ if (empty($groups)) {
         } else {
             $fb .= "<tr class='odd'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_group.png' />$name</td>";
         }
-        $fb .= "<td>";
-        
-//        <select name='params[{$groupid}]'>\n";
-//
-//        // yes
-//        $fb .= '<option value="yes"';
-//        if ($usersettings->{$groupid} == 'yes') {
-//            $fb .= " selected=\"selected\" ";
-//        }
-//        $fb .= '>' . elgg_echo('mt_activity_tabs:off') . '</option>';
-//
-//        // no
-//        $fb .= '<option value="no"';
-//        if ($usersettings->{$groupid} != 'yes') {
-//            $fb .= " selected=\"selected\" ";
-//        }
-//        
-//        // finish select dropdown
-//        $fb .= '>' . elgg_echo('mt_activity_tabs:on') . "</option></select>"; //</td>";
         
         // fix usersettings when NULL
         if (is_null($usersettings->$groupid)) {
@@ -142,7 +116,7 @@ if (empty($groups)) {
         }
         
         // radio buttons
-        $fb .= elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'options' => array('yes'=>'yes', 'no'=>'no')));
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
 
         // add default radio button
         $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'options' => array(''=>$groupid))) . "</td></tr>\n";
