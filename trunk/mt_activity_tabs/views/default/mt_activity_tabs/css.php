@@ -9,11 +9,9 @@
 	background: url(<?php echo $vars['url']; ?>mod/mt_activity_tabs/_graphics/div_up.png) no-repeat center -1px;
 	background-color:white;
 }
-#mt_activity_tabs_settings {
-	border:1px solid #333333;
-	background-color:#dddddd;
-}
 #mt_activity_tabs_settings_body {
+	border:1px solid #cccccc;
+	background-color:#dddddd;
 	margin:10px;
 }
 
