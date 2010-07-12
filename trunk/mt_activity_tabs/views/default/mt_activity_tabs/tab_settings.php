@@ -15,6 +15,7 @@ $userid = $_SESSION['user']->guid;
 
 // grab collections from usersettings
 $usersettings = find_plugin_usersettings('mt_activity_tabs', $userid);
+var_dump($usersettings);
 
 // grab user
 $user_guid = $_SESSION['user']->guid;
