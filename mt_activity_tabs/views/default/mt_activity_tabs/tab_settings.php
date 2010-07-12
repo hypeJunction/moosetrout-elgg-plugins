@@ -33,6 +33,7 @@ $fb .= elgg_view('input/hidden', array('internalname' => 'plugin', 'value' => 'm
 
 $fb .= "<div class='admin_statistics'>\n";
 $fb .= "<table border='1' cellpadding='5'>\n";
+$fb .= "<th></th><th></th><th>" . elgg_echo('mt_activity_tabs:makedefault') . "</th>\n";
     
 if (empty($collections)) {
     $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nocollections') . '</td></tr>';
