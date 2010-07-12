@@ -4,7 +4,7 @@
 	display: none;
 }
 
-.mt_activity_tabs_settings {
+#mt_activity_tabs_settings {
 	border:1px solid #333333;
 	background-color:#dddddd;
 }
