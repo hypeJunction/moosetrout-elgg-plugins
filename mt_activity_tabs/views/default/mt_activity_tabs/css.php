@@ -5,6 +5,7 @@
 }
 
 #mt_activity_tabs_settings_header {
+	height:10px;
 	background: url(<?php echo $vars['url']; ?>mod/mt_activity_tabs/_graphics/div_up.png) no-repeat center -1px;
 	background-color:white;
 }
