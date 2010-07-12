@@ -132,7 +132,7 @@ if (empty($groups)) {
 //        $fb .= '>' . elgg_echo('mt_activity_tabs:on') . "</option></select>"; //</td>";
         
         // radio buttons
-        $fb .= elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => "$usersettings->{$groupid}", 'options' => array('yes'=>'yes', 'no'=>'no')));
+        $fb .= elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'options' => array('yes'=>'yes', 'no'=>'no')));
 
         // add default radio button
         $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'default_tab', 'value' => $groupid, 'options' => array(''=>$groupid))) . "</td></tr>\n";
