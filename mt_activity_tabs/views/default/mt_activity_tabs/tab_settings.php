@@ -156,6 +156,7 @@ $fb .= elgg_view('input/button', array(	'name' => 'submit',
 $fb .= '<div id="mt_ajax_spinner"><img src="' . $vars['url'] . '_graphics/ajax_loader.gif" /></div>';
 
 // open div
+echo("<div id='mt_activity_tabs_settings_header' />\n");
 echo("<div id='mt_activity_tabs_settings'>\n");
 
 // write out form
@@ -167,7 +168,6 @@ echo elgg_view('input/form', array('body' => $fb, 'internalid' =>'mt_activity_ta
 <p><img src="<?php echo $CONFIG->wwwroot ?>mod/mt_activity_tabs/_graphics/river_icon_group.png" /><?php echo elgg_echo('mt_activity_tabs:groupexpl')?><a href="<?php echo $CONFIG->wwwroot ?>pg/groups/new"><?php echo elgg_echo('mt_activity_tabs:creategroup')?></a></p>
 
 </div><!--  close mt_actitivy_tabs_settings div -->
-
 
 <script type="text/javascript">
 

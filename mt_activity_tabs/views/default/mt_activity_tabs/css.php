@@ -4,6 +4,9 @@
 	display: none;
 }
 
+#mt_activity_tabs_settings_header {
+	background: url(<?php echo $vars['url']; ?>mod/mt_activity_tabs/_graphics/div_up.png) no-repeat center -1px;
+}
 #mt_activity_tabs_settings {
 	border:1px solid #333333;
 	background-color:#dddddd;
@@ -15,8 +18,8 @@
 
 // override river icons
 .river_object_event_calendar_create {
-	background: url(<?php echo $vars['url']; ?>mod/mt_activity_tabs/_graphics/river_icon_calendar.gif) no-repeat left -1px;
+	background: url(<?php echo $vars['url']; ?>mod/mt_activity_tabs/_graphics/river_icon_calendar.png) no-repeat left -1px;
 }
 .river_object_event_calendar_update {
-	background: url(<?php echo $vars['url']; ?>mod/mt_activity_tabs/_graphics/river_icon_calendar.gif) no-repeat left -1px;
+	background: url(<?php echo $vars['url']; ?>mod/mt_activity_tabs/_graphics/river_icon_calendar.png) no-repeat left -1px;
 }
