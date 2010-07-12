@@ -15,7 +15,6 @@ $userid = $_SESSION['user']->guid;
 
 // grab collections from usersettings
 $usersettings = find_plugin_usersettings('mt_activity_tabs', $userid);
-var_dump($usersettings);
 
 // grab user
 $user_guid = $_SESSION['user']->guid;
@@ -40,7 +39,7 @@ $fb .= "<tr class='even'><th></th><th></th><th>" . elgg_echo('mt_activity_tabs:m
 if (is_null($usersettings->default_tab)) {
     $usersettings->default_tab = 'all';
 }
-
+var_dump($usersettings);
 if (empty($collections)) {
     $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nocollections') . '</td></tr>';
 } else {
