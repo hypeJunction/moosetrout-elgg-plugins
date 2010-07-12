@@ -34,13 +34,11 @@ $fb .= elgg_view('input/hidden', array('internalname' => 'plugin', 'value' => 'm
 $fb .= "<h2>" . elgg_echo('mt_activity_tabs:description') ."</h2>\n";
 
 $fb .= "<div class='admin_statistics'>\n";
-
+$fb .= "<table border='1' cellpadding='5'>\n";
+    
 if (empty($collections)) {
     $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nocollections') . '</td></tr>';
 } else {
-
-    $fb .= "<h3>Collections</h3>\n";
-    $fb .= "<table border='1' cellpadding='5'>\n";
 
     $even = false;
     $non_group_collection = false;
@@ -91,18 +89,12 @@ if (empty($collections)) {
             $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nocollections') . '</td></tr>';
         }
     }
-
-    $fb .= "</table><br /><br />\n";
 }
 
 if (empty($groups)) {
     $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nogroups') . "</td></tr>\n";
 } else {
-    $fb .= "<h3>Groups</h3>\n";
-    $fb .= "<table border='1' cellpadding='5'>\n";
 
-    // even flag
-    $even = false;
     foreach ($groups as $group) {
 
         //
@@ -139,9 +131,9 @@ if (empty($groups)) {
             $even = true;
         }
     }
-
-    $fb .= "</table>\n";
 }
+
+$fb .= "</table>\n";
 $fb .= "</div>\n";
 
 $fb .= elgg_view('input/button', array(	'name' => 'submit',
@@ -154,8 +146,12 @@ echo elgg_view('input/form', array('body' => $fb, 'internalid' =>'mt_activity_ta
 
 ?>
 
+<p><img src="<?php echo $CONFIG->wwwroot ?>mod/mt_activity_tabs/_graphics/collection.png" /><?php echo elgg_echo('mt_activity_tabs:collectionexpl')?><a href="<?php echo $CONFIG->wwwroot ?>pg/collections/add"><?php echo elgg_echo('mt_activity_tabs:createcollection')?></a></p>
+<p><img src="<?php echo $CONFIG->wwwroot ?>mod/mt_activity_tabs/_graphics/group.png" /><?php echo elgg_echo('mt_activity_tabs:groupexpl')?><a href="<?php echo $CONFIG->wwwroot ?>pg/groups/new"><?php echo elgg_echo('mt_activity_tabs:creategroup')?></a></p>
+
 <script type="text/javascript">
 
+// called when submit button is clicked
 function mtActivityTabsSettings()
 {
 
