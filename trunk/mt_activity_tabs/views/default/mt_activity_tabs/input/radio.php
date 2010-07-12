@@ -14,7 +14,7 @@
  * @uses $vars['options'] An array of strings representing the options for the radio field as "label" => option
  *
  */
-
+var_dump($vars);
 $class = $vars['class'];
 if (!$class) {
 	$class = "input-radio";
