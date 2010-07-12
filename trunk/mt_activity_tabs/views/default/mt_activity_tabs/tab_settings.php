@@ -33,7 +33,7 @@ $fb .= elgg_view('input/hidden', array('internalname' => 'plugin', 'value' => 'm
 
 $fb .= "<div class='admin_statistics'>\n";
 $fb .= "<table border='1' cellpadding='5'>\n";
-$fb .= "<th></th><th></th><th>" . elgg_echo('mt_activity_tabs:makedefault') . "</th>\n";
+$fb .= "<tr class='even'><th></th><th></th><th>" . elgg_echo('mt_activity_tabs:makedefault') . "</th></tr>\n";
     
 if (empty($collections)) {
     $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nocollections') . '</td></tr>';
@@ -67,15 +67,18 @@ if (empty($collections)) {
         if ($usersettings->{$collectionid} == 'yes') {
             $fb .= " selected=\"selected\" ";
         }
-        $fb .= '>' . elgg_echo('option:yes') .'</option>';
+        $fb .= '>' . elgg_echo('option:remove') .'</option>';
 
         // no
         $fb .= '<option value="no"';
         if ($usersettings->{$collectionid} != 'yes') {
             $fb .= " selected=\"selected\" ";
         }
-        $fb .= '>' . elgg_echo('option:no') . '</option></select></td></tr>';
+        $fb .= '>' . elgg_echo('option:add') . '</option></select></td>';
 
+        // add default radio button
+        $fb .= "<td>" . elgg_view('input/radio', array('internalname' => 'default_tab', 'value' => $collectionid)) . "</td></tr>\n";
+        
         // toggle even flag
         if($even) {
             $even = false;
@@ -94,6 +97,7 @@ if (empty($groups)) {
     $fb .= '<tr><td>' . elgg_echo('mt_activity_tabs:nogroups') . "</td></tr>\n";
 } else {
 
+    // iterate through groups
     foreach ($groups as $group) {
 
         //
@@ -114,14 +118,19 @@ if (empty($groups)) {
         if ($usersettings->{$groupid} == 'yes') {
             $fb .= " selected=\"selected\" ";
         }
-        $fb .= '>' . elgg_echo('option:yes') . '</option>';
+        $fb .= '>' . elgg_echo('option:remove') . '</option>';
 
         // no
         $fb .= '<option value="no"';
         if ($usersettings->{$groupid} != 'yes') {
             $fb .= " selected=\"selected\" ";
         }
-        $fb .= '>' . elgg_echo('option:no') . "</option></select></td></tr>\n";
+        
+        // finish select dropdown
+        $fb .= '>' . elgg_echo('option:add') . "</option></select></td>";
+
+        // add default radio button
+        $fb .= "<td>" . elgg_view('input/radio', array('internalname' => 'default_tab', 'value' => $groupid)) . "</td></tr>\n";
 
         // toggle even flag
         if($even) {
