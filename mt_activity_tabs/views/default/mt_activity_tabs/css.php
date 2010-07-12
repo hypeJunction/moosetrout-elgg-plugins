@@ -12,7 +12,7 @@
 #mt_activity_tabs_settings_body {
 	border:1px solid #cccccc;
 	background-color:#dddddd;
-	margin:10px;
+	padding:10px;
 }
 
 // override river icons
