@@ -150,12 +150,8 @@ $(document).ready(function () {
 	
 }); /* end document ready function */
 </script>
-<!-- p><a href='#' id='mt_display_tab_settings'>Show settings</a></p-->
-<div id="mt_activity_tabs_settings">
 
 <?php echo elgg_view('mt_activity_tabs/tab_settings') ?>
-
-</div>
 
 <div class="riverdashboard_filtermenu"><select name="content" id="content" onchange="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?callback=true&amp;display='+$('input#display').val() + '&amp;content=' + $('select#content').val());">
 	
