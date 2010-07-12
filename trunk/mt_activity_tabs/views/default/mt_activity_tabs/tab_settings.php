@@ -32,6 +32,7 @@ $url = $CONFIG->wwwroot . "action/plugins/usersettings/save";
 $fb .= elgg_view('input/hidden', array('internalname' => 'plugin', 'value' => 'mt_activity_tabs'));
 
 $fb .= "<div class='admin_statistics'>\n";
+$fb .= "<div class='mt_activity_tabs_settings_close'></div>\n";
 $fb .= "<table border='1' cellpadding='5'>\n";
 $fb .= "<tr class='even'><th></th><th></th><th>" . elgg_echo('mt_activity_tabs:makedefault') . "</th></tr>\n";
     
