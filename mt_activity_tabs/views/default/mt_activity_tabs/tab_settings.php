@@ -31,8 +31,6 @@ $url = $CONFIG->wwwroot . "action/plugins/usersettings/save";
 // plugin name hidden field
 $fb .= elgg_view('input/hidden', array('internalname' => 'plugin', 'value' => 'mt_activity_tabs'));
 
-$fb .= "<h2>" . elgg_echo('mt_activity_tabs:description') ."</h2>\n";
-
 $fb .= "<div class='admin_statistics'>\n";
 $fb .= "<table border='1' cellpadding='5'>\n";
     
