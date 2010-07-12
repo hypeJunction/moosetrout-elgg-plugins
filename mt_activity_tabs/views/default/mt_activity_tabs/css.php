@@ -12,9 +12,8 @@
 	border:1px solid #333333;
 	background-color:#dddddd;
 }
-	
-.mt_activity_tabs_wrapper {
-	margin-left: 20px;
+#mt_activity_tabs_settings_body {
+	margin:10px;
 }
 
 // override river icons
