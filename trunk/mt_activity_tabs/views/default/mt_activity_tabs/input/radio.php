@@ -14,8 +14,6 @@
  * @uses $vars['options'] An array of strings representing the options for the radio field as "label" => option
  *
  */
-echo('internalid: ' . $vars['internalid'] . "<br/>\n");
-echo('value: ' . $vars['value'] . "<br/>\n");
 
 $class = $vars['class'];
 if (!$class) {
