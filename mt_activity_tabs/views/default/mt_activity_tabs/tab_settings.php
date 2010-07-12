@@ -131,6 +131,11 @@ if (empty($groups)) {
 //        // finish select dropdown
 //        $fb .= '>' . elgg_echo('mt_activity_tabs:on') . "</option></select>"; //</td>";
         
+        // fix usersettings when NULL
+        if (is_null($usersettings->$groupid)) {
+            $usersettings->$groupid = 'no';
+        }
+        
         // radio buttons
         $fb .= elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'options' => array('yes'=>'yes', 'no'=>'no')));
 
