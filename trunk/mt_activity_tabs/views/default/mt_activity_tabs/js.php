@@ -9,9 +9,6 @@ global $CONFIG;
 $nav_tab_endpoint_values = "orient=" . $vars['orient'] . "&type=" . $vars['type'] . "&url=" . $vars['url'] . "&user=" . $vars['user'];
 $nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_tabs_endpoint.php';
 
-echo($nav_tab_endpoint_values);
-echo($nav_tab_endpoint_url);
-
 ?>
 <script type="text/javascript">
 $(document).ready(function () {
