@@ -25,3 +25,9 @@
 .river_object_event_calendar_update {
 	background: url(<?php echo $vars['url']; ?>mod/mt_activity_tabs/_graphics/river_icon_calendar.png) no-repeat left -1px;
 }
+
+//
+.usersettings_statistics th, .admin_statistics th {
+	border-bottom:1px solid #CCCCCC;
+	padding:2px 4px;
+}
