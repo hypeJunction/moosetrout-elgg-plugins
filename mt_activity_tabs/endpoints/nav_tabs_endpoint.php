@@ -30,12 +30,14 @@ $allselect = '';
 $friendsselect = '';
 $mineselect = '';
 
-$vars['orient'] = get_input('orient');
-$vars['url'] = get_input('url');
-$vars['type'] = get_input('type');
-$vars['user'] = get_input('user');
+$orient = get_input('orient');
+$url = get_input('url');
+$type = get_input('type');
+$user = get_input('user');
 
-switch($vars['orient']) {
+echo("orient: $orient; url: $url; type: $type; user: $user");
+
+switch($orient) {
     case '':		$allselect = 'class="selected"';
     break;
     case 'friends':		$friendsselect = 'class="selected"';
@@ -46,20 +48,20 @@ switch($vars['orient']) {
 
 
 // grab enabled collections and groups from usersettings
-$collection_ids = mt_get_user_collection_ids($vars['user']->guid);
-$group_ids = mt_get_user_group_ids($vars['user']->guid);
+$collection_ids = mt_get_user_collection_ids($user->guid);
+$group_ids = mt_get_user_group_ids($user->guid);
 
 $c_river = false;
 $g_river = false;
 // deal with setting class for selected collection tab
-if (substr($vars['orient'], 0, 11) == 'collection_') {
+if (substr($orient, 0, 11) == 'collection_') {
     //
     $c_river = true;
-    $z = explode('_', $vars['orient']);
+    $z = explode('_', $orient);
     $selectedid = $z[1];
-} else if (substr($vars['orient'], 0, 6) == 'group_') {
+} else if (substr($orient, 0, 6) == 'group_') {
     $g_river = true;
-    $z = explode('_', $vars['orient']);
+    $z = explode('_', $orient);
     $selectedid = $z[1];
 }
 
@@ -67,13 +69,13 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 
 <ul>
 	<li <?php echo $allselect; ?>><a
-		onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
+		onclick="javascript:$('#river_container').load('<?php echo $url; ?>pg/activity_tabs/?content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
 		href="?display="><?php echo elgg_echo('all'); ?></a></li>
 	<li <?php echo $friendsselect; ?>><a
-		onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?display=friends&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
+		onclick="javascript:$('#river_container').load('<?php echo $url; ?>pg/activity_tabs/?display=friends&amp;content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
 		href="?display=friends"><?php echo elgg_echo('friends'); ?></a></li>
 	<li <?php echo $mineselect; ?>><a
-		onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?display=mine&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
+		onclick="javascript:$('#river_container').load('<?php echo $url; ?>pg/activity_tabs/?display=mine&amp;content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
 		href="?display=mine"><?php echo elgg_echo('mine'); ?></a></li>
 		<?php
 
@@ -87,14 +89,14 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 	    if($c_river && ($selectedid == $id)) {
 	    ?>
 	        <li class='selected'><a
-	        onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?display=collection_<?php echo $collection->id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
+	        onclick="javascript:$('#river_container').load('<?php echo $url; ?>pg/activity_tabs/?display=collection_<?php echo $collection->id ?>&amp;content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
 	        href="?display=collection_<?php echo $collection->id; ?>"><?php echo $collection_name; ?></a></li>
 	        
 	    <?php
 	    } else {
 	    ?>
             <li><a
-            onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?display=collection_<?php echo $collection->id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
+            onclick="javascript:$('#river_container').load('<?php echo $url; ?>pg/activity_tabs/?display=collection_<?php echo $collection->id ?>&amp;content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
             href="?display=collection_<?php echo $collection->id; ?>"><?php echo $collection_name; ?></a></li>
         <?php
         }
@@ -110,13 +112,13 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 	    if($g_river && ($selectedid == $id)) {
 	    ?>
 	    	<li class='selected'><a
-	    	onclick="javascript:$('#river_container').load('<?php echo $vars['url'] ?>pg/activity_tabs/?display=group_<?php echo $id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
+	    	onclick="javascript:$('#river_container').load('<?php echo $url ?>pg/activity_tabs/?display=group_<?php echo $id ?>&amp;content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
 	    	href="?display=group_<?php echo $id ?>"><?php echo $group_name ?></a></li>
 	    <?php
 	    } else {
 	    ?>
 	        <li><a
-	        onclick="javascript:$('#river_container').load('<?php echo $vars['url'] ?>pg/activity_tabs/?display=group_<?php echo $id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
+	        onclick="javascript:$('#river_container').load('<?php echo $url ?>pg/activity_tabs/?display=group_<?php echo $id ?>&amp;content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
 	        href="?display=group_<?php echo $id ?>"><?php echo $group_name ?></a></li>
 	    <?php
 	    }
@@ -126,7 +128,7 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 	echo("<li><a href='#' id='mt_display_tab_settings'>+/-</a></li>");
 	
 	// add ajax spinner
-	echo("<li id='mt_ajax_spinner'><img src='" . $vars['url'] . "_graphics/ajax_loader.gif' /></li>");
+	echo("<li id='mt_ajax_spinner'><img src='" . $url . "_graphics/ajax_loader.gif' /></li>");
 	?>
 	    
 </ul>
