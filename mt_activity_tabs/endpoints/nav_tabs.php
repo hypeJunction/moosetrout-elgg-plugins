@@ -118,7 +118,7 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 	echo("<li><a href='#' id='mt_display_tab_settings'>+/-</a></li>");
 	
 	// add ajax spinner
-	echo("<li id='mt_activity_tabs_tab_spinner'><img src='" . $vars['url'] . "_graphics/ajax_loader.gif' /></li>");
+	//echo("<li id='mt_activity_tabs_tab_spinner'><img src='" . $vars['url'] . "_graphics/ajax_loader.gif' /></li>");
 	?>
 	    
 </ul>
