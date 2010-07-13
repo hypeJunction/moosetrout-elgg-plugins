@@ -58,7 +58,7 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 <?php
 // calculate endpoint query string
 $nav_tab_endpoint_values = "orient=" . $vars['orient'] . "&type=" . $vars['type'] . "&url=" . $vars['url'] . "&user=" . $vars['user'];
-$nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_tabs.php';
+$nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_tabs_endpoint.php';
 
 ?>
 </div>
@@ -66,36 +66,7 @@ $nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_t
 <div id="elgg_horizontal_tabbed_nav">
 </div>
 
-
-<script type="text/javascript">
-$(document).ready(function () {
-
-	// hide on load
-	$('#mt_activity_tabs_settings').hide();
-
-	// toggle on click
-    $('#mt_display_tab_settings').click(function () {
-		$('#mt_activity_tabs_settings').slideToggle("fast");
-		//return false;
-    });
-    
-	// load up nav tabs
-	// make ajax call
-	var endpoint_values = '<?php echo $nav_tab_endpoint_values ?>';
-	$.ajax({
-		type: "POST",
-		url: '<?php echo $nav_tab_endpoint_url ?>',
-		data: endpoint_values,
-		cache: false,
-		success: function(returned_data){
-
-			// reload tabs
-			$('#elgg_horizontal_tabbed_nav').html(returned_data);
-		}
-	});
-	
-}); /* end document ready function */
-</script>
+<?php echo elgg_view('mt_activity_tabs/js') ?>
 
 <?php echo elgg_view('mt_activity_tabs/tab_settings') ?>
 
