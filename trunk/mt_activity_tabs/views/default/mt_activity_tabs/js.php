@@ -15,6 +15,7 @@ $(document).ready(function () {
 	
 	// add events that show/hide settings div onclick
     $('#mt_display_tab_settings').click(function () {
+        alert('+/- clicked');
 		$('#mt_activity_tabs_settings').slideToggle("fast");
 		//return false;
     });
