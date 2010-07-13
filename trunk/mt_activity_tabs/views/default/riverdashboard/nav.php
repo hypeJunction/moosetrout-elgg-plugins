@@ -57,9 +57,17 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 <div id="elgg_horizontal_tabbed_nav">
 </div>
 
-<?php echo elgg_view('mt_activity_tabs/js') ?>
+<?php echo elgg_view('mt_activity_tabs/js', array(
+											'type' => $type,
+											'subtype' => $subtype,
+											'orient' => $orient
+                                            )) ?>
 
-<?php echo elgg_view('mt_activity_tabs/tab_settings') ?>
+<?php echo elgg_view('mt_activity_tabs/tab_settings', array(
+											'type' => $type,
+											'subtype' => $subtype,
+											'orient' => $orient
+                                            )) ?>
 
 <div class="riverdashboard_filtermenu"><select name="content" id="content" onchange="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?callback=true&amp;display='+$('input#display').val() + '&amp;content=' + $('select#content').val());">
 	
