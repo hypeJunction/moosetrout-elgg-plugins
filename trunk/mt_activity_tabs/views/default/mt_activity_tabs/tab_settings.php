@@ -113,7 +113,7 @@ if (!empty($groups)) {
         }
         
         // radio buttons
-        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'js' => 'onclick="mtActivityTabsSettings(); return false;"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'js' => 'onclick="mtActivityTabsSettings();"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
 
         // add default radio button
         $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'js' => 'onclick="mtActivityTabsSettings(); return false;"', 'options' => array(''=>$groupid))) . "</td></tr>\n";
