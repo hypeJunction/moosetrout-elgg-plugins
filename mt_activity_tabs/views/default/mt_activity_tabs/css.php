@@ -3,6 +3,9 @@
 	margin-right: 340px;
 	display: none;
 }
+#mt_activity_tabs_settings {
+	display:none;
+}
 #mt_activity_tabs_settings_close {
 	float:right;
 	background: url(<?php echo $vars['url']; ?>/mod/embed/images/close_button.gif) no-repeat center -1px;
