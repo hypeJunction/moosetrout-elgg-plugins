@@ -112,8 +112,7 @@ $river = str_replace('callback=true','replaced=88,334',$river);
 $nav = elgg_view('riverdashboard/nav',array(
 											'type' => $type,
 											'subtype' => $subtype,
-											'orient' => $orient,
-											'collection_ids' => $collection_ids
+											'orient' => $orient
                                             )
                 );
 
