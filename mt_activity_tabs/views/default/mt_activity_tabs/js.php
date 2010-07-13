@@ -14,11 +14,11 @@ $nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_t
 $(document).ready(function () {
 	
 	// add events that show/hide settings div onclick
-    $('#mt_display_tab_settings').click(function () {
-        alert('+/- clicked');
-		$('#mt_activity_tabs_settings').slideToggle("fast");
-		return false;
-    });
+//    $('#mt_display_tab_settings').click(function () {
+//        alert('+/- clicked');
+//		$('#mt_activity_tabs_settings').slideToggle("fast");
+//		return false;
+//    });
 
 	// register event handlers for spinner
 	$("#mt_ajax_spinner").ajaxStart(function(){
@@ -44,6 +44,10 @@ $(document).ready(function () {
 	});
 	
 }); /* end document ready function */
+
+$("#mt_display_tab_settings").click(function () {
+    $('#mt_activity_tabs_settings').slideToggle("slow");
+  });
 
 // called when settings change
 function mtActivityTabsSettings()
