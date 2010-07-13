@@ -134,8 +134,6 @@ $fb .= elgg_view('input/button', array(	'name' => 'submit',
                                         'value' => elgg_echo('Submit'),
 										'js' => 'onclick="mtActivityTabsSettings(); return false;"' ));
 
-$fb .= '<div id="mt_ajax_spinner"><img src="' . $vars['url'] . '_graphics/ajax_loader.gif" /></div>';
-
 // open div
 
 echo("<div id='mt_activity_tabs_settings'>\n");
