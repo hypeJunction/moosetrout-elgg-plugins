@@ -135,7 +135,8 @@ if (substr($orient, 0, 11) == 'collection_') {
     	$('#mt_activity_tabs_settings').slideToggle("slow");
   	});
   	</script>
-  
+    
+	<?php
 	// add ajax spinner
 	echo("<li id='mt_ajax_spinner'><img src='" . $url . "_graphics/ajax_loader.gif' /></li>");
 	?>
