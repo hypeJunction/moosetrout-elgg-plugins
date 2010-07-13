@@ -86,12 +86,16 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
         // set selected class
 	    if($c_river && ($selectedid == $id)) {
 	    ?>
-	        <li class='selected'><a onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?display=collection_<?php echo $collection->id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;" href="?display=collection_<?php echo $collection->id; ?>"><?php echo $collection_name; ?></a></li>
+	        <li class='selected'><a
+	        onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?display=collection_<?php echo $collection->id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
+	        href="?display=collection_<?php echo $collection->id; ?>"><?php echo $collection_name; ?></a></li>
 	        
 	    <?php
 	    } else {
 	    ?>
-            <li><a onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?display=collection_<?php echo $collection->id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;" href="?display=collection_<?php echo $collection->id; ?>"><?php echo $collection_name; ?></a></li>
+            <li><a
+            onclick="javascript:$('#river_container').load('<?php echo $vars['url']; ?>pg/activity_tabs/?display=collection_<?php echo $collection->id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
+            href="?display=collection_<?php echo $collection->id; ?>"><?php echo $collection_name; ?></a></li>
         <?php
         }
 	}
@@ -105,11 +109,15 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
         // set selected class
 	    if($g_river && ($selectedid == $id)) {
 	    ?>
-	    	<li class='selected'><a onclick="javascript:$('#river_container').load('<?php echo $vars['url'] ?>pg/activity_tabs/?display=group_<?php echo $id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;" href="?display=group_<?php echo $id ?>"><?php echo $group_name ?></a></li>
+	    	<li class='selected'><a
+	    	onclick="javascript:$('#river_container').load('<?php echo $vars['url'] ?>pg/activity_tabs/?display=group_<?php echo $id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
+	    	href="?display=group_<?php echo $id ?>"><?php echo $group_name ?></a></li>
 	    <?php
 	    } else {
 	    ?>
-	        <li><a onclick="javascript:$('#river_container').load('<?php echo $vars['url'] ?>pg/activity_tabs/?display=group_<?php echo $id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;" href="?display=group_<?php echo $id ?>"><?php echo $group_name ?></a></li>
+	        <li><a
+	        onclick="javascript:$('#river_container').load('<?php echo $vars['url'] ?>pg/activity_tabs/?display=group_<?php echo $id ?>&amp;content=<?php echo $vars['type']; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
+	        href="?display=group_<?php echo $id ?>"><?php echo $group_name ?></a></li>
 	    <?php
 	    }
 	}
