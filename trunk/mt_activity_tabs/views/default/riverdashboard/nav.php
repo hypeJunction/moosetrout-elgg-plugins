@@ -114,7 +114,7 @@ $nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_t
 	}
 	
 	// add settings tab
-	echo("<li><a href='#' id='mt_display_tab_settings'>+/-</a></li>");
+	echo("<li><a href='#' id='mt_display_tab_settings'>+/!</a></li>");
 	?>
 	    
 </ul>
