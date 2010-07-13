@@ -51,6 +51,7 @@ if (isset($content[1])) {
     $subtype = '';
 }
 $orient = get_input('display');
+echo("INDEX.PHP -- orient: $orient<br />");
 
 if (substr($orient, 0, 11) == 'collection_') {
     $c_river = true;
@@ -69,7 +70,7 @@ if ($type == 'all') {
     $subtype = '';
 }
 
-$body = 'INDEX<br />';
+$body = '';
 if (empty($callback)) {
 
     //set a view for the wire to extend
@@ -88,12 +89,14 @@ switch($orient) {
         $subject_guid = $_SESSION['user']->guid;
         $relationship_type = '';
         break;
-    case 'friends':	$subject_guid = $_SESSION['user']->guid;
-    $relationship_type = 'friend';
-    break;
-    default:		$subject_guid = 0;
-    $relationship_type = '';
-    break;
+    case 'friends':
+        $subject_guid = $_SESSION['user']->guid;
+        $relationship_type = 'friend';
+        break;
+    default:
+        $subject_guid = 0;
+        $relationship_type = '';
+        break;
 }
 
 if ($c_river) {
