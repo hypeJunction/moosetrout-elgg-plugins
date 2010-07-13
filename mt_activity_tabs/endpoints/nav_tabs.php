@@ -116,6 +116,33 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 	
 	// add settings tab
 	echo("<li><a href='#' id='mt_display_tab_settings'>+/-</a></li>");
+	
+	// add ajax spinner
+	echo("<li id='mt_activity_tabs_tab_spinner'><img src='" . $vars['url'] . "_graphics/ajax_loader.gif' /></li>");
 	?>
 	    
 </ul>
+
+
+<script type='text/javascript'>
+
+// body onload
+$(document).ready(function () {
+
+
+
+}
+
+// when a tab is clicked
+function mtActivityTabsTabClick()
+{
+    // register event handlers for spinner
+    $("#mt_activity_tabs_tab_spinner").ajaxStart(function(){
+    	   $(this).show();
+    	 });
+    $("#mt_activity_tabs_tab_spinner").ajaxStop(function(){
+    	   $(this).hide();
+    	 });
+}
+
+</script>
