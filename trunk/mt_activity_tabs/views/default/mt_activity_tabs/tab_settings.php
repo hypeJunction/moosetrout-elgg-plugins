@@ -150,54 +150,5 @@ echo elgg_view('input/form', array('body' => $fb, 'internalid' =>'mt_activity_ta
 <p><img src="<?php echo $CONFIG->wwwroot ?>mod/mt_activity_tabs/_graphics/river_icon_collection.png" /><?php echo elgg_echo('mt_activity_tabs:collectionexpl')?><a href="<?php echo $CONFIG->wwwroot ?>pg/collections/add"><?php echo elgg_echo('mt_activity_tabs:createcollection')?></a></p>
 <p><img src="<?php echo $CONFIG->wwwroot ?>mod/mt_activity_tabs/_graphics/river_icon_group.png" /><?php echo elgg_echo('mt_activity_tabs:groupexpl')?><a href="<?php echo $CONFIG->wwwroot ?>pg/groups/new"><?php echo elgg_echo('mt_activity_tabs:creategroup')?></a></p>
 
-</div><!--  close mt_actitivy_tabs_settings_body div -->
-</div><!--  close mt_actitivy_tabs_settings div -->
-
-<script type="text/javascript">
-
-// called when submit button is clicked
-function mtActivityTabsSettings()
-{
-
-	// register event handlers for spinner
-	$("#mt_ajax_spinner").ajaxStart(function(){
-		   $(this).show();
-		 });
-	$("#mt_ajax_spinner").ajaxStop(function(){
-		   $(this).hide();
-		 });
-
-	// serialize form values
-	var mapped_values = {};
-	mapped_values = $("#mt_activity_tabs_settings_form").serialize();
-
-	// make ajax call
-	$.ajax({
-		type: "POST",
-		url: '<?php echo $url ?>',
-		data: mapped_values,
-		cache: false,
-		success: function(returned_data){
-
-			// reload tabs
-			mtLoadTabs();
-		}
-	});
-}
-
-function mtLoadTabs()
-{
-	// make ajax call
-	$.ajax({
-		type: "POST",
-		url: '<?php echo $nav_tab_endpoint_values ?>',
-		data: '<?php echo $nav_tab_endpoint_url ?>',
-		cache: false,
-		success: function(returned_data){
-
-			// reload tabs
-			$('#elgg_horizontal_tabbed_nav').html(returned_data);
-		}
-	});
-}
-</script>
+</div><!--  close mt_activity_tabs_settings_body div -->
+</div><!--  close mt_activity_tabs_settings div -->
