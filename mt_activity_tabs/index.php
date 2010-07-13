@@ -69,7 +69,7 @@ if ($type == 'all') {
     $subtype = '';
 }
 
-$body = '';
+$body = 'INDEX<br />';
 if (empty($callback)) {
 
     //set a view for the wire to extend
