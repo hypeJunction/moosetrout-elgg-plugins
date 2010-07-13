@@ -21,6 +21,7 @@ if (!empty($vars['config']->registered_entities)) {
         }
     }
 }
+echo("NAV.php -- orient: {$vars['orient']};");
 
 $allselect = ''; $friendsselect = ''; $mineselect = '';
 switch($vars['orient']) {
