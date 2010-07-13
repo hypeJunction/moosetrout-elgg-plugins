@@ -129,6 +129,8 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 // body onload
 $(document).ready(function () {
 
+	// hide ajax spinner
+	$("#mt_activity_tabs_tab_spinner").hide();
 
 
 }
