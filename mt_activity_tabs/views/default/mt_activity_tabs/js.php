@@ -9,6 +9,9 @@ global $CONFIG;
 $nav_tab_endpoint_values = "orient=" . $vars['orient'] . "&type=" . $vars['type'] . "&subtype=" . $vars['subtype']; // . "&url=" . $vars['url'] . "&user=" . $vars['user'];
 $nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_tabs_endpoint.php';
 
+// use ajax to post to /action/plugins/usersettings/save
+$usersettings_url = $CONFIG->wwwroot . "action/plugins/usersettings/save";
+
 ?>
 <script type="text/javascript">
 $(document).ready(function () {
@@ -64,7 +67,7 @@ function mtActivityTabsSettings()
 	// make ajax call to submit settings form
 	$.ajax({
 		type: "POST",
-		url: '<?php echo $url ?>',
+		url: '<?php echo $usersettings_url ?>',
 		data: mapped_values,
 		cache: false,
 		success: function(returned_data){
