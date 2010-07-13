@@ -76,7 +76,7 @@ $(document).ready(function () {
 	// toggle on click
     $('#mt_display_tab_settings').click(function () {
 		$('#mt_activity_tabs_settings').slideToggle("fast");
-		return false;
+		//return false;
     });
     
 	// load up nav tabs
