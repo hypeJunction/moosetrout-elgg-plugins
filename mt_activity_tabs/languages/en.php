@@ -14,6 +14,7 @@ $english = array(
     'mt_activity_tabs:collectionexpl' => ' is a collection of people. ',
     'mt_activity_tabs:creategroup' => 'Create a group.',
     'mt_activity_tabs:groupexpl' => ' is a group; groups have their own discussion forum, shared calendar, shared bookmarks, etc. ',
+    'mt_activity_tabs:display' => 'Display',
     'mt_activity_tabs:makedefault' => 'Default',
     'mt_activity_tabs:on' => 'on',
     'mt_activity_tabs:off' => 'off',
