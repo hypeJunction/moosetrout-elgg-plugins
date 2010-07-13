@@ -34,8 +34,8 @@ $orient = get_input('orient');
 $type = get_input('type');
 $subtype = get_input('subtype');
 
-$url = $vars['url'];
-$user = $vars['user'];
+$url = $CONFIG->wwwroot;
+$user = $user_guid;
 
 echo("NAV_TABS_ENDPOINT.PHP -- orient: $orient; url: $url; type: $type; subtype: $subtype; user: $user<br />");
 
