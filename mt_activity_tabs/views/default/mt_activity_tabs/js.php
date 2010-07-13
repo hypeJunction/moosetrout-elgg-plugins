@@ -12,12 +12,6 @@ $nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_t
 ?>
 <script type="text/javascript">
 $(document).ready(function () {
-
-	// hide settings div on load
-	$('#mt_activity_tabs_settings').hide();
-
-	// hide ajax spinner on load
-	$("#mt_activity_tabs_tab_spinner").hide();
 	
 	// add events that show/hide settings div onclick
     $('#mt_display_tab_settings').click(function () {
