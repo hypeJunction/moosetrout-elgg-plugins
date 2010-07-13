@@ -122,29 +122,3 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 	?>
 	    
 </ul>
-
-
-<script type='text/javascript'>
-
-// body onload
-$(document).ready(function () {
-
-	// hide ajax spinner
-	$("#mt_activity_tabs_tab_spinner").hide();
-
-
-}
-
-// when a tab is clicked
-function mtActivityTabsTabClick()
-{
-    // register event handlers for spinner
-    $("#mt_activity_tabs_tab_spinner").ajaxStart(function(){
-    	   $(this).show();
-    	 });
-    $("#mt_activity_tabs_tab_spinner").ajaxStop(function(){
-    	   $(this).hide();
-    	 });
-}
-
-</script>
