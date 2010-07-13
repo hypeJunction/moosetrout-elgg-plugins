@@ -17,7 +17,6 @@ $(document).ready(function () {
     $('#mt_display_tab_settings').click(function () {
         alert('+/- clicked');
 		$('#mt_activity_tabs_settings').slideToggle("fast");
-		//return false;
     });
 
 	// register event handlers for spinner
