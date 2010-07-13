@@ -3,6 +3,9 @@
 	margin-right: 340px;
 	display: none;
 }
+#mt_activity_tabs_tab_spinner {
+	display:none;
+}
 #mt_activity_tabs_settings {
 	display:none;
 }
