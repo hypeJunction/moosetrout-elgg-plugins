@@ -127,7 +127,7 @@ if (substr($orient, 0, 11) == 'collection_') {
 	}
 	
 	// add settings tab
-	echo("<li><span id='mt_display_tab_settings'>+/-</span></li>");
+	echo("<li><a href='#' id='mt_display_tab_settings'>+/-</a></li>");
 	
 	// add ajax spinner
 	echo("<li id='mt_ajax_spinner'><img src='" . $url . "_graphics/ajax_loader.gif' /></li>");
