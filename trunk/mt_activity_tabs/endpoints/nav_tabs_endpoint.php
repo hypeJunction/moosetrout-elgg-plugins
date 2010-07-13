@@ -33,9 +33,10 @@ $mineselect = '';
 $orient = get_input('orient');
 $url = get_input('url');
 $type = get_input('type');
+$subtype = get_input('subtype');
 $user = get_input('user');
 
-echo("orient: $orient; url: $url; type: $type; user: $user");
+echo("NAV_TABS_ENDPOINT.PHP -- orient: $orient; url: $url; type: $type; subtype: $subtype; user: $user<br />");
 
 switch($orient) {
     case '':		$allselect = 'class="selected"';
