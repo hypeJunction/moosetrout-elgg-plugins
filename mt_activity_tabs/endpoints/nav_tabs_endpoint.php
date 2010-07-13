@@ -129,6 +129,13 @@ if (substr($orient, 0, 11) == 'collection_') {
 	// add settings tab
 	echo("<li><a href='#' id='mt_display_tab_settings'>+/-</a></li>");
 	
+	?>
+	<script type='text/javascript'>
+	$("#mt_display_tab_settings").click(function () {
+    	$('#mt_activity_tabs_settings').slideToggle("slow");
+  	});
+  	</script>
+  
 	// add ajax spinner
 	echo("<li id='mt_ajax_spinner'><img src='" . $url . "_graphics/ajax_loader.gif' /></li>");
 	?>
