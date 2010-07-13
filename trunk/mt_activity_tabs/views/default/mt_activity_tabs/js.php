@@ -18,6 +18,14 @@ $(document).ready(function () {
 		$('#mt_activity_tabs_settings').slideToggle("fast");
 		//return false;
     });
+
+	// register event handlers for spinner
+	$("#mt_ajax_spinner").ajaxStart(function(){
+		   $(this).show();
+		 });
+	$("#mt_ajax_spinner").ajaxStop(function(){
+		   $(this).hide();
+		 });
     
 	// load up nav tabs
 	// make ajax call
@@ -29,26 +37,14 @@ $(document).ready(function () {
 		cache: false,
 		success: function(returned_data){
 
-			// reload tabs
+			// load tabs
 			$('#elgg_horizontal_tabbed_nav').html(returned_data);
 		}
 	});
 	
 }); /* end document ready function */
 
-// called when a tab is clicked
-function mtActivityTabsTabClick()
-{
-    // register event handlers for spinner
-    $("#mt_activity_tabs_tab_spinner").ajaxStart(function(){
-    	   $(this).show();
-    	 });
-    $("#mt_activity_tabs_tab_spinner").ajaxStop(function(){
-    	   $(this).hide();
-    	 });
-}
-
-// called when a settings
+// called when settings change
 function mtActivityTabsSettings()
 {
 
