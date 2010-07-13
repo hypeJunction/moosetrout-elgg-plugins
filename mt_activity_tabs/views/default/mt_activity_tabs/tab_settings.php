@@ -34,7 +34,7 @@ $fb .= elgg_view('input/hidden', array('internalname' => 'plugin', 'value' => 'm
 $fb .= "<div class='admin_statistics'>\n";
 $fb .= "<div class='mt_activity_tabs_settings_close'></div>\n";
 $fb .= "<table border='1' cellpadding='5'>\n";
-$fb .= "<tr class='even'><th></th><th></th><th>" . elgg_echo('mt_activity_tabs:makedefault') . "</th></tr>\n";
+$fb .= "<tr><th></th><th></th><th>" . elgg_echo('mt_activity_tabs:makedefault') . "</th></tr>\n";
     
 // fix default_tab
 if (is_null($usersettings->default_tab)) {
@@ -71,10 +71,10 @@ if (!empty($collections)) {
         }
         
         // radio buttons
-        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $collectionid .']', 'value' => $usersettings->$collectionid, 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $collectionid .']', 'value' => $usersettings->$collectionid, 'js' => 'onclick="mtActivityTabsSettings(); return false;"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
         
         // add default radio button
-        $fb .= "<td>" . elgg_view('input/radio', array('internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'options' => array(''=>$collectionid))) . "</td></tr>\n";
+        $fb .= "<td>" . elgg_view('input/radio', array('internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'js' => 'onclick="mtActivityTabsSettings(); return false;"', 'options' => array(''=>$collectionid))) . "</td></tr>\n";
         
         // toggle even flag
         if($even) {
@@ -113,10 +113,10 @@ if (!empty($groups)) {
         }
         
         // radio buttons
-        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'js' => 'onclick="mtActivityTabsSettings(); return false;"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
 
         // add default radio button
-        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'options' => array(''=>$groupid))) . "</td></tr>\n";
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'js' => 'onclick="mtActivityTabsSettings(); return false;"', 'options' => array(''=>$groupid))) . "</td></tr>\n";
 
         // toggle even flag
         if($even) {
