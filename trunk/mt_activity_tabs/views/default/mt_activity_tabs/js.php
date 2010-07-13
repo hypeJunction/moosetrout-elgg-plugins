@@ -45,10 +45,6 @@ $(document).ready(function () {
 	
 }); /* end document ready function */
 
-$("#mt_display_tab_settings").click(function () {
-    $('#mt_activity_tabs_settings').slideToggle("slow");
-  });
-
 // called when settings change
 function mtActivityTabsSettings()
 {
