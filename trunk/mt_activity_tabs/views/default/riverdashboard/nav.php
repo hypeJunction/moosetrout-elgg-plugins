@@ -53,15 +53,6 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 
 ?>
 <div class="contentWrapper">
-<div id='nav_test'>
-
-<?php
-// calculate endpoint query string
-$nav_tab_endpoint_values = "orient=" . $vars['orient'] . "&type=" . $vars['type'] . "&url=" . $vars['url'] . "&user=" . $vars['user'];
-$nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_tabs_endpoint.php';
-
-?>
-</div>
 
 <div id="elgg_horizontal_tabbed_nav">
 </div>
