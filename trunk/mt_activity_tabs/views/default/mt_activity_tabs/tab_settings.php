@@ -34,7 +34,7 @@ $fb .= elgg_view('input/hidden', array('internalname' => 'plugin', 'value' => 'm
 $fb .= "<div class='admin_statistics'>\n";
 $fb .= "<div class='mt_activity_tabs_settings_close'></div>\n";
 $fb .= "<table border='1' cellpadding='5'>\n";
-$fb .= "<tr><th></th><th></th><th>" . elgg_echo('mt_activity_tabs:makedefault') . "</th></tr>\n";
+$fb .= "<tr><th></th><th>" . elgg_echo('mt_activity_tabs:display') . "</th><th>" . elgg_echo('mt_activity_tabs:makedefault') . "</th></tr>\n";
     
 // fix default_tab
 if (is_null($usersettings->default_tab)) {
