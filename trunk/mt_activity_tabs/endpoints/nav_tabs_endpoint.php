@@ -133,6 +133,7 @@ if (substr($orient, 0, 11) == 'collection_') {
 	<script type='text/javascript'>
 	$("#mt_display_tab_settings").click(function () {
     	$('#mt_activity_tabs_settings').slideToggle("slow");
+    	return false;
   	});
   	</script>
     
