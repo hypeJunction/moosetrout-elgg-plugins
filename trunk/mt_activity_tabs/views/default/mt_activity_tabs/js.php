@@ -52,12 +52,19 @@ $(document).ready(function () {
 function mtActivityTabsToggleDefaultRadio(stype,sid,swhich) {
 	alert('hello!');
 
+	// calculate default radio button id
+	var drbid = stype . '_' . sid;
+	alert ('drbid: ' . drbid);
+	
 	if ($(this).value == 'yes') {
 		alert('yes button!');
-	} else {
+	} else if ($(this).value == 'no') {
 		alert('no button!');
+	} else {
+		alert('button value not yes or no!!!');
 	}
-	alert('type: ' . stype . '; sid: ' . sid . '; which: ' . swhich);
+	
+	//alert('type: ' . stype . '; sid: ' . sid . '; which: ' . swhich);
 //	//var activate = ${'#' . id}.value;
 //
 //	// which radio button?
