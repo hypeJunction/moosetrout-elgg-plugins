@@ -67,7 +67,7 @@ function mtActivityTabsToggleDefaultRadio(stype,sid) {
 
 	// which radio button?
 	alert('this id: ' + $(this).id);
-	alert('this value: ' + $(this).val()));
+	alert('this value: ' + $(this).val());
 
 	// calculate default radio button id
 	var drb = type + '_' + id;
