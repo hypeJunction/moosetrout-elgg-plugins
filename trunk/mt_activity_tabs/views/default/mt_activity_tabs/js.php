@@ -49,7 +49,7 @@ $(document).ready(function () {
 }); /* end document ready function */
 
 // activate default radio button
-function mtActivityTabsToggleDefaultRadio(type,sid) {
+function mtActivityTabsToggleDefaultRadio(type,sid,which) {
 	alert('hello!');
 
 //	alert('type: ' . type . '; sid: ' . sid);
