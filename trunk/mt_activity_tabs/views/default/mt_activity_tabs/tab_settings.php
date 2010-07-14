@@ -41,6 +41,20 @@ if (is_null($usersettings->default_tab)) {
     $usersettings->default_tab = 'all';
 }
 
+// print out rows for all/friends/mine
+$fb .= "<tr class='even'><td class='column_one'>All</td>";
+$fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalid' => 'mtat_all', 'internalname' => 'params[all]', 'value' => $usersettings->all, 'js' => 'onclick="mtActivityTabsToggleDefaultRadio(\'collection\', \'all\'); return false;"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+
+// is default radio button disabled?
+unset($disabled);
+if ($usersettings->all == 'no') {
+    $disabled = 'disabled';
+}
+
+// default radio button    
+$fb .= "<td>" . elgg_view('input/radio', array('internalid' => "default_select_all", 'internalname' => 'params[default_tab]', 'disabled' => $disabled, 'value' => $usersettings->default_tab, 'options' => array(''=>'all'))) . "</td></tr>\n";
+
+        
 if (!empty($collections)) {
 
     $even = false;
