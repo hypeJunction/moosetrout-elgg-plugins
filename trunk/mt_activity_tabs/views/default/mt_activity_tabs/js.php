@@ -49,13 +49,13 @@ $(document).ready(function () {
 }); /* end document ready function */
 
 // activate default radio button
-function mtActivityTabsToggleDefaultRadio(type, id) {
-	alert('type: ' . type . '; id: ' . id);
+function mtActivityTabsToggleDefaultRadio(type,sid) {
+	alert('type: ' . type . '; sid: ' . sid);
 	//var activate = ${'#' . id}.value;
 
 	// which radio button?
 	alert('this id: ' . $(this).id);
-	alert('this value: ' . ${#id}.value);
+	alert('this value: ' . $(this).value);
 
 	// calculate default radio button id
 	var drb = type . '_' . id;
