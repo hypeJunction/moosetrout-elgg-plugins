@@ -80,8 +80,6 @@ function mtActivityTabsSettings()
 		}
 	});
 	
-	console.log(returned_data);
-	
 	return false;
 }
 
