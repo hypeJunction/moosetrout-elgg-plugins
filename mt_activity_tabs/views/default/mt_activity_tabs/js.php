@@ -63,8 +63,10 @@ function mtActivityTabsToggleDefaultRadio(stype,sid) {
 
 	// enable/disable default radio button
 	if (thisval == 'yes') {
+		alert('attempting to disable');
 		$("#" + drbid).attr("disabled","disabled");
 	} else if (thisval == 'no') {
+		alert('attempting to enable');
 		$("#" + drbid).removeAttr("disabled");
 	} else {
 		//alert('');
