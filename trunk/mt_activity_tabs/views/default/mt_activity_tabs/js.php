@@ -123,8 +123,8 @@ function mtLoadTabs()
 	// make ajax call
 	$.ajax({
 		type: "POST",
-		url: '<?php echo $nav_tab_endpoint_values ?>',
-		data: '<?php echo $nav_tab_endpoint_url ?>',
+		url: '<?php echo $nav_tab_endpoint_url ?>',
+		data: '<?php echo $nav_tab_endpoint_values ?>',
 		cache: false,
 		success: function(returned_data){
 
