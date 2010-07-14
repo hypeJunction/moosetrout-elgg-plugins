@@ -91,7 +91,7 @@ function mtActivityTabsSettings()
 	// make ajax call to submit settings form
 	$.ajax({
 		type: 'POST',
-		dataType: 'json',
+		dataType: 'text',
 		url: '<?php echo $usersettings_url ?>',
 		data: mapped_values,
 		cache: false,
