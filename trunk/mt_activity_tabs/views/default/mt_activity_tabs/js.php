@@ -56,6 +56,10 @@ function mtActivityTabsToggleDefaultRadio(stype,sid) {
 	// calculate default radio button id
 	var drbid = 'default_select_' + sid;
 	alert ('drbid: ' + drbid);
+
+	//
+	var thisval = $("input[name='params[" + sid + "]']:checked").val();
+	alert('thisval: ' + thisval);
 	
 	if ($(this).val() == 'yes') {
 		alert('yes button!');
@@ -69,11 +73,7 @@ function mtActivityTabsToggleDefaultRadio(stype,sid) {
 	alert('this id: ' + $(this).id);
 	alert('this value: ' + $(this).val());
 
-	// calculate default radio button id
-	var drb = type + '_' + id;
-	alert('drb: ' + drb);
-	
-
+	// enable/disable default radio button
 }
 
 // called when settings change
