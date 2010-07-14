@@ -49,7 +49,7 @@ $(document).ready(function () {
 }); /* end document ready function */
 
 // activate default radio button
-function mtActivityTabsToggleDefaultRadio(type,sid,which) {
+function mtActivityTabsToggleDefaultRadio(stype,sid,swhich) {
 	alert('hello!');
 
 	if ($(this).value == 'yes') {
@@ -57,7 +57,7 @@ function mtActivityTabsToggleDefaultRadio(type,sid,which) {
 	} else {
 		alert('no button!');
 	}
-	alert('type: ' . type . '; sid: ' . sid . '; which: ' . which);
+	alert('type: ' . stype . '; sid: ' . sid . '; which: ' . swhich);
 //	//var activate = ${'#' . id}.value;
 //
 //	// which radio button?
