@@ -60,20 +60,17 @@ function mtActivityTabsToggleDefaultRadio(stype,sid) {
 	//
 	var thisval = $("input[name='params[" + sid + "]']:checked").val();
 	alert('thisval: ' + thisval);
-	
-	if ($(this).val() == 'yes') {
-		alert('yes button!');
-	} else if ($(this).val() == 'no') {
-		alert('no button!');
-	} else {
-		alert('button value: ' + $(this).val());
-	}
-
-	// which radio button?
-	alert('this id: ' + $(this).id);
-	alert('this value: ' + $(this).val());
 
 	// enable/disable default radio button
+	if (thisval == 'yes') {
+		${"#" + drbid}.attr("disabled","disabled");
+	} else if (thisval == 'no') {
+		${"#" + drbid}.removeAttr("disabled");
+	} else {
+		//alert('');
+	}
+
+	return true;
 }
 
 // called when settings change
