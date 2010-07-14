@@ -94,8 +94,8 @@ function mtActivityTabsSettings()
 		url: '<?php echo $usersettings_url ?>',
 		data: mapped_values,
 		cache: false,
-		error: function(a, status, error) {
-			alert('a: ' + a + '; status: ' + status + '; error: ' + error);
+		error: function(xhr, status, error) {
+			alert('xhr error: ' + xhr.status + '; status: ' + status + '; error: ' + error);
 		},
 		success: function(returned_data){
 
