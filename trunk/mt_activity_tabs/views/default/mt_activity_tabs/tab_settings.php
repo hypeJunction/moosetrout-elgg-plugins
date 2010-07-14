@@ -77,9 +77,9 @@ if (!empty($collections)) {
         if ($usersettings->$collectionid == 'yes') {
             
             // add default radio button
-            $fb .= "<td>" . elgg_view('input/radio', array('internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'js' => 'onclick="mtActivityTabsSettings(); return false;"', 'options' => array(''=>$collectionid))) . "</td></tr>\n";
+            $fb .= "<td>" . elgg_view('input/radio', array('internalid' => "default_select_" . $collectionid, 'internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'js' => 'onclick="mtActivityTabsSettings(); return false;"', 'options' => array(''=>$collectionid))) . "</td></tr>\n";
         } else {
-            $fb .= "<td></td></tr>\n";
+            $fb .= "<td>" . elgg_view('input/radio', array('disabled' => 'disabled', 'internalid' => "default_select_" . $collectionid, 'internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'js' => 'onclick="mtActivityTabsSettings(); return false;"', 'options' => array(''=>$collectionid))) .  "</td></tr>\n";
         }
         
         // toggle even flag
@@ -125,7 +125,7 @@ if (!empty($groups)) {
         if ($usersettings->$groupid == 'yes') {
             $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'js' => 'onclick="mtActivityTabsSettings()"', 'options' => array(''=>$groupid))) . "</td></tr>\n";
         } else {
-            $fb .= "<td></td></tr>\n";
+            $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('disabled' => 'disabled', 'internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'js' => 'onclick="mtActivityTabsSettings()"', 'options' => array(''=>$groupid))) . "</td></tr>\n";
         }
         // toggle even flag
         if($even) {
