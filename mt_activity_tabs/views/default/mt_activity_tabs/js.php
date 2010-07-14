@@ -53,8 +53,8 @@ function mtActivityTabsToggleDefaultRadio(stype,sid,swhich) {
 	alert('hello!');
 
 	// calculate default radio button id
-	var drbid = stype . '_' . sid;
-	alert ('drbid: ' . drbid);
+	var drbid = stype + '_' + sid;
+	alert ('drbid: ' + drbid);
 	
 	if ($(this).value == 'yes') {
 		alert('yes button!');
@@ -64,19 +64,18 @@ function mtActivityTabsToggleDefaultRadio(stype,sid,swhich) {
 		alert('button value not yes or no!!!');
 	}
 	
-	//alert('type: ' . stype . '; sid: ' . sid . '; which: ' . swhich);
-//	//var activate = ${'#' . id}.value;
-//
-//	// which radio button?
-//	alert('this id: ' . $(this).id);
-//	alert('this value: ' . $(this).value);
-//
-//	// calculate default radio button id
-//	var drb = type . '_' . id;
-//	alert('drb: ' . drb);
+	alert('type: ' + stype . '; sid: ' + sid + '; which: ' + swhich);
+	var activate = ${'#' + id}.value;
+
+	// which radio button?
+	alert('this id: ' + $(this).id);
+	alert('this value: ' + $(this).value);
+
+	// calculate default radio button id
+	var drb = type + '_' + id;
+	alert('drb: ' + drb);
 	
-//	if (activate == 'yes') {
-//		${#drb}
+
 }
 
 // called when settings change
