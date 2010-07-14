@@ -99,6 +99,8 @@ function mtActivityTabsSettings()
 			mtLoadTabs();
 		}
 	});
+
+	return false;
 }
 
 // called when tabs need to be reloaded
