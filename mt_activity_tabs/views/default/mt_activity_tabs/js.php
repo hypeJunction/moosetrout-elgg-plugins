@@ -86,7 +86,8 @@ function mtActivityTabsSettings()
 	// serialize form values
 	var mapped_values = {};
 	mapped_values = $("#mt_activity_tabs_settings_form").serialize();
-
+	alert('mapped_values: ' + mapped_values);
+	
 	// make ajax call to submit settings form
 	$.ajax({
 		type: "POST",
