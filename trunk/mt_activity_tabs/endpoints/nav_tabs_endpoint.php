@@ -29,6 +29,7 @@ $groups = get_users_membership($user_guid);
 // grab default tab from usersettings
 $default_tab = $usersettings->default_tab;
 echo("default tab: " . $default_tab . "<br />\n");
+echo("all enabled: " . $usersettings->all . "<br />\n");
 
 $allselect = '';
 $friendsselect = '';
