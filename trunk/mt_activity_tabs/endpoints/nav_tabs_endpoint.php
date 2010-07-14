@@ -89,6 +89,8 @@ if (is_null($usersettings->all)) $usersettings->all == 'yes';
 if (is_null($usersettings->friends)) $usersettings->friends == 'yes';
 if (is_null($usersettings->mine)) $usersettings->mine == 'yes';
 
+var_dump($usersettings);
+
 if ($usersettings->all == 'yes') { ?>
 	<li <?php echo $allselect; ?>><a
 		onclick="javascript:$('#river_container').load('<?php echo $url; ?>pg/activity_tabs/?display=all&amp;content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
