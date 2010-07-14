@@ -21,7 +21,7 @@
 	padding:10px;
 }
 #mt_activity_tabs_settings_submit {
-	float: right;
+	margin-left:200px;
 }
 
 // override river icons
