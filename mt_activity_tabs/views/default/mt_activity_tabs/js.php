@@ -98,7 +98,7 @@ function mtActivityTabsSettings()
 			alert('xhr error: ' + xhr.status + '; status: ' + status + '; error: ' + error);
 		},
 		success: function(returned_data){
-
+			alert('Success! Reloading tabs');
 			// reload tabs
 			mtLoadTabs();
 		}
