@@ -41,9 +41,9 @@ if (is_null($usersettings->default_tab)) {
     $usersettings->default_tab = 'all';
 }
 
-// print out rows for all/friends/mine
+// print out row for all
 $fb .= "<tr class='even'><td class='column_one'>All</td>";
-$fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalid' => 'mtat_all', 'internalname' => 'params[all]', 'value' => $usersettings->all, 'js' => 'onclick="mtActivityTabsToggleDefaultRadio(\'collection\', \'all\'); return false;"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+$fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalid' => 'mtat_all', 'internalname' => 'params[all]', 'value' => $usersettings->all, 'js' => 'onclick="mtActivityTabsToggleDefaultRadio(\'all\', \'all\');"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
 
 // is default radio button disabled?
 unset($disabled);
@@ -85,7 +85,7 @@ if (!empty($collections)) {
         }
         
         // radio buttons
-        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalid' => 'mtat_c_' . $collectionid, 'internalname' => 'params[' . $collectionid .']', 'value' => $usersettings->$collectionid, 'js' => 'onclick="mtActivityTabsToggleDefaultRadio(\'collection\', \'' . $collectionid . '\'); return false;"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalid' => 'mtat_c_' . $collectionid, 'internalname' => 'params[' . $collectionid .']', 'value' => $usersettings->$collectionid, 'js' => 'onclick="mtActivityTabsToggleDefaultRadio(\'collection\', \'' . $collectionid . '\');"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
 
         // is default radio button disabled?
         unset($disabled);
