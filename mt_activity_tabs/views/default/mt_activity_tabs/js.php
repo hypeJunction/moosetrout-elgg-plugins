@@ -69,8 +69,8 @@ function mtActivityTabsSettings()
 		data: mapped_values,
 		cache: false,
 		error: function(xhr, status, error) {
+			alert('xhr error: ' + xhr.status + '; another: ' . xhr.ErrorMessage . '; status: ' + status + '; error: ' + error);
 			mtLoadTabs();
-			//alert('xhr error: ' + xhr.status + '; status: ' + status + '; error: ' + error);
 			return false;
 		},
 		success: function(returned_data){
@@ -99,6 +99,7 @@ function mtLoadTabs()
 			$('#elgg_horizontal_tabbed_nav').html(returned_data);
 		}
 	});
+	return false;
 }
 
 
