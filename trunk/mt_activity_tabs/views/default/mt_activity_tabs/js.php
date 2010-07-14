@@ -15,13 +15,6 @@ $usersettings_url = $CONFIG->wwwroot . "mod/mt_activity_tabs/endpoints/usersetti
 ?>
 <script type="text/javascript">
 $(document).ready(function () {
-	
-	// add events that show/hide settings div onclick
-//    $('#mt_display_tab_settings').click(function () {
-//        alert('+/- clicked');
-//		$('#mt_activity_tabs_settings').slideToggle("fast");
-//		return false;
-//    });
 
 	// register event handlers for spinner
 	$("#mt_ajax_spinner").ajaxStart(function(){
@@ -32,19 +25,7 @@ $(document).ready(function () {
 		 });
     
 	// load up nav tabs
-	// make ajax call
-	var endpoint_values = '<?php echo $nav_tab_endpoint_values ?>';
-	$.ajax({
-		type: "POST",
-		url: '<?php echo $nav_tab_endpoint_url ?>',
-		data: endpoint_values,
-		cache: false,
-		success: function(returned_data){
-
-			// load tabs
-			$('#elgg_horizontal_tabbed_nav').html(returned_data);
-		}
-	});
+	mtLoadTabs();
 	
 }); /* end document ready function */
 
@@ -75,14 +56,6 @@ function mtActivityTabsToggleDefaultRadio(stype,sid) {
 function mtActivityTabsSettings()
 {
 
-	// register event handlers for spinner
-	$("#mt_ajax_spinner").ajaxStart(function(){
-		   $(this).show();
-		 });
-	$("#mt_ajax_spinner").ajaxStop(function(){
-		   $(this).hide();
-		 });
-
 	// serialize form values
 	var mapped_values = {};
 	mapped_values = $("#mt_activity_tabs_settings_form").serialize();
@@ -112,14 +85,6 @@ function mtActivityTabsSettings()
 // called when tabs need to be reloaded
 function mtLoadTabs()
 {
-
-	// register event handlers for spinner
-	$("#mt_ajax_spinner").ajaxStart(function(){
-		   $(this).show();
-		 });
-	$("#mt_ajax_spinner").ajaxStop(function(){
-		   $(this).hide();
-		 });
 	 
 	// make ajax call
 	$.ajax({
