@@ -20,6 +20,9 @@
 	background-color:#eeeeee;
 	padding:10px;
 }
+#mt_activity_tabs_settings_submit {
+	float: right;
+}
 
 // override river icons
 .river_object_event_calendar_create {
