@@ -86,7 +86,8 @@ function mtActivityTabsSettings()
 // called when tabs need to be reloaded
 function mtLoadTabs()
 {
-	 
+	alert('loading tabs!');
+	
 	// make ajax call
 	$.ajax({
 		type: "POST",
