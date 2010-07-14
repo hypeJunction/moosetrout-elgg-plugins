@@ -29,7 +29,6 @@ $groups = get_users_membership($user_guid);
 // grab default tab from usersettings
 $default_tab = $usersettings->default_tab;
 $default_enabled = $usersettings->$default_tab;
-echo("default: " . $default_tab . "; enabled: " . $default_enabled . "<br />\n");
 
 $allselect = '';
 $friendsselect = '';
@@ -45,12 +44,12 @@ $user = $user_guid;
 //echo("NAV_TABS_ENDPOINT.PHP -- orient: $orient; url: $url; type: $type; subtype: $subtype; user: $user<br />");
 
 
-// set orient to default if not empty and enabled, otherwise set to all
+// set orient to default if not empty and enabled, otherwise set to friends
 if(empty($orient) && !empty($default_tab)) {
     if ($default_enabled == 'yes') {
         $orient = $default_tab;
     } else {
-        $orient = 'all';
+        $orient = 'friends';
     }
     //echo("Orient empty; setting to default_tab: " . $default_tab . "<br />\n");
 }
