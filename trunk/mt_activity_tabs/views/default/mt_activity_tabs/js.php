@@ -95,7 +95,7 @@ function mtActivityTabsSettings()
 		cache: false,
 		error: function(a, status, error) {
 			alert('a: ' + a + '; status: ' + status + '; error: ' + error);
-		}
+		},
 		success: function(returned_data){
 
 			// reload tabs
