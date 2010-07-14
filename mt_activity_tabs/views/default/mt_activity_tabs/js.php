@@ -48,6 +48,23 @@ $(document).ready(function () {
 	
 }); /* end document ready function */
 
+// activate default radio button
+function mtActivityTabsToggleDefaultRadio(type, id) {
+
+	var activate = ${#id}.value;
+
+	// which radio button?
+	alert('id: ' . $(this).id);
+	alert('value: ' . ${#id}.value);
+
+	// calculate default radio button id
+	var drb = type . '_' . id;
+	alert('drb: ' . drb);
+	
+//	if (activate == 'yes') {
+//		${#drb}
+}
+
 // called when settings change
 function mtActivityTabsSettings()
 {
