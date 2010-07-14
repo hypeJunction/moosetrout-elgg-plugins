@@ -88,6 +88,7 @@ if (is_null($usersettings->all)) $usersettings->all == 'yes';
 if (is_null($usersettings->friends)) $usersettings->friends == 'yes';
 if (is_null($usersettings->mine)) $usersettings->mine == 'yes';
 
+var_dump($usersettings);
 
 if ($usersettings->all == 'yes') { ?>
 	<li <?php echo $allselect; ?>><a
