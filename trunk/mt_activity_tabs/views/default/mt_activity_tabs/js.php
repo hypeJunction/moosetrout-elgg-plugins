@@ -52,7 +52,7 @@ $(document).ready(function () {
 function mtActivityTabsToggleDefaultRadio(type,sid,which) {
 	alert('hello!');
 
-	if ($(this).value == yes) {
+	if ($(this).value == 'yes') {
 		alert('yes button!');
 	} else {
 		alert('no button!');
