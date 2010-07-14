@@ -85,19 +85,19 @@ if (substr($orient, 0, 11) == 'collection_') {
 
 // clean up usersettings
 if (is_null($usersettings->all)) {
-    $usersettings->all == 'yes';
+    $usersettings->all = 'yes';
 } else {
     echo("usersettings->all is not null: " . $usersettings->all . "<br />\n");
 }
 if (is_null($usersettings->friends)) {
     
     echo("usersettings->friends is null<br />\n");
-    $usersettings->friends == 'yes';
+    $usersettings->friends = 'yes';
     echo("attempting to set usersettings-friends: ". $usersettings->friends . "<br />\n");
 } else {
     echo("usersettings->friends is not null: " . $usersettings->friends . "<br />\n");
 }
-if (is_null($usersettings->mine)) $usersettings->mine == 'yes';
+if (is_null($usersettings->mine)) $usersettings->mine = 'yes';
 
 var_dump($usersettings);
 
