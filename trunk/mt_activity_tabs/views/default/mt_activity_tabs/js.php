@@ -50,23 +50,19 @@ $(document).ready(function () {
 
 // activate default radio button
 function mtActivityTabsToggleDefaultRadio(stype,sid) {
-
-	alert('type: ' + stype + '; sid: ' + sid);
 	
 	// calculate default radio button id
 	var drbid = 'default_select_' + sid;
-	alert ('drbid: ' + drbid);
 
 	//
 	var thisval = $("input[name='params[" + sid + "]']:checked").val();
-	alert('thisval: ' + thisval);
 
 	// enable/disable default radio button
-	if (thisval == 'yes') {
-		alert('attempting to disable');
+	if (thisval == 'no') {
+		alert('attempting to disable ' + drbid);
 		$("#" + drbid).attr("disabled","disabled");
-	} else if (thisval == 'no') {
-		alert('attempting to enable');
+	} else if (thisval == 'yes') {
+		alert('attempting to enable ' + drbid);
 		$("#" + drbid).removeAttr("disabled");
 	} else {
 		//alert('');
