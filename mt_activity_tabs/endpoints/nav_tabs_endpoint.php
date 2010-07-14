@@ -28,6 +28,8 @@ $groups = get_users_membership($user_guid);
 	
 // grab default tab from usersettings
 $default_tab = $usersettings->default_tab;
+$default_enabled = $usersettings->$default_tab;
+echo("default: " . $default_tab . "; enabled: " . $default_enabled . "<br />\n");
 
 $allselect = '';
 $friendsselect = '';
@@ -48,6 +50,9 @@ if(empty($orient) && !empty($default_tab)) {
     $orient = $default_tab;
     //echo("Orient empty; setting to default_tab: " . $default_tab . "<br />\n");
 }
+
+// set orient to All if default is not enabled
+
 
 switch($orient) {
     case 'all':		$allselect = 'class="selected"';
