@@ -42,6 +42,10 @@ if (is_null($usersettings->default_tab)) {
 }
 
 // print out row for all
+// fix usersettings when NULL
+if (is_null($usersettings->all)) {
+    $usersettings->all = 'no';
+}
 $fb .= "<tr class='even'><td class='column_one'>All</td>";
 $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalid' => 'mtat_all', 'internalname' => 'params[all]', 'value' => $usersettings->all, 'js' => 'onclick="mtActivityTabsToggleDefaultRadio(\'all\', \'all\');"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
 
