@@ -16,7 +16,6 @@ $userid = $_SESSION['user']->guid;
 
 // grab collections from usersettings
 $usersettings = find_plugin_usersettings('mt_activity_tabs', $userid);
-var_dump($usersettings);
 
 // grab user
 $user_guid = $_SESSION['user']->guid;
@@ -29,6 +28,7 @@ $groups = get_users_membership($user_guid);
 	
 // grab default tab from usersettings
 $default_tab = $usersettings->default_tab;
+echo("default tab: " . $default_tab . "<br />\n");
 
 $allselect = '';
 $friendsselect = '';
@@ -41,7 +41,7 @@ $subtype = get_input('subtype');
 $url = $CONFIG->wwwroot;
 $user = $user_guid;
 
-echo("NAV_TABS_ENDPOINT.PHP -- orient: $orient; url: $url; type: $type; subtype: $subtype; user: $user<br />");
+//echo("NAV_TABS_ENDPOINT.PHP -- orient: $orient; url: $url; type: $type; subtype: $subtype; user: $user<br />");
 
 
 // set orient to default if empty
@@ -89,7 +89,6 @@ if (is_null($usersettings->all)) $usersettings->all == 'yes';
 if (is_null($usersettings->friends)) $usersettings->friends == 'yes';
 if (is_null($usersettings->mine)) $usersettings->mine == 'yes';
 
-var_dump($usersettings);
 
 if ($usersettings->all == 'yes') { ?>
 	<li <?php echo $allselect; ?>><a
