@@ -50,12 +50,12 @@ $(document).ready(function () {
 
 // activate default radio button
 function mtActivityTabsToggleDefaultRadio(type, id) {
-
-	var activate = ${'#' . id}.value;
+	alert('type: ' . type . '; id: ' . id);
+	//var activate = ${'#' . id}.value;
 
 	// which radio button?
-	alert('id: ' . $(this).id);
-	alert('value: ' . ${#id}.value);
+	alert('this id: ' . $(this).id);
+	alert('this value: ' . ${#id}.value);
 
 	// calculate default radio button id
 	var drb = type . '_' . id;
