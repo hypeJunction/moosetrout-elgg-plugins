@@ -50,7 +50,7 @@ if(empty($orient) && !empty($default_tab)) {
 }
 
 switch($orient) {
-    case '':		$allselect = 'class="selected"';
+    case 'all':		$allselect = 'class="selected"';
     break;
     case 'friends':		$friendsselect = 'class="selected"';
     break;
@@ -81,7 +81,7 @@ if (substr($orient, 0, 11) == 'collection_') {
 
 <ul>
 	<li <?php echo $allselect; ?>><a
-		onclick="javascript:$('#river_container').load('<?php echo $url; ?>pg/activity_tabs/?content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
+		onclick="javascript:$('#river_container').load('<?php echo $url; ?>pg/activity_tabs/?display=all&amp;content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
 		href="?display="><?php echo elgg_echo('all'); ?></a></li>
 	<li <?php echo $friendsselect; ?>><a
 		onclick="javascript:$('#river_container').load('<?php echo $url; ?>pg/activity_tabs/?display=friends&amp;content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
