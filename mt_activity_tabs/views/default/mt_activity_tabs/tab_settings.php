@@ -85,12 +85,12 @@ $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalid' => 
 
 // is default radio button disabled?
 unset($disabled);
-if ($usersettings->all == 'no') {
+if ($usersettings->mine == 'no') {
     $disabled = 'disabled';
 }
 
 // default radio button    
-$fb .= "<td>" . elgg_view('input/radio', array('internalid' => "default_select_all", 'internalname' => 'params[default_tab]', 'disabled' => $disabled, 'value' => $usersettings->default_tab, 'options' => array(''=>'all'))) . "</td></tr>\n";
+$fb .= "<td>" . elgg_view('input/radio', array('internalid' => "default_select_mine", 'internalname' => 'params[default_tab]', 'disabled' => $disabled, 'value' => $usersettings->default_tab, 'options' => array(''=>'mine'))) . "</td></tr>\n";
 
         
 if (!empty($collections)) {
