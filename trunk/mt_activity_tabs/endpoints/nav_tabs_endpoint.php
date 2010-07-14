@@ -90,7 +90,10 @@ if (is_null($usersettings->all)) {
     echo("usersettings->all is not null: " . $usersettings->all . "<br />\n");
 }
 if (is_null($usersettings->friends)) {
+    
+    echo("usersettings->friends is null<br />\n");
     $usersettings->friends == 'yes';
+    echo("attempting to set usersettings-friends: ". $usersettings->friends . "<br />\n");
 } else {
     echo("usersettings->friends is not null: " . $usersettings->friends . "<br />\n");
 }
