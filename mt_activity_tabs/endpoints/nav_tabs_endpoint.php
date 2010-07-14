@@ -26,6 +26,9 @@ $collections = get_user_access_collections($user_guid);
 // grab groups this user is a member of
 $groups = get_users_membership($user_guid);
 	
+// grab default tab from usersettings
+$default_tab = $usersettings->default_tab;
+
 $allselect = '';
 $friendsselect = '';
 $mineselect = '';
@@ -38,6 +41,13 @@ $url = $CONFIG->wwwroot;
 $user = $user_guid;
 
 echo("NAV_TABS_ENDPOINT.PHP -- orient: $orient; url: $url; type: $type; subtype: $subtype; user: $user<br />");
+
+
+// set orient to default if empty
+if(empty($orient) && !empty($default_tab)) {
+    $orient = $default_tab;
+    echo("Orient empty; setting to default_tab: " . $default_tab . "<br />\n");
+}
 
 switch($orient) {
     case '':		$allselect = 'class="selected"';
