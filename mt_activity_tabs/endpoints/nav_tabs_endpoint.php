@@ -84,9 +84,9 @@ if (substr($orient, 0, 11) == 'collection_') {
 <?php
 
 // clean up usersettings
-if (is_null($usersettings->all)) $usersettings->all == 'no';
-if (is_null($usersettings->friends)) $usersettings->friends == 'no';
-if (is_null($usersettings->mine)) $usersettings->mine == 'no';
+if (is_null($usersettings->all)) $usersettings->all == 'yes';
+if (is_null($usersettings->friends)) $usersettings->friends == 'yes';
+if (is_null($usersettings->mine)) $usersettings->mine == 'yes';
 
 if ($usersettings->all == 'yes') { ?>
 	<li <?php echo $allselect; ?>><a
