@@ -64,7 +64,7 @@ function mtActivityTabsToggleDefaultRadio(stype,sid,swhich) {
 		alert('button value not yes or no!!!');
 	}
 	
-	alert('type: ' + stype . '; sid: ' + sid + '; which: ' + swhich);
+	alert('type: ' + stype + '; sid: ' + sid + '; which: ' + swhich);
 	var activate = ${'#' + id}.value;
 
 	// which radio button?
