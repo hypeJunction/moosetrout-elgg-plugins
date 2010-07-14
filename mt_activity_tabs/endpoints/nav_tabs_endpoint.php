@@ -45,9 +45,13 @@ $user = $user_guid;
 //echo("NAV_TABS_ENDPOINT.PHP -- orient: $orient; url: $url; type: $type; subtype: $subtype; user: $user<br />");
 
 
-// set orient to default if empty
+// set orient to default if not empty and enabled, otherwise set to all
 if(empty($orient) && !empty($default_tab)) {
-    $orient = $default_tab;
+    if ($default_enabled == 'yes') {
+        $orient = $default_tab;
+    } else {
+        $orient = 'all';
+    }
     //echo("Orient empty; setting to default_tab: " . $default_tab . "<br />\n");
 }
 
