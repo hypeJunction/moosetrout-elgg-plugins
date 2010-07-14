@@ -57,7 +57,7 @@ function mtActivityTabsToggleDefaultRadio(type,sid,which) {
 	} else {
 		alert('no button!');
 	}
-//	alert('type: ' . type . '; sid: ' . sid);
+	alert('type: ' . type . '; sid: ' . sid . '; which: ' . which);
 //	//var activate = ${'#' . id}.value;
 //
 //	// which radio button?
