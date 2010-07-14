@@ -10,7 +10,7 @@ $nav_tab_endpoint_values = "orient=" . $vars['orient'] . "&type=" . $vars['type'
 $nav_tab_endpoint_url = $CONFIG->wwwroot . 'mod/mt_activity_tabs/endpoints/nav_tabs_endpoint.php';
 
 // use ajax to post to /action/plugins/usersettings/save
-$usersettings_url = $CONFIG->wwwroot . "action/plugins/usersettings/save";
+$usersettings_url = $CONFIG->wwwroot . "mod/mt_activity_tabs/endpoints/usersettings_save.php";
 
 ?>
 <script type="text/javascript">
