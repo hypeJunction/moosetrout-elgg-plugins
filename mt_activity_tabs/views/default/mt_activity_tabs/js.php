@@ -54,7 +54,7 @@ function mtActivityTabsToggleDefaultRadio(stype,sid) {
 	alert('type: ' + stype + '; sid: ' + sid);
 	
 	// calculate default radio button id
-	var drbid = stype + '_' + sid;
+	var drbid = 'default_select_' + sid;
 	alert ('drbid: ' + drbid);
 	
 	if ($(this).value == 'yes') {
