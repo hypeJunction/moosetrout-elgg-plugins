@@ -49,9 +49,9 @@ $(document).ready(function () {
 }); /* end document ready function */
 
 // activate default radio button
-function mtActivityTabsToggleDefaultRadio(stype,sid,swhich) {
+function mtActivityTabsToggleDefaultRadio(stype,sid) {
 
-	alert('type: ' + stype + '; sid: ' + sid + '; which: ' + swhich);
+	alert('type: ' + stype + '; sid: ' + sid);
 	
 	// calculate default radio button id
 	var drbid = stype + '_' + sid;
