@@ -71,7 +71,7 @@ if (!empty($collections)) {
         }
         
         // radio buttons
-        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalid' => 'mtat_c_' . $collectionid, 'internalname' => 'params[' . $collectionid .']', 'value' => $usersettings->$collectionid, 'js' => 'onclick="mtActivityTabsToggleDefaultRadio(\'collection\', '. $collectionid .'); return false;"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalid' => 'mtat_c_' . $collectionid, 'internalname' => 'params[' . $collectionid .']', 'value' => $usersettings->$collectionid, 'js' => 'onclick="mtActivityTabsToggleDefaultRadio(\'collection\', '. '{$collectionid}' .'); return false;"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
 
         // is default radio button disabled?
         unset($disabled);
@@ -119,7 +119,7 @@ if (!empty($groups)) {
         }
         
         // radio buttons
-        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'js' => 'onclick="mtActivityTabsToggleDefaultRadio(\'group\', ' . $groupid .')"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'js' => 'onclick="mtActivityTabsToggleDefaultRadio(\'group\', ' . '{$groupid}' .')"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
 
         // is default radio button disabled?
         unset($disabled);
