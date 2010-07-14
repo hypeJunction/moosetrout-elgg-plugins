@@ -46,7 +46,7 @@ $user = $user_guid;
 // set orient to default if empty
 if(empty($orient) && !empty($default_tab)) {
     $orient = $default_tab;
-    echo("Orient empty; setting to default_tab: " . $default_tab . "<br />\n");
+    //echo("Orient empty; setting to default_tab: " . $default_tab . "<br />\n");
 }
 
 switch($orient) {
