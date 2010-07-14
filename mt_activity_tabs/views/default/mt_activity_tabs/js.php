@@ -69,6 +69,7 @@ function mtActivityTabsSettings()
 		data: mapped_values,
 		cache: false,
 		error: function(xhr, status, error) {
+			mtLoadTabs();
 			//alert('xhr error: ' + xhr.status + '; status: ' + status + '; error: ' + error);
 			return false;
 		},
