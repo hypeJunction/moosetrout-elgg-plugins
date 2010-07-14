@@ -95,14 +95,14 @@ if ($usersettings->all == 'yes') { ?>
         <?php
 }
 	
-if ($usersettings->friends == 'friends') { ?>	
+if ($usersettings->friends == 'yes') { ?>	
 	<li <?php echo $friendsselect; ?>><a
 		onclick="javascript:$('#river_container').load('<?php echo $url; ?>pg/activity_tabs/?display=friends&amp;content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
 		href="?display=friends"><?php echo elgg_echo('friends'); ?></a></li>
         <?php
 }
 	
-if ($usersettings->all == 'mine') { ?>
+if ($usersettings->mine == 'yes') { ?>
 	<li <?php echo $mineselect; ?>><a
 		onclick="javascript:$('#river_container').load('<?php echo $url; ?>pg/activity_tabs/?display=mine&amp;content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
 		href="?display=mine"><?php echo elgg_echo('mine'); ?></a></li>
