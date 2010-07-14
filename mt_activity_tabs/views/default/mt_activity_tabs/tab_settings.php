@@ -71,16 +71,17 @@ if (!empty($collections)) {
         }
         
         // radio buttons
-        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $collectionid .']', 'value' => $usersettings->$collectionid, 'js' => 'onclick="mtActivityTabsSettings(); return false;"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $collectionid .']', 'value' => $usersettings->$collectionid, 'js' => 'onclick="mtActivityTabsActivateDefaultRadio({$collectionid}); return false;"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
         
-        // add default radio button if this group is enabled
+        // is default radio button disabled?
         if ($usersettings->$collectionid == 'yes') {
-            
-            // add default radio button
-            $fb .= "<td>" . elgg_view('input/radio', array('internalid' => "default_select_" . $collectionid, 'internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'js' => 'onclick="mtActivityTabsSettings(); return false;"', 'options' => array(''=>$collectionid))) . "</td></tr>\n";
+            $disabled = 'false';
         } else {
-            $fb .= "<td>" . elgg_view('input/radio', array('disabled' => 'disabled', 'internalid' => "default_select_" . $collectionid, 'internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'js' => 'onclick="mtActivityTabsSettings(); return false;"', 'options' => array(''=>$collectionid))) .  "</td></tr>\n";
+            $disabled = 'true';
         }
+        
+        // default radio button    
+        $fb .= "<td>" . elgg_view('input/radio', array('internalid' => "default_select_" . $collectionid, 'internalname' => 'params[default_tab]', 'disabled' => $disabled, 'value' => $usersettings->default_tab, 'options' => array(''=>$collectionid))) . "</td></tr>\n";
         
         // toggle even flag
         if($even) {
@@ -119,14 +120,18 @@ if (!empty($groups)) {
         }
         
         // radio buttons
-        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'js' => 'onclick="mtActivityTabsSettings()"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[' . $groupid .']', 'value' => $usersettings->$groupid, 'js' => 'onclick="mtActivityTabsActivateDefaultRadio({$groupid})"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
 
-        // add default radio button if this group is enabled
+        // is default radio button disabled?
         if ($usersettings->$groupid == 'yes') {
-            $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'js' => 'onclick="mtActivityTabsSettings()"', 'options' => array(''=>$groupid))) . "</td></tr>\n";
+            $disabled = 'false';
         } else {
-            $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('disabled' => 'disabled', 'internalname' => 'params[default_tab]', 'value' => $usersettings->default_tab, 'js' => 'onclick="mtActivityTabsSettings()"', 'options' => array(''=>$groupid))) . "</td></tr>\n";
+            $disabled = 'true';
         }
+        
+        // default radio button
+        $fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalid' => "default_select_" . $groupid, 'internalname' => 'params[default_tab]', 'disabled' => $disabled, 'value' => $usersettings->default_tab, 'options' => array(''=>$groupid))) . "</td></tr>\n";
+
         // toggle even flag
         if($even) {
             $even = false;
@@ -141,7 +146,7 @@ $fb .= "</div>\n";
 
 $fb .= elgg_view('input/button', array(	'name' => 'submit',
                                         'value' => elgg_echo('Submit'),
-										'js' => 'onclick="mtActivityTabsSettings(); return false;"' ));
+										'js' => 'onclick="mtActivityTabsSettings();"' ));
 
 // open div
 
