@@ -58,6 +58,40 @@ if ($usersettings->all == 'no') {
 // default radio button    
 $fb .= "<td>" . elgg_view('input/radio', array('internalid' => "default_select_all", 'internalname' => 'params[default_tab]', 'disabled' => $disabled, 'value' => $usersettings->default_tab, 'options' => array(''=>'all'))) . "</td></tr>\n";
 
+// print out row for friends
+// fix usersettings when NULL
+if (is_null($usersettings->friends)) {
+    $usersettings->friends = 'yes';
+}
+$fb .= "<tr class='even'><td class='column_one'>Friends</td>";
+$fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalid' => 'mtat_friends', 'internalname' => 'params[friends]', 'value' => $usersettings->friends, 'js' => 'onclick="mtActivityTabsToggleDefaultRadio(\'friends\', \'friends\');"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+
+// is default radio button disabled?
+unset($disabled);
+if ($usersettings->friends == 'no') {
+    $disabled = 'disabled';
+}
+
+// default radio button    
+$fb .= "<td>" . elgg_view('input/radio', array('internalid' => "default_select_friends", 'internalname' => 'params[default_tab]', 'disabled' => $disabled, 'value' => $usersettings->default_tab, 'options' => array(''=>'friends'))) . "</td></tr>\n";
+
+// print out row for mine
+// fix usersettings when NULL
+if (is_null($usersettings->mine)) {
+    $usersettings->mine = 'yes';
+}
+$fb .= "<tr class='even'><td class='column_one'>Mine</td>";
+$fb .= "<td>" . elgg_view('mt_activity_tabs/input/radio', array('internalid' => 'mtat_mine', 'internalname' => 'params[mine]', 'value' => $usersettings->mine, 'js' => 'onclick="mtActivityTabsToggleDefaultRadio(\'mine\', \'mine\');"', 'options' => array('yes'=>'yes', 'no'=>'no'))) . "</td>";
+
+// is default radio button disabled?
+unset($disabled);
+if ($usersettings->all == 'no') {
+    $disabled = 'disabled';
+}
+
+// default radio button    
+$fb .= "<td>" . elgg_view('input/radio', array('internalid' => "default_select_all", 'internalname' => 'params[default_tab]', 'disabled' => $disabled, 'value' => $usersettings->default_tab, 'options' => array(''=>'all'))) . "</td></tr>\n";
+
         
 if (!empty($collections)) {
 
