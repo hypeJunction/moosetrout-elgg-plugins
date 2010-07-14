@@ -86,7 +86,7 @@ function mtActivityTabsSettings()
 	// serialize form values
 	var mapped_values = {};
 	mapped_values = $("#mt_activity_tabs_settings_form").serialize();
-	alert('mapped_values: ' + mapped_values);
+	//alert('mapped_values: ' + mapped_values);
 	
 	// make ajax call to submit settings form
 	$.ajax({
@@ -96,11 +96,11 @@ function mtActivityTabsSettings()
 		data: mapped_values,
 		cache: false,
 		error: function(xhr, status, error) {
-			alert('xhr error: ' + xhr.status + '; status: ' + status + '; error: ' + error);
+			//alert('xhr error: ' + xhr.status + '; status: ' + status + '; error: ' + error);
 			return false;
 		},
 		success: function(returned_data){
-			alert('Success! Reloading tabs');
+			//alert('Success! Reloading tabs');
 			// reload tabs
 			mtLoadTabs();
 		}
