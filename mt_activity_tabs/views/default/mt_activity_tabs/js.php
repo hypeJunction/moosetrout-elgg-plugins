@@ -50,8 +50,9 @@ $(document).ready(function () {
 
 // activate default radio button
 function mtActivityTabsToggleDefaultRadio(stype,sid,swhich) {
-	alert('hello!');
 
+	alert('type: ' + stype + '; sid: ' + sid + '; which: ' + swhich);
+	
 	// calculate default radio button id
 	var drbid = stype + '_' + sid;
 	alert ('drbid: ' + drbid);
@@ -63,9 +64,6 @@ function mtActivityTabsToggleDefaultRadio(stype,sid,swhich) {
 	} else {
 		alert('button value not yes or no!!!');
 	}
-	
-	alert('type: ' + stype + '; sid: ' + sid + '; which: ' + swhich);
-	var activate = ${'#' + id}.value;
 
 	// which radio button?
 	alert('this id: ' + $(this).id);
