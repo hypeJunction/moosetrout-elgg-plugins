@@ -62,7 +62,7 @@ function mtActivityTabsSettings()
 	//alert('mapped_values: ' + mapped_values);
 	
 	// make ajax call to submit settings form
-	var response = $.ajax({
+	$.ajax({
 		type: 'POST',
 		dataType: 'text',
 		url: '<?php echo $usersettings_url ?>',
@@ -80,7 +80,7 @@ function mtActivityTabsSettings()
 		}
 	});
 	
-	console.log(response.responseText);
+	console.log(returned_data);
 	
 	return false;
 }
