@@ -20,7 +20,7 @@ $result = false;
 $response = array('response' => 'error');
 
 // send header
-echo(header('Content-type:application/json'));
+echo(header('Content-type:text/plain'));
 foreach ($params as $k => $v) {
 	// Save
 	$result = set_plugin_usersetting($k, $v, $_SESSION['user']->guid, $plugin);
