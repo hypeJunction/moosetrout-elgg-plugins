@@ -17,7 +17,6 @@ $params = get_input('params');
 $plugin = get_input('plugin');
 
 $result = false;
-$response = array('response' => 'error');
 
 // send header
 echo(header('Content-type:text/plain'));
@@ -29,13 +28,11 @@ foreach ($params as $k => $v) {
 	if (!$result) {
 	    
 	    // return error
-	    $response['response'] = sprintf(elgg_echo('plugins:usersettings:save:fail'), $plugin);
-		echo json_encode($response);
+	    echo sprintf(elgg_echo('plugins:usersettings:save:fail'), $plugin);
 		exit;
 	}
 }
 
 // return success
-$response['response'] = sprintf(elgg_echo('plugins:usersettings:save:ok'), $plugin);
-echo json_encode($response);
+echo sprintf(elgg_echo('plugins:usersettings:save:ok'), $plugin);
 exit;
