@@ -62,7 +62,7 @@ function mtActivityTabsToggleDefaultRadio(stype,sid) {
 	} else if ($(this).value == 'no') {
 		alert('no button!');
 	} else {
-		alert('button value not yes or no!!!');
+		alert('button value: ' + $(this).value);
 	}
 
 	// which radio button?
