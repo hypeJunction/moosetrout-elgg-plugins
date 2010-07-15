@@ -52,38 +52,7 @@ function mtActivityTabsToggleDefaultRadio(stype,sid) {
 	return true;
 }
 
-// called when settings are submitted
-function mtActivityTabsSettings()
-{
-
-	// serialize form values
-	var mapped_values = {};
-	mapped_values = $("#mt_activity_tabs_settings_form").serialize();
-	//alert('mapped_values: ' + mapped_values);
-	
-	// make ajax call to submit settings form
-	$.ajax({
-		type: 'POST',
-		dataType: 'text',
-		url: '<?php echo $usersettings_url ?>',
-		data: mapped_values,
-		cache: false,
-		error: function(xhr, status, error) {
-			//alert('xhr error: ' + xhr.status + '; another: ' + xhr.ErrorMessage + '; status: ' + status + '; error: ' + error);
-			mtLoadTabs();
-			return false;
-		},
-		success: function(returned_data){
-			//alert('Success! Reloading tabs');
-			// reload tabs
-			mtLoadTabs();
-		}
-	});
-	
-	return false;
-}
-
-// called when tabs need to be reloaded
+// called when tabs need to be loaded
 function mtLoadTabs()
 {
 	//alert('loading tabs!');
