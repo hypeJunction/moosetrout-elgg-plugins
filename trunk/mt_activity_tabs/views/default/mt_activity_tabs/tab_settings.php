@@ -197,8 +197,8 @@ $fb .= "</div>\n";
 $fb .= elgg_view('input/button', array(	'internalid' => 'mt_activity_tabs_settings_submit',
 										'name' => 'submit',
                                         'value' => elgg_echo('Submit'),
-                                        'action' => '#',
-										'js' => 'onclick="mtActivityTabsSettings();"' ));
+                                        'action' => $CONFIG->wwwroot . 'actions/plugins/usersettings/save'));
+										//'js' => 'onclick="mtActivityTabsSettings();"' ));
 
 // open div
 
