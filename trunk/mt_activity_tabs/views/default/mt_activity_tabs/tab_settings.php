@@ -206,7 +206,7 @@ echo("<div id='mt_activity_tabs_settings_header'></div>\n");
 echo("<div id='mt_activity_tabs_settings_body'>\n");
 
 // write out form
-echo elgg_view('input/form', array('action' => $CONFIG->wwwroot . 'actions/plugins/usersettings/save', 'body' => $fb, 'internalid' =>'mt_activity_tabs_settings_form'));
+echo elgg_view('input/form', array('action' => $CONFIG->wwwroot . 'action/plugins/usersettings/save', 'body' => $fb, 'internalid' =>'mt_activity_tabs_settings_form'));
 
 // write out explanations for groups and collections
 ?>
