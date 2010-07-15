@@ -52,7 +52,7 @@ function mtActivityTabsToggleDefaultRadio(stype,sid) {
 	return true;
 }
 
-// called when settings change
+// called when settings are submitted
 function mtActivityTabsSettings()
 {
 
@@ -69,7 +69,7 @@ function mtActivityTabsSettings()
 		data: mapped_values,
 		cache: false,
 		error: function(xhr, status, error) {
-			alert('xhr error: ' + xhr.status + '; another: ' + xhr.ErrorMessage + '; status: ' + status + '; error: ' + error);
+			//alert('xhr error: ' + xhr.status + '; another: ' + xhr.ErrorMessage + '; status: ' + status + '; error: ' + error);
 			mtLoadTabs();
 			return false;
 		},
@@ -86,7 +86,7 @@ function mtActivityTabsSettings()
 // called when tabs need to be reloaded
 function mtLoadTabs()
 {
-	alert('loading tabs!');
+	//alert('loading tabs!');
 	
 	// make ajax call
 	$.ajax({
