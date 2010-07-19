@@ -16,6 +16,7 @@ $english = array(
     'mt_activity_tabs:groupexpl' => ' is a group; groups have their own discussion forum, shared calendar, shared bookmarks, etc. ',
     'mt_activity_tabs:display' => 'Display',
     'mt_activity_tabs:makedefault' => 'Default',
+    'mt_activity_tabs_settings:settings:disablefriends' => 'Allow users to disable friends feed?',
     'mt_activity_tabs:on' => 'on',
     'mt_activity_tabs:off' => 'off',
     'mt_activity_tabs:description' => 'View By Collections/Groups of People:',
