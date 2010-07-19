@@ -14,5 +14,6 @@ echo elgg_view('mt_activity_tabs/tab_settings');
 <script type="text/javascript">
 $(document).ready(function() {
 	$('#mt_activity_tabs_usersettings').show();
+	$('#mt_activity_tabs_usersettings_header').hide();
 });
 </script>
