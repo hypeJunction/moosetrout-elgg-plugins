@@ -24,7 +24,7 @@ if ($user_guid) $user_guid = $_SESSION['user']->guid;
 if (elgg_view("usersettings/{$plugin}/edit")) {
     ?>
 <div class="contentWrapper">
-<h3 class="settings"><a name="<?php echo elgg_echo($plugin); ?>"><?php echo elgg_echo($plugin); ?></a></h3>
+<h3 class="settings"><a name="<?php echo $plugin; ?>"><?php echo elgg_echo($plugin); ?></a></h3>
 
 <div id="<?php echo $plugin; ?>_settings"><?php echo elgg_view("object/plugin", array('plugin' => $plugin, 'entity' => find_plugin_usersettings($plugin, $user_guid), 'prefix' => 'user')) ?>
 </div>
