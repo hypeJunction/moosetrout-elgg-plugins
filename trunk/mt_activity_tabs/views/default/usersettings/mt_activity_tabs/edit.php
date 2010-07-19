@@ -8,3 +8,11 @@
  */
 
 echo elgg_view('mt_activity_tabs/tab_settings');
+
+// script to display block
+?>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#mt_activity_tabs_settings').show();
+});
+</script>
