@@ -102,13 +102,22 @@ if ($usersettings->all == 'yes') { ?>
 		href="?display="><?php echo elgg_echo('all'); ?></a></li>
         <?php
 }
+$pluginsettings = find_plugin_settings('mt_activity_tabs');
+
+// display if users allowed to disable but choose to view
+// or display if users not allowed to disable
+if ((($pluginsettings->enable_disable_friends == 'true') && ($usersettings->friends == 'yes')) 
+    || ($pluginsettings->enable_disable_friends == 'false')) {
+
 ?>	
 	
 	<li <?php echo $friendsselect; ?>><a
 		onclick="javascript:$('#river_container').load('<?php echo $url; ?>pg/activity_tabs/?display=friends&amp;content=<?php echo $type; ?>,<?php echo $vars['subtype']; ?>&amp;callback=true'); return false;"
 		href="?display=friends"><?php echo elgg_echo('friends'); ?></a></li>
-        <?php
+        
 
+<?php
+}
 	
 if ($usersettings->mine == 'yes') { ?>
 	<li <?php echo $mineselect; ?>><a
