@@ -2,24 +2,24 @@
 	float: right;
 	display: none;
 }
-#mt_activity_tabs_settings {
+#mt_activity_tabs_usersettings {
 	display:none;
 }
-#mt_activity_tabs_settings_close {
+#mt_activity_tabs_usersettings_close {
 	float:right;
 	background: url(<?php echo $vars['url']; ?>/mod/embed/images/close_button.gif) no-repeat center -1px;
 }
-#mt_activity_tabs_settings_header {
+#mt_activity_tabs_usersettings_header {
 	height:10px;
 	background: url(<?php echo $vars['url']; ?>mod/mt_activity_tabs/_graphics/div_up.png) no-repeat center -1px;
 	background-color:white;
 }
-#mt_activity_tabs_settings_body {
+#mt_activity_tabs_usersettings_body {
 	border:1px solid #cccccc;
 	background-color:#eeeeee;
 	padding:10px;
 }
-#mt_activity_tabs_settings_submit {
+#mt_activity_tabs_usersettings_submit {
 	margin-left:300px;
 }
 

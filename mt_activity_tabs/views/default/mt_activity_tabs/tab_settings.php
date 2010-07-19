@@ -32,7 +32,7 @@ $url = $CONFIG->wwwroot . "action/plugins/usersettings/save";
 $fb .= elgg_view('input/hidden', array('internalname' => 'plugin', 'value' => 'mt_activity_tabs'));
 
 $fb .= "<div class='admin_statistics'>\n";
-$fb .= "<div class='mt_activity_tabs_settings_close'></div>\n";
+$fb .= "<div class='mt_activity_tabs_usersettings_close'></div>\n";
 $fb .= "<table border='1' cellpadding='5'>\n";
 $fb .= "<tr><th></th><th>" . elgg_echo('mt_activity_tabs:display') . "</th><th>" . elgg_echo('mt_activity_tabs:makedefault') . "</th></tr>\n";
     
@@ -194,23 +194,23 @@ if (!empty($groups)) {
 $fb .= "</table>\n";
 $fb .= "</div>\n";
 
-$fb .= elgg_view('input/button', array(	'internalid' => 'mt_activity_tabs_settings_submit',
+$fb .= elgg_view('input/button', array(	'internalid' => 'mt_activity_tabs_usersettings_submit',
 										'name' => 'submit',
                                         'value' => elgg_echo('Submit')));
 
 // open div
 
-echo("<div id='mt_activity_tabs_settings'>\n");
-echo("<div id='mt_activity_tabs_settings_header'></div>\n");
-echo("<div id='mt_activity_tabs_settings_body'>\n");
+echo("<div id='mt_activity_tabs_usersettings'>\n");
+echo("<div id='mt_activity_tabs_usersettings_header'></div>\n");
+echo("<div id='mt_activity_tabs_usersettings_body'>\n");
 
 // write out form
-echo elgg_view('input/form', array('action' => $CONFIG->wwwroot . 'action/plugins/usersettings/save', 'body' => $fb, 'internalid' =>'mt_activity_tabs_settings_form'));
+echo elgg_view('input/form', array('action' => $CONFIG->wwwroot . 'action/plugins/usersettings/save', 'body' => $fb, 'internalid' =>'mt_activity_tabs_usersettings_form'));
 
 // write out explanations for groups and collections
 ?>
 <p><img src="<?php echo $CONFIG->wwwroot ?>mod/mt_activity_tabs/_graphics/river_icon_collection.png" /><?php echo elgg_echo('mt_activity_tabs:collectionexpl')?><a href="<?php echo $CONFIG->wwwroot ?>pg/collections/add"><?php echo elgg_echo('mt_activity_tabs:createcollection')?></a></p>
 <p><img src="<?php echo $CONFIG->wwwroot ?>mod/mt_activity_tabs/_graphics/river_icon_group.png" /><?php echo elgg_echo('mt_activity_tabs:groupexpl')?><a href="<?php echo $CONFIG->wwwroot ?>pg/groups/new"><?php echo elgg_echo('mt_activity_tabs:creategroup')?></a></p>
 
-</div><!--  close mt_activity_tabs_settings_body div -->
-</div><!--  close mt_activity_tabs_settings div -->
+</div><!--  close mt_activity_tabs_usersettings_body div -->
+</div><!--  close mt_activity_tabs_usersettings div -->
