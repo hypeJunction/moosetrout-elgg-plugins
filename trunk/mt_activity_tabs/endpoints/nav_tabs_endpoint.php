@@ -172,7 +172,7 @@ foreach($group_ids as $id) {
 }
 	
 // add settings tab
-echo("<li><a href='" . $CONFIG->wwwroot ."pg/settings/plugins#mt_activity_tabs' id='mt_display_tab_settings'>+/-</a></li>");
+echo("<li><a href='" . $CONFIG->wwwroot ."pg/settings/plugins/" . $userid  . "#mt_activity_tabs' id='mt_display_tab_settings'>+/-</a></li>");
 
 ?>
 <script type='text/javascript'>
