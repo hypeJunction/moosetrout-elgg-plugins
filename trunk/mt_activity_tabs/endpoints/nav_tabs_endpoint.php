@@ -168,7 +168,7 @@ echo("<li><a href='" . $CONFIG->wwwroot ."pg/settings/plugins#mt_activity_tabs' 
 ?>
 <script type='text/javascript'>
 $("#mt_display_tab_settings").click(function () {
-	$('#mt_activity_tabs_settings').slideToggle("slow");
+	$('#mt_activity_tabs_usersettings').slideToggle("slow");
 	return false;
 });
 </script>

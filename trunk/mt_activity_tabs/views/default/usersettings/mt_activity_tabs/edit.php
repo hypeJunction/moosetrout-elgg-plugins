@@ -13,6 +13,6 @@ echo elgg_view('mt_activity_tabs/tab_settings');
 ?>
 <script type="text/javascript">
 $(document).ready(function() {
-	$('#mt_activity_tabs_settings').show();
+	$('#mt_activity_tabs_usersettings').show();
 });
 </script>
