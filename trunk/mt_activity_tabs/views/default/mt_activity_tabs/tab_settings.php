@@ -60,7 +60,7 @@ $fb .= "<td>" . elgg_view('input/radio', array('internalid' => "default_select_a
 
 // print out row for friends
 $pluginsettings = find_plugin_settings('mt_activity_tabs');
-if ($pluginsettings->enable_disable_friends == 'yes') {
+if ($pluginsettings->enable_disable_friends == 'true') {
     
     // fix usersettings when NULL
     if (is_null($usersettings->friends)) {
