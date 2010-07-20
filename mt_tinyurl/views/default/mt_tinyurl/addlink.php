@@ -52,7 +52,13 @@ function mt_tinyurl_sendTinyURL(entityname) {
 
     	// put tinyurl in form
     	$('textarea[name='+entityname+']').val($('textarea[name='+entityname+']').val() + ' ' + tinyurl);			
-	}); 
+	});
+
+	// finally, hide form
+	$('#mt_tinyurl_form').hide();
+
+	// do not submit form!
+	return false;
 }
 </script>
 
