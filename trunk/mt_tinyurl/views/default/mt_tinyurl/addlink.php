@@ -10,6 +10,9 @@
 $pluginsettings = find_plugin_settings('mt_tinyurl');
 $facebox = $pluginsettings->mode;
 
+// name of form to insert tinyurl into
+$internalname = 'note';
+
 $link = "<a id='mt_tinyurl_link' class=\"tinyurl_option\" href=\"{$vars['url']}pg/mt_tinyurl/longurl?internalname=note\" ";
 
 // facebox or
@@ -64,7 +67,7 @@ echo elgg_view("input/text", array(
 ?> </label></p>
 <input type="button"
 	value="<?php echo elgg_echo("shortlink:insert"); ?>"
-	onclick="javascript:mt_tinyurl_sendTinyURL('<?php echo $vars['internalname']; ?>');" />
+	onclick="javascript:mt_tinyurl_sendTinyURL('<?php echo $internalname; ?>');" />
 </div>
 </div>
 
