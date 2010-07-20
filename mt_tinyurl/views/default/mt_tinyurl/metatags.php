@@ -1,5 +1,5 @@
 		<script type="text/javascript">
-		 jQuery(document).ready(function($) {
+		$(document).ready(function() {
 		  $('a[rel*=facebox]').facebox()
 		});
 		</script>
