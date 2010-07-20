@@ -1,6 +1,6 @@
 <h1 class="linkModalTitle"><?php echo elgg_echo("shortlink:modaltitle"); ?></h1>
 <div id='sectionLink'>
-<script>
+<script type="text/javascript">
 function getTinyURL(longURL, success) {
  
     var API = 'http://json-tinyurl.appspot.com/?url=',
