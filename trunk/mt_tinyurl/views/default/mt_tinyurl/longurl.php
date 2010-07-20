@@ -13,10 +13,10 @@ function getTinyURL(longURL, success) {
 	
 function sendTinyURL(entityname) {
  
-    var link = $('input[@name=link]').val();
+    var link = $('input[name=link]').val();
 	getTinyURL(link, function(tinyurl){
     // Do something with tinyurl:
-    $('textarea[@name='+entityname+']').val($('textarea[@name='+entityname+']').val() + ' ' + tinyurl);			
+    $('textarea[name='+entityname+']').val($('textarea[name='+entityname+']').val() + ' ' + tinyurl);			
 	$.facebox.close();
 	}); 
 }
