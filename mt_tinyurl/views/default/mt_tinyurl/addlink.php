@@ -51,7 +51,7 @@ function mt_tinyurl_sendTinyURL(entityname) {
     mt_tinyurl_getTinyURL(link, function(tinyurl){
 
     	// put tinyurl in form
-    	$('textarea[name='+entityname+']').val($('textarea[name='+entityname+']').val() + ' ' + tinyurl);			
+    	$('textarea[name='+entityname+']').val($('textarea[name='+entityname+']').val() + tinyurl);			
 	});
 
 	// finally, hide form
