@@ -1,3 +1,17 @@
+<?php
+
+/**
+ * Ajax endpoint that returns a longurl form
+ */
+
+// load elgg
+
+
+// make sure we are logged in, etc etc
+gatekeeper();
+
+?>
+
 <h1 class="linkModalTitle"><?php echo elgg_echo("shortlink:modaltitle"); ?></h1>
 <div id='sectionLink'>
 <script type="text/javascript">
