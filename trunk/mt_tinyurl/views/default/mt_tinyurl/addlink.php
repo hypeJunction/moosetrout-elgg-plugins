@@ -7,15 +7,15 @@
 <!-- open mt_tinyurl link -->
 <?php
 // grab pluginsetting
-$pluginsettings = getpluginsettings('mt_tinyurl');
+$pluginsettings = find_plugin_settings('mt_tinyurl');
 $facebox = $pluginsettings->mode;
 
 $link = "<a id='mt_tinyurl_link' class=\"tinyurl_option\" href=\"{$vars['url']}pg/mt_tinyurl/longurl?internalname=note\" ";
 
 // facebox or
-if ($pluginsetting->mode == 'facebox') {
+if ($pluginsettings->mode == 'facebox') {
     $link .= 'rel=\"facebox\">';
-} else if ($pluginsetting->mode == 'accordion') {
+} else if ($pluginsettings->mode == 'accordion') {
     //$link .= ' js=\"onclick=\'showhide()\';
 }
 
