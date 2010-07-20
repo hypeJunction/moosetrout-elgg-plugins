@@ -3,4 +3,3 @@
 		  $('a[rel*=facebox]').facebox()
 		});
 		</script>
-		<script type="text/javascript" src="<?php echo $vars['url']; ?>mod/mt_tinyurl/jquery.form.js"></script> 
