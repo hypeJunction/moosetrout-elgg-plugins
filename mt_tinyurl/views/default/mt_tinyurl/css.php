@@ -12,6 +12,10 @@
 
 ?>
 
+#mt_tinyurl_form {
+	display:none;
+}
+
 #facebox {
 	position: absolute;
 	top: 0;
