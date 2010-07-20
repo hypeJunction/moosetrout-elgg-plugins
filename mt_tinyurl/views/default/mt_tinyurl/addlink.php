@@ -64,7 +64,7 @@ echo elgg_view("input/text", array(
 ?> </label></p>
 <input type="button"
 	value="<?php echo elgg_echo("shortlink:insert"); ?>"
-	onclick="javascript:sendTinyURL('<?php echo $vars['internalname']; ?>');" />
+	onclick="javascript:mt_tinyurl_sendTinyURL('<?php echo $vars['internalname']; ?>');" />
 </div>
 </div>
 
