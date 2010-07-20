@@ -27,6 +27,11 @@ function mt_tinyurl_init() {
     register_page_handler('mt_tinyurl','mt_tinyurl_page_handler');
 }
 
+/**
+ * Page handler
+ * 
+ * @param $page
+ */
 function mt_tinyurl_page_handler($page) {
     switch($page[0]) {
         default:			require_once(dirname(__FILE__) . '/longurl.php');
