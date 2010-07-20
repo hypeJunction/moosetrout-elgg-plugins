@@ -17,7 +17,7 @@ function mt_tinyurl_init() {
     elgg_extend_view('css','mt_tinyurl/css');
     	
     // extend urlshortener view!
-    elgg_extend_view('input/urlshortener', 'my_tinyurl/addlink');
+    elgg_extend_view('input/urlshortener', 'mt_tinyurl/addlink');
     	
     if(!is_plugin_enabled('embed')){
         elgg_extend_view('js/initialise_elgg','mt_tinyurl/js');
