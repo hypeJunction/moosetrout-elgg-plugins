@@ -51,7 +51,6 @@ if (isset($content[1])) {
     $subtype = '';
 }
 $orient = get_input('display');
-echo("INDEX.PHP -- orient: $orient<br />");
 
 if (substr($orient, 0, 11) == 'collection_') {
     $c_river = true;
