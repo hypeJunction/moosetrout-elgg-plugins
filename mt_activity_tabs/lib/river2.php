@@ -184,6 +184,17 @@ $limit = 20, $offset = 0, $posted_min = 0, $posted_max = 0) {
     // HUH?
     $where[] = str_replace("and enabled='yes'",'',str_replace('owner_guid','subject_guid',get_access_sql_suffix()));
 
+    // add limiters for type and subtype and action_type
+	if (!empty($type)) {
+		$where[] = " type = '{$type}' ";
+	}
+	if (!empty($subtype)) {
+		$where[] = " subtype = '{$subtype}' ";
+	}
+	if (!empty($action_type)) {
+		$where[] = " action_type = '{$action_type}' ";
+	}
+	
     // grab array of users in this collection
     //$collection_users = get_members_of_access_collection($collection_guid, true);
     $group_users = get_group_members($group_guid);
