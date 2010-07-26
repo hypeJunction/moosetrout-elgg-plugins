@@ -23,7 +23,7 @@ $english = array(
     'mt_activity_tabs:clickhere' => 'Click here to go to Activity Tabs.',
     'mt_activity_tabs:nocollections' => 'You have no collections.',
 	'mt_activity_tabs:nogroups' => 'You are not a member of any groups',
-    'mt_activity_tabs:empty' => 'There are no users in this group or collection.',
+    'mt_activity_tabs:empty' => 'No results found.',
     'mt_activity_tabs:addtab' => 'To add an Activity Tab for a group or collection, go to My Account -> Configure your tools -> Activity Tabs or click here.'
 );
 
