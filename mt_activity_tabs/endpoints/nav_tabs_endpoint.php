@@ -185,6 +185,7 @@ $("#mt_display_tab_settings").click(function () {
 	$('#mt_activity_tabs_usersettings').slideToggle("slow");
 
 	if($('mt_activity_tabs_usersettings').is(':visible')) {
+		alert('visible!');
 		$('mt_display_tab_settings').html('close');
 	}
 	return false;
