@@ -174,7 +174,12 @@ foreach($group_ids as $id) {
 // add settings tab
 echo("<li><a href='" . $CONFIG->wwwroot ."pg/settings/plugins/" . $userid  . "#mt_activity_tabs' id='mt_display_tab_settings'>+/-</a></li>");
 
+// add ajax spinner
+echo("<li id='mt_ajax_spinner'><img src='" . $url . "_graphics/ajax_loader.gif' /></li>");
 ?>
+	    
+</ul>
+
 <script type='text/javascript'>
 $("#mt_display_tab_settings").click(function () {
 	$('#mt_activity_tabs_usersettings').slideToggle("slow");
@@ -185,10 +190,3 @@ $("#mt_display_tab_settings").click(function () {
 	return false;
 });
 </script>
-
-<?php
-// add ajax spinner
-echo("<li id='mt_ajax_spinner'><img src='" . $url . "_graphics/ajax_loader.gif' /></li>");
-?>
-	    
-</ul>
