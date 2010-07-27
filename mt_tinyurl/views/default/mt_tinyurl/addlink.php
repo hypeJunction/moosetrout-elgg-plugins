@@ -33,7 +33,6 @@ $("#mt_tinyurl_link").click(function () {
 });
 </script>
 <div id='mt_tinyurl_form'>
-<h3><?php echo elgg_echo("shortlink:modaltitle"); ?></h3>
 <div id='sectionLink'><script type="text/javascript">
 function mt_tinyurl_getTinyURL(longURL, success) {
  
@@ -63,7 +62,7 @@ function mt_tinyurl_sendTinyURL(entityname) {
 </script>
 
 <div id="linkFormText">
-<p><label><?php echo elgg_echo("shortlink:link"); ?><br />
+<h3><?php echo elgg_echo("shortlink:modaltitle"); ?></h3>
 <?php
 
 echo elgg_view("input/text", array(
