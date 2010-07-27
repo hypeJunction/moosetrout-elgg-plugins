@@ -178,6 +178,10 @@ echo("<li><a href='" . $CONFIG->wwwroot ."pg/settings/plugins/" . $userid  . "#m
 <script type='text/javascript'>
 $("#mt_display_tab_settings").click(function () {
 	$('#mt_activity_tabs_usersettings').slideToggle("slow");
+
+	if($('mt_activity_tabs_usersettings').display == 'block') {
+		$('mt_display_tab_settings').html('close');
+	}
 	return false;
 });
 </script>
