@@ -33,7 +33,7 @@ $("#mt_tinyurl_link").click(function () {
 });
 </script>
 <div id='mt_tinyurl_form'>
-<h1 class="linkModalTitle"><?php echo elgg_echo("shortlink:modaltitle"); ?></h1>
+<h1><?php echo elgg_echo("shortlink:modaltitle"); ?></h1>
 <div id='sectionLink'><script type="text/javascript">
 function mt_tinyurl_getTinyURL(longURL, success) {
  
