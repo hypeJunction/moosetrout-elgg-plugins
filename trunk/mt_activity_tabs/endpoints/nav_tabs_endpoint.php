@@ -186,7 +186,7 @@ $("#mt_display_tab_settings").click(function () {
 
 	if($('mt_activity_tabs_usersettings').is(':visible')) {
 		alert('visible!');
-		$('mt_display_tab_settings').html('close');
+		$('mt_display_tab_settings').text('<?php elgg_echo('mt_activity_tabs:close') ?>');
 	}
 	return false;
 });
