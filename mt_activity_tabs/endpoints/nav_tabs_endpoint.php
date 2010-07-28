@@ -196,7 +196,7 @@ $("#mt_display_tab_settings").click(function () {
 		$('#mt_display_tab_settings').text('\(<?php echo elgg_echo('mt_activity_tabs:open') ?>\)');
 	}
 
-	if($('#mt_activity_tabs_usersettings').text() == '(close)' {
+	if($('#mt_activity_tabs_usersettings').text() == '(close)') {
 		alert('OPENING!');
 	}
 		
