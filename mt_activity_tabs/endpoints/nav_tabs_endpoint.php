@@ -184,8 +184,12 @@ echo("<li id='mt_ajax_spinner'><img src='" . $url . "_graphics/ajax_loader.gif' 
 $("#mt_display_tab_settings").click(function () {
 	$('#mt_activity_tabs_usersettings').slideToggle("slow");
 
+	if($('mt_activity_tabs_usersettings').text() == '+/-') {
+		alert('1visible!');
+	}
+	
 	if($('mt_activity_tabs_usersettings').is(':visible')) {
-		alert('visible!');
+		alert('2visible!');
 		$('mt_display_tab_settings').text('<?php elgg_echo('mt_activity_tabs:close') ?>');
 	}
 	return false;
