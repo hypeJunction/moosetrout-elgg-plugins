@@ -196,10 +196,6 @@ $("#mt_display_tab_settings").click(function () {
     	if($('#mt_activity_tabs_usersettings').is(':hidden')) {
     		$('#mt_display_tab_settings').text('\(<?php echo elgg_echo('mt_activity_tabs:open') ?>\)');
     	}
-    		
-    	if($('#mt_display_tab_settings').text() == '(close)') {
-    		alert('now open!');
-    	}
 	});
 		
 	return false;
