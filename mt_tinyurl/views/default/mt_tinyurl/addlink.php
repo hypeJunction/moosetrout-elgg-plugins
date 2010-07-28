@@ -22,7 +22,7 @@ if ($pluginsettings->mode == 'facebox') {
     //$link .= ' js=\"onclick=\'showhide()\';
 }
 
-$link .= '>' . elgg_echo('mt_tinyurl:insert') . "</a><br />";
+$link .= '>(' . elgg_echo('mt_tinyurl:insert') . ")</a><br />";
 
 echo($link);
 ?>
