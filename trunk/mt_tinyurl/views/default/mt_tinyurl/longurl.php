@@ -12,7 +12,7 @@ gatekeeper();
 
 ?>
 
-<h1 class="linkModalTitle"><?php echo elgg_echo("shortlink:modaltitle"); ?></h1>
+<h1 class="linkModalTitle"><?php echo elgg_echo("mt_tinyurl:modaltitle"); ?></h1>
 <div id='sectionLink'>
 <script type="text/javascript">
 function getTinyURL(longURL, success) {
@@ -38,7 +38,7 @@ function sendTinyURL(entityname) {
 
 <div id="linkFormText">
 		<p>
-			<label><?php echo elgg_echo("shortlink:link"); ?><br />
+			<label><?php echo elgg_echo("mt_tinyurl:link"); ?><br />
 			<?php
 
 				echo elgg_view("input/text", array(
@@ -48,6 +48,6 @@ function sendTinyURL(entityname) {
 			?>
 			</label>
 		</p>
-		<input type="button" value="<?php echo elgg_echo("shortlink:insert"); ?>" onclick="javascript:sendTinyURL('<?php echo $vars['internalname']; ?>');" />
+		<input type="button" value="<?php echo elgg_echo("mt_tinyurl:insert"); ?>" onclick="javascript:sendTinyURL('<?php echo $vars['internalname']; ?>');" />
 </div>
 </div>
