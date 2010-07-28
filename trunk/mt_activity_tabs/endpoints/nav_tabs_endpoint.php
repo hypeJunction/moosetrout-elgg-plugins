@@ -185,11 +185,11 @@ $("#mt_display_tab_settings").click(function () {
 	alert('TOGGLING!');
 	$('#mt_activity_tabs_usersettings').slideToggle("slow");
 
-	if($('mt_activity_tabs_usersettings').text() == '+/-') {
+	if($('#mt_activity_tabs_usersettings').text() == '+/-') {
 		alert('1visible!');
 	}
 	
-	if($('mt_activity_tabs_usersettings').is(':visible')) {
+	if($('#mt_activity_tabs_usersettings').is(':visible')) {
 		alert('2visible!');
 		$('mt_display_tab_settings').text('<?php elgg_echo('mt_activity_tabs:close') ?>');
 	}
