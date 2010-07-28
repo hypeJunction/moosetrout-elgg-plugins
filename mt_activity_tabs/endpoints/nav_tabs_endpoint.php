@@ -189,18 +189,15 @@ $("#mt_display_tab_settings").click(function () {
 		// could also use $(this)?
     	// if now visible
     	if($('#mt_activity_tabs_usersettings').is(':visible')) {
-    		$('#mt_display_tab_settings').text('close'); //\(<?php echo elgg_echo('mt_activity_tabs:close') ?>\)');
+    		$('#mt_display_tab_settings').text('\(<?php echo elgg_echo('mt_activity_tabs:close') ?>\)');
     	}
     
     	// if now hidden
     	if($('#mt_activity_tabs_usersettings').is(':hidden')) {
-    		$('#mt_display_tab_settings').text('open'); //\(<?php echo elgg_echo('mt_activity_tabs:open') ?>\)');
+    		$('#mt_display_tab_settings').text('\(<?php echo elgg_echo('mt_activity_tabs:open') ?>\)');
     	}
-    
-    	alert ('TEXT:' + $('#mt_display_tab_settings').text());
-    	alert ('VAL:' + $('#mt_display_tab_settings').val());
     		
-    	if($('#mt_display_tab_settings').text() == 'close') {
+    	if($('#mt_display_tab_settings').text() == '(close)') {
     		alert('now open!');
     	}
 	});
