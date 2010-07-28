@@ -182,6 +182,7 @@ echo("<li id='mt_ajax_spinner'><img src='" . $url . "_graphics/ajax_loader.gif' 
 
 <script type='text/javascript'>
 $("#mt_display_tab_settings").click(function () {
+	alert('TOGGLING!');
 	$('#mt_activity_tabs_usersettings').slideToggle("slow");
 
 	if($('mt_activity_tabs_usersettings').text() == '+/-') {
