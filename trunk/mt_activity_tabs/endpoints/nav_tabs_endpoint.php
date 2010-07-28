@@ -196,9 +196,9 @@ $("#mt_display_tab_settings").click(function () {
 		$('#mt_display_tab_settings').text('\(<?php echo elgg_echo('mt_activity_tabs:open') ?>\)');
 	}
 
-	alert ('VAL:' + $('#mt_activity_tabs_settings').text());
+	alert ('VAL:' + $('#mt_display_tabs_settings').text());
 	
-	if($('#mt_activity_tabs_settings').text() == '(close)') {
+	if($('#mt_display_tabs_settings').text() == '(close)') {
 		alert('OPENING!');
 	}
 		
