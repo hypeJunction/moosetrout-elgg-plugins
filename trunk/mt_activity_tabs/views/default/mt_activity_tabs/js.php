@@ -18,10 +18,10 @@ $(document).ready(function () {
 
 	// register event handlers for spinner
 	$("#mt_ajax_spinner").ajaxStart(function(){
-		   $(#mt_ajax_spinner).show();
+		   $('#mt_ajax_spinner').show();
 		 });
 	$("#mt_ajax_spinner").ajaxStop(function(){
-		   $(#mt_ajax_spinner).hide();
+		   $('#mt_ajax_spinner').hide();
 		 });
     
 	// load up nav tabs
