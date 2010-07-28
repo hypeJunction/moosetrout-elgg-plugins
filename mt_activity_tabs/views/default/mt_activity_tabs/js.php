@@ -16,6 +16,8 @@ $usersettings_url = $CONFIG->wwwroot . "mod/mt_activity_tabs/endpoints/usersetti
 <script type="text/javascript">
 $(document).ready(function () {
 
+	$("#mt_ajax_spinner").show();
+	
 	// register event handlers for spinner
 	$("#mt_ajax_spinner").ajaxStart(function(){
 			alert('ajax starting');
