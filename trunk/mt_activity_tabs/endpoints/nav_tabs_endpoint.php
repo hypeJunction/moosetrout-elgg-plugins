@@ -172,7 +172,7 @@ foreach($group_ids as $id) {
 }
 	
 // add settings tab
-echo("<li><a href='" . $CONFIG->wwwroot ."pg/settings/plugins/" . $userid  . "#mt_activity_tabs' id='mt_display_tab_settings'>+/-</a></li>");
+echo("<li><a href='" . $CONFIG->wwwroot ."pg/settings/plugins/" . $userid  . "#mt_activity_tabs' id='mt_display_tab_settings'>(" . elgg_echo('mt_activity_tabs:open') . ")</a></li>");
 
 // add ajax spinner
 echo("<li id='mt_ajax_spinner'><img src='" . $url . "_graphics/ajax_loader.gif' /></li>");
