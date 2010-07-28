@@ -15,6 +15,8 @@
 #mt_tinyurl_form {
 	display:none;
 	background-color:#EEEEEE;
+	border: 1px solid #CCCCCC;
+	padding: 10px;
 }
 
 #facebox {
