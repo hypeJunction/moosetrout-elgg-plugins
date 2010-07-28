@@ -16,22 +16,22 @@ $usersettings_url = $CONFIG->wwwroot . "mod/mt_activity_tabs/endpoints/usersetti
 <script type="text/javascript">
 $(document).ready(function () {
 
-	$("#mt_ajax_spinner").show();
+	$('#mt_ajax_spinner').show();
 	
 	// register event handlers for spinner
-	$("#mt_ajax_spinner").ajaxStart(function(){
+	$('#mt_ajax_spinner').ajaxStart(function(){
 			//alert('ajax starting');
 		   $(this).show();
 		 });
-	$("#mt_ajax_spinner").ajaxStop(function(){
+	$('#mt_ajax_spinner').ajaxStop(function(){
 			//alert('ajax done');
 		   $(this).hide();
 		 });
-    
-	// load up nav tabs
-	mtLoadTabs();
 	
 }); /* end document ready function */
+
+// load tabs when spinner is ready
+$('#mt_ajax_spinner').load(mtLoadTabs);
 
 // activate default radio button
 function mtActivityTabsToggleDefaultRadio(stype,sid) {
