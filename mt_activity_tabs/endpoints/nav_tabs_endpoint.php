@@ -182,29 +182,21 @@ echo("<li id='mt_ajax_spinner'><img src='" . $url . "_graphics/ajax_loader.gif' 
 
 <script type='text/javascript'>
 $("#mt_display_tab_settings").click(function () {
-	alert('TOGGLING!');
-	$('#mt_activity_tabs_usersettings').slideToggle("slow");
 
-	if($('#mt_activity_tabs_usersettings').text() == '+/-') {
-		alert('1visible!');
-	}
+	$('#mt_activity_tabs_usersettings').slideToggle("slow");
 	
 	if($('#mt_activity_tabs_usersettings').is(':visible')) {
-		alert('2visible!');
-		$('#mt_display_tab_settings').text('<?php elgg_echo('mt_activity_tabs:close') ?>');
+		alert('closing!');
+		$('#mt_display_tab_settings').text('\(<?php elgg_echo('mt_activity_tabs:close') ?>\)');
 	}
+
+	// making visible
+	if($('#mt_activity_tabs_usersettings').is(':hidden')) {
+		alert('opening!');
+		$('#mt_display_tab_settings').text('\(<?php elgg_echo('mt_activity_tabs:open') ?>\)');
+	}
+		
 	return false;
 });
-
-$("#mt_activity_tabs_usersettings:hidden").click(function () {
-	alert('viewing!');
-    $(this).css("background", "yellow");
-    $('#mt_display_tab_settings').text('<?php elgg_echo('mt_activity_tabs:close') ?>');
-  });
-$("#mt_activity_tabs_usersettings:visible").click(function () {
-	alert('hiding!');
-    $(this).css("background", "yellow");
-    $('#mt_display_tab_settings').text('<?php elgg_echo('mt_activity_tabs:close') ?>');
-  });
 
 </script>
