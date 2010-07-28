@@ -184,24 +184,26 @@ echo("<li id='mt_ajax_spinner'><img src='" . $url . "_graphics/ajax_loader.gif' 
 $("#mt_display_tab_settings").click(function () {
 
 	// show or hide
-	$('#mt_activity_tabs_usersettings').slideToggle("slow");
+	$('#mt_activity_tabs_usersettings').slideToggle("slow", function() {
 
-	// if now visible
-	if($('#mt_activity_tabs_usersettings').is(':visible')) {
-		$('#mt_display_tab_settings').text('close'); //\(<?php echo elgg_echo('mt_activity_tabs:close') ?>\)');
-	}
-
-	// if now hidden
-	if($('#mt_activity_tabs_usersettings').is(':hidden')) {
-		$('#mt_display_tab_settings').text('open'); //\(<?php echo elgg_echo('mt_activity_tabs:open') ?>\)');
-	}
-
-	alert ('TEXT:' + $('#mt_display_tab_settings').text());
-	alert ('VAL:' + $('#mt_display_tab_settings').val());
-		
-	if($('#mt_display_tab_settings').text() == 'close') {
-		alert('now open!');
-	}
+		// could also use $(this)?
+    	// if now visible
+    	if($('#mt_activity_tabs_usersettings').is(':visible')) {
+    		$('#mt_display_tab_settings').text('close'); //\(<?php echo elgg_echo('mt_activity_tabs:close') ?>\)');
+    	}
+    
+    	// if now hidden
+    	if($('#mt_activity_tabs_usersettings').is(':hidden')) {
+    		$('#mt_display_tab_settings').text('open'); //\(<?php echo elgg_echo('mt_activity_tabs:open') ?>\)');
+    	}
+    
+    	alert ('TEXT:' + $('#mt_display_tab_settings').text());
+    	alert ('VAL:' + $('#mt_display_tab_settings').val());
+    		
+    	if($('#mt_display_tab_settings').text() == 'close') {
+    		alert('now open!');
+    	}
+	});
 		
 	return false;
 });
