@@ -1,7 +1,7 @@
 #mt_ajax_spinner {
-	float: right;
+	float: left;
 	display: block;
-	background-color: yellow;
+	margin: 5px;
 }
 #mt_activity_tabs_usersettings {
 	display:none;
