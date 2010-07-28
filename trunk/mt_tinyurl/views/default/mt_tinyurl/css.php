@@ -14,6 +14,7 @@
 
 #mt_tinyurl_form {
 	display:none;
+	background-color:#EEEEEE;
 }
 
 #facebox {
