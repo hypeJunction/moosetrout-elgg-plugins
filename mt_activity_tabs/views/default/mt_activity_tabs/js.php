@@ -59,7 +59,6 @@ function mtActivityTabsToggleDefaultRadio(stype,sid) {
 // called when tabs need to be loaded
 function mtLoadTabs()
 {
-	//alert('loading tabs!');
 	
 	// make ajax call
 	$.ajax({
