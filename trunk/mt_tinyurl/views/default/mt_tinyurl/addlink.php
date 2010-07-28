@@ -22,13 +22,26 @@ if ($pluginsettings->mode == 'facebox') {
     //$link .= ' js=\"onclick=\'showhide()\';
 }
 
-$link .= '>' . elgg_echo('shortlink:insert') . "</a><br />";
+$link .= '>' . elgg_echo('mt_tinyurl:insert') . "</a><br />";
 
 echo($link);
 ?>
 <script type='text/javascript'>
 $("#mt_tinyurl_link").click(function () {
-	$('#mt_tinyurl_form').slideToggle("slow");
+	$('#mt_tinyurl_form').slideToggle("slow", function() {
+		
+		// could also use $(this)?
+    	// if now visible
+    	if($('#mt_tinyurl_form').is(':visible')) {
+    		$('#mt_tinyurl_link').text('\(<?php echo elgg_echo('mt_tinyurl:close') ?>\)');
+    	}
+    
+    	// if now hidden
+    	if($('#mt_tinyurl_form').is(':hidden')) {
+    		$('#mt_tinyurl_link').text('\(<?php echo elgg_echo('mt_tinyurl:insert') ?>\)');
+    	}
+
+		});
 	return false;
 });
 </script>

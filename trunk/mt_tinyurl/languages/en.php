@@ -7,7 +7,8 @@
 
 $english = array(
 
-		'shortlink:insert' => 'Insert short link',
+		'mt_tinyurl:insert' => 'Insert short link',
+        'mt_tinyurl:close' => '(close)',
 		'shortlink:modaltitle' => 'Insert Short URL via TinyURL',
 		'shortlink:link' => 'URL',
     	'mt_tinyurl:settings:facebox' => 'facebox',
