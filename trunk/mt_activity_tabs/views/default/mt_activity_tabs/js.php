@@ -30,10 +30,8 @@ $(document).ready(function () {
 	
 }); /* end document ready function */
 
-// load tabs when spinner is ready
-$('#mt_ajax_spinner').load(function() {
-	mtLoadTabs();
-});
+// load tabs ASAP
+mtLoadTabs();
 
 // activate default radio button
 function mtActivityTabsToggleDefaultRadio(stype,sid) {
