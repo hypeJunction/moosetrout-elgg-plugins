@@ -80,15 +80,6 @@
 	height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
 }
 
-#sectionLink {
-	margin:0 5px 10px 5px;
-	padding:10px;
-	border:2px solid #dedede;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	background: #dedede;
-}
-
 h1.linkModalTitle {
 	color:#0054A7;
 	font-size:1.35em;
