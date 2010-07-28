@@ -191,8 +191,20 @@ $("#mt_display_tab_settings").click(function () {
 	
 	if($('#mt_activity_tabs_usersettings').is(':visible')) {
 		alert('2visible!');
-		$('mt_display_tab_settings').text('<?php elgg_echo('mt_activity_tabs:close') ?>');
+		$('#mt_display_tab_settings').text('<?php elgg_echo('mt_activity_tabs:close') ?>');
 	}
 	return false;
 });
+
+$("#mt_activity_tabs_usersettings:hidden").click(function () {
+	alert('viewing!');
+    $(this).css("background", "yellow");
+    $('#mt_display_tab_settings').text('<?php elgg_echo('mt_activity_tabs:close') ?>');
+  });
+$("#mt_activity_tabs_usersettings:visible").click(function () {
+	alert('hiding!');
+    $(this).css("background", "yellow");
+    $('#mt_display_tab_settings').text('<?php elgg_echo('mt_activity_tabs:close') ?>');
+  });
+
 </script>
