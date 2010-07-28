@@ -56,7 +56,7 @@ if (substr($vars['orient'], 0, 11) == 'collection_') {
 <div class="contentWrapper">
 
 <div id="elgg_horizontal_tabbed_nav">
-<div id='mt_ajax_spinner'><img src='<?php echo $vars['url'] ?>_graphics/ajax_loader.gif' /></div>
+<div id='mt_ajax_spinner'><img src='<?php echo $vars['url'] ?>medikly_theme/graphics/custom/ajax-loader.gif' /></div>
 </div>
 
 <?php echo elgg_view('mt_activity_tabs/js', array(
