@@ -75,7 +75,7 @@ function mt_tinyurl_sendTinyURL(entityname) {
 </script>
 
 <div id="linkFormText">
-<h3><?php echo elgg_echo("shortlink:modaltitle"); ?></h3>
+<h3><?php echo elgg_echo("mt_tinyurl:modaltitle"); ?></h3>
 <?php
 
 echo elgg_view("input/text", array(
@@ -84,7 +84,7 @@ echo elgg_view("input/text", array(
 ));
 ?> </label></p>
 <input type="button"
-	value="<?php echo elgg_echo("shortlink:insert"); ?>"
+	value="<?php echo elgg_echo("mt_tinyurl:insert"); ?>"
 	onclick="javascript:mt_tinyurl_sendTinyURL('<?php echo $internalname; ?>');" />
 </div>
 </div>
