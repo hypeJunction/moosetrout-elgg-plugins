@@ -20,11 +20,11 @@ $(document).ready(function () {
 	
 	// register event handlers for spinner
 	$("#mt_ajax_spinner").ajaxStart(function(){
-			alert('ajax starting');
+			//alert('ajax starting');
 		   $(this).show();
 		 });
 	$("#mt_ajax_spinner").ajaxStop(function(){
-			alert('ajax done');
+			//alert('ajax done');
 		   $(this).hide();
 		 });
     
