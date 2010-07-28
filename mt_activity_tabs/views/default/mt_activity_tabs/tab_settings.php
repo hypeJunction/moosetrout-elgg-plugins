@@ -116,9 +116,9 @@ if (!empty($collections)) {
         $collectionid = "collection_" . $id;
 
         if ($even) {
-            $fb .= "<tr class='even'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_collection.png' />$name</td>";
+            $fb .= "<tr class='even'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_collection.png' class='icon' />$name</td>";
         } else {
-            $fb .= "<tr class='odd'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_collection.png' />$name</td>";
+            $fb .= "<tr class='odd'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_collection.png' class='icon' />$name</td>";
         }
 
         // fix usersettings when NULL
@@ -164,9 +164,9 @@ if (!empty($groups)) {
         $groupid = "group_" . $id;
 
         if ($even) {
-            $fb .= "<tr class='even'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_group.png' />$name</td>";
+            $fb .= "<tr class='even'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_group.png' class='icon' />$name</td>";
         } else {
-            $fb .= "<tr class='odd'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_group.png' />$name</td>";
+            $fb .= "<tr class='odd'><td class='column_one'><img src='" . $CONFIG->wwwroot . "mod/mt_activity_tabs/_graphics/river_icon_group.png' class='icon' />$name</td>";
         }
         
         // fix usersettings when NULL
@@ -213,8 +213,8 @@ echo elgg_view('input/form', array('action' => $CONFIG->wwwroot . 'action/plugin
 
 // write out explanations for groups and collections
 ?>
-<p><img src="<?php echo $CONFIG->wwwroot ?>mod/mt_activity_tabs/_graphics/river_icon_collection.png" /><?php echo elgg_echo('mt_activity_tabs:collectionexpl')?><a href="<?php echo $CONFIG->wwwroot ?>pg/collections/add"><?php echo elgg_echo('mt_activity_tabs:createcollection')?></a></p>
-<p><img src="<?php echo $CONFIG->wwwroot ?>mod/mt_activity_tabs/_graphics/river_icon_group.png" /><?php echo elgg_echo('mt_activity_tabs:groupexpl')?><a href="<?php echo $CONFIG->wwwroot ?>pg/groups/new"><?php echo elgg_echo('mt_activity_tabs:creategroup')?></a></p>
+<p><img src="<?php echo $CONFIG->wwwroot ?>mod/mt_activity_tabs/_graphics/river_icon_collection.png" class='icon' /><?php echo elgg_echo('mt_activity_tabs:collectionexpl')?><a href="<?php echo $CONFIG->wwwroot ?>pg/collections/add"><?php echo elgg_echo('mt_activity_tabs:createcollection')?></a></p>
+<p><img src="<?php echo $CONFIG->wwwroot ?>mod/mt_activity_tabs/_graphics/river_icon_group.png" class='icon' /><?php echo elgg_echo('mt_activity_tabs:groupexpl')?><a href="<?php echo $CONFIG->wwwroot ?>pg/groups/new"><?php echo elgg_echo('mt_activity_tabs:creategroup')?></a></p>
 
 </div><!--  close mt_activity_tabs_usersettings_body div -->
 </div><!--  close mt_activity_tabs_usersettings div -->
