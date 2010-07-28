@@ -83,7 +83,7 @@ echo elgg_view("input/text", array(
 									"value" => $title,
 ));
 ?> </label></p>
-<input type="button"
+<input type="button" class="submit_button"
 	value="<?php echo elgg_echo("mt_tinyurl:insert"); ?>"
 	onclick="javascript:mt_tinyurl_sendTinyURL('<?php echo $internalname; ?>');" />
 </div>
