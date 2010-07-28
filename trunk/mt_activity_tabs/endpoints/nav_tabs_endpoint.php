@@ -187,13 +187,13 @@ $("#mt_display_tab_settings").click(function () {
 	
 	if($('#mt_activity_tabs_usersettings').is(':visible')) {
 		alert('closing!');
-		$('#mt_display_tab_settings').text('\(<?php elgg_echo('mt_activity_tabs:close') ?>\)');
+		$('#mt_display_tab_settings').text('\(<?php echo elgg_echo('mt_activity_tabs:close') ?>\)');
 	}
 
 	// making visible
 	if($('#mt_activity_tabs_usersettings').is(':hidden')) {
 		alert('opening!');
-		$('#mt_display_tab_settings').text('\(<?php elgg_echo('mt_activity_tabs:open') ?>\)');
+		$('#mt_display_tab_settings').text('\(<?php echo elgg_echo('mt_activity_tabs:open') ?>\)');
 	}
 		
 	return false;
