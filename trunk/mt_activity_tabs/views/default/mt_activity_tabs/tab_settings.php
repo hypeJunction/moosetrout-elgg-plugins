@@ -200,7 +200,7 @@ $fb .= "</div>\n";
 
 $fb .= elgg_view('input/button', array(	'internalid' => 'mt_activity_tabs_usersettings_submit',
 										'name' => 'submit',
-                                        'value' => elgg_echo('Submit')));
+                                        'value' => elgg_echo('mt_activity_tabs:submit')));
 
 // open div
 
