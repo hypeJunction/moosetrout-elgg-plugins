@@ -20,6 +20,9 @@
 	background-color:#eeeeee;
 	padding:10px;
 }
+#mt_activity_tabs_usersettings_body .icon {
+	margin-right:5px;
+}
 #mt_activity_tabs_usersettings_submit {
 	margin-left:300px;
 }
