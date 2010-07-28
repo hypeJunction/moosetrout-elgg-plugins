@@ -11,9 +11,9 @@ $english = array(
 
     'mt_activity_tabs' => 'Activity Tabs',
     'mt_activity_tabs:createcollection' => 'Create a collection.',
-    'mt_activity_tabs:collectionexpl' => ' is a collection of people. ',
+    'mt_activity_tabs:collectionexpl' => ' is a collection of people. You will see all their public content. ',
     'mt_activity_tabs:creategroup' => 'Create a group.',
-    'mt_activity_tabs:groupexpl' => ' is a group; groups have their own discussion forum, shared calendar, shared bookmarks, etc. ',
+    'mt_activity_tabs:groupexpl' => ' is a group. You will see content that is posted to that group. ',
     'mt_activity_tabs:display' => 'Display',
     'mt_activity_tabs:makedefault' => 'Default',
     'mt_activity_tabs_settings:settings:disablefriends' => 'Allow users to disable friends feed?',
