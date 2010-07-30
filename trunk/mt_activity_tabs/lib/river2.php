@@ -131,6 +131,9 @@ $limit = 20, $offset = 0, $posted_min = 0, $posted_max = 0) {
 
     $where[] = $wherein;
 
+    // filter on access
+    $where[] = ' access_id = 1 ';
+    
     //
     $whereclause = implode(' and ', $where);
 
@@ -220,6 +223,9 @@ $limit = 20, $offset = 0, $posted_min = 0, $posted_max = 0) {
 
     $where[] = $wherein;
 
+    // filter on access
+    $where[] = ' access_id = 1 ';
+    
     //
     $whereclause = implode(' and ', $where);
 
