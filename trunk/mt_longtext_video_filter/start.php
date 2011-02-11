@@ -21,7 +21,7 @@ register_elgg_event_handler('init','system','mt_longtext_video_filter_init');
 function mt_longtext_video_filter_init() {
 
     // extend css
-    extend_view('css', 'mt_longtext_video_filter/mt_longtext_video_filter_css');
+    elgg_extend_view('css', 'mt_longtext_video_filter/mt_longtext_video_filter_css');
     
     // do not load if embedvideo is not present
     $plugins = get_plugin_list();
