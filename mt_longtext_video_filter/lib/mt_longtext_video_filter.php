@@ -1,7 +1,22 @@
 <?php
 
 global $CONFIG;
-require_once($CONFIG->pluginspath . '/embedvideo/lib/embedvideo.php');
+
+// do not load if embedvideo is not present
+$plugins = get_plugin_list();
+    
+// use in_array or array_search?
+if(in_array('embedvideo', $plugins)) {
+	
+    require_once($CONFIG->pluginspath . '/embedvideo/lib/embedvideo.php');
+    
+} else {
+	// disable this plugin
+    disable_plugin('mt_longtext_video_filter');
+        
+    // generate error message
+    register_error(elgg_echo('mt_longtext_video_filter:missinglib'));
+}
 
 /**
  * Modified version of /engine/lib/input.php
